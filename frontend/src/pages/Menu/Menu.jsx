@@ -1,5 +1,5 @@
 import React from 'react';
-import MenuItem from '../components/MenuItem';
+import MenuItem from '../../components/Menu/MenuItem';
 
 const menuItems = [
   { id: 1, name: "Hamburger", price: 123, category: "Burger", sku: "401"},

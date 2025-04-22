@@ -1,6 +1,6 @@
 import React from 'react';
-import BackToHome from './pages/BackToHome';
-import Menu from './pages/Menu';
+import BackToHome from './pages/Home/BackToHome';
+import Menu from './pages/Menu/Menu';
 
 const App = () => {
   const containerStyle = {
