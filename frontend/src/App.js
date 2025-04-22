@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import BackToHome from './pages/BackToHome';
+import Menu from './pages/Menu';
 
-function App() {
+const App = () => {
+  const containerStyle = {
+    backgroundColor: '#1A1A1A',
+    minHeight: '100vh',
+    padding: '20px',
+    display: 'flex',
+    flexDirection: 'column',
+  };
+
+  const backToHomeWrapperStyle = {
+    marginBottom: '20px',
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={containerStyle}>
+      <div style={backToHomeWrapperStyle}>
+        <BackToHome />
+      </div>
+      <div style={{ color: '#FFFFFF' }}><Menu /></div>
     </div>
   );
-}
+};
 
 export default App;
