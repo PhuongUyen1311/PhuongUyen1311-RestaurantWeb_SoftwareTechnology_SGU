@@ -1,28 +1,9 @@
 import React from 'react';
-import BackToHome from './pages/Home/BackToHome';
-import Menu from './pages/Menu/Menu';
+import Home from './pages/Home/Home';
 
 const App = () => {
-  const containerStyle = {
-    backgroundColor: '#1A1A1A',
-    minHeight: '100vh',
-    padding: '20px',
-    display: 'flex',
-    flexDirection: 'column',
-  };
 
-  const backToHomeWrapperStyle = {
-    marginBottom: '20px',
-  };
-
-  return (
-    <div style={containerStyle}>
-      <div style={backToHomeWrapperStyle}>
-        <BackToHome />
-      </div>
-      <div style={{ color: '#FFFFFF' }}><Menu /></div>
-    </div>
-  );
+  return (<Home />);
 };
 
 export default App;

@@ -1,0 +1,39 @@
+/* MenuList.css */
+
+.menu-list {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px; /* tương đương space-x-4 */
+    padding: 16px;
+    white-space: nowrap;
+  }
+  
+  .filter-menu-item button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ec4899; /* Pink-500 */
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .filter-menu-item button:hover {
+    background-color: #db2777; /* Pink-600 */
+  }
+  
+  .filter-menu-item img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    margin-bottom: 8px;
+  }
+  
+  .filter-menu-item p {
+    font-size: 14px;
+    margin: 0;
+  }
+  

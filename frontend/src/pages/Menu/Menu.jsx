@@ -1,5 +1,6 @@
 import React from 'react';
 import MenuItem from '../../components/Menu/MenuItem';
+import '../../styles/Menu.css';
 
 const menuItems = [
   { id: 1, name: "Hamburger", price: 123, category: "Burger", sku: "401"},
@@ -11,26 +12,13 @@ const menuItems = [
 ];
 
 const Menu = () => {
-  const pageStyle = {
-    backgroundColor: '#1A1A1A', // Màu nền chính (gần đen)
-    minHeight: '100vh',
-    padding: '16px',
-  };
-
-  const gridStyle = {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(3, 1fr)', // Grid 3 cột
-    gap: '16px',
-  };
-
   const handleAddToCart = (item) => {
-
     console.log('Add to cart:', item);
   };
 
   return (
-    <div style={pageStyle}>
-      <div style={gridStyle}>
+    <div className="menu-page">
+      <div className="menu-grid">
         {menuItems.map((item) => (
           <MenuItem
             key={item.id}

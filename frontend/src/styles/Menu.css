@@ -1,0 +1,12 @@
+.menu-page {
+    background-color: #1A1A1A;
+    min-height: 100vh;
+    padding: 16px;
+  }
+  
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  
