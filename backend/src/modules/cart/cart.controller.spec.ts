@@ -1,12 +1,20 @@
-import { Controller, Post, Body } from '@nestjs/common';
+import { Test, TestingModule } from '@nestjs/testing';
+import { CartController } from './cart.controller';
 import { CartService } from './cart.service';
 
-@Controller('cart')
-export class CartController {
-  constructor(private readonly cartService: CartService) {}
+describe('CartController', () => {
+  let controller: CartController;
 
-  @Post('add')
-  addToCart(@Body() body: { userId: string, productId: string, quantity: number }) {
-    return this.cartService.addToCart(body.userId, body.productId, body.quantity);
-  }
-}
+  beforeEach(async () => {
+    const module: TestingModule = await Test.createTestingModule({
+      controllers: [CartController],
+      providers: [CartService],
+    }).compile();
+
+    controller = module.get<CartController>(CartController);
+  });
+
+  it('should be defined', () => {
+    expect(controller).toBeDefined();
+  });
+});

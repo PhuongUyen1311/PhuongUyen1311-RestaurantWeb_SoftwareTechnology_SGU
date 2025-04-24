@@ -2,11 +2,28 @@ import MenuItem from '../../components/Menu/MenuItem';
 import '../../styles/Menu.css';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import YourCart from '../Cart/Cart';
+
+const addToCart = async (productId, quantity = 1) => {
+  try {
+    const addToCartResponse = await axios.post("http://localhost:5000/cart/add", {
+      productId,
+      quantity
+    });
+
+    if (addToCartResponse.data.success) {
+      alert("Đã thêm vào giỏ hàng!");
+      window.location.reload('http://localhost:3000');
+    }
+  } catch (err) {
+    console.error("Lỗi:", err);
+    alert("Thêm vào giỏ hàng thất bại!");
+  }
+};
 
 function Menu() {
   const [menuItems, setFoods] = useState([]);
 
-  // Khi trang load thì gọi API
   useEffect(function () {
     axios.get(`${process.env.REACT_APP_API_URL}/food`)
       .then(function (response) {
@@ -17,10 +34,9 @@ function Menu() {
       });
   }, []);
 
-  // Hàm xử lý khi bấm "Add to cart"
   const handleAddToCart = function (item) {
     console.log('Thêm vào giỏ hàng:', item);
-    // Sau này có thể viết thêm: gửi item vào giỏ hàng, context, hoặc localStorage
+    addToCart(item.id, 1);
   };
 
   return (
@@ -29,7 +45,6 @@ function Menu() {
         {menuItems.map(function (item) {
           return (
             <MenuItem
-              
               key={item.id}
               image={item.image}
               item={item}
@@ -43,4 +58,3 @@ function Menu() {
 }
 
 export default Menu;
-

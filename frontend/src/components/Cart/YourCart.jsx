@@ -1,11 +1,13 @@
-
+// YourCart.jsx
 import React from 'react';
 import '../../styles/YourCart.css';
+import { normalizeImageName } from '../../utils/Normalize.js';
 
-const CartItem = ({ item, onIncrease, onDecrease }) => {
-  const imageSrc = `/images/${item.name.toLowerCase().replace(/\s/g, '-')}.png`;
-  const tax = (item.price * 0.1).toFixed(2);
-  const price = item.price.toFixed(2);
+export const YourCart = ({ item, onIncrease, onDecrease }) => {
+  const imageSrc = `/images/${normalizeImageName(item.name)}.jpg`;
+  console.log("Image source:", imageSrc);
+  const tax = (item.price * 0.1).toFixed(3);
+  const price = item.price.toFixed(3);
 
   return (
     <div className="cart-item">
@@ -13,44 +15,21 @@ const CartItem = ({ item, onIncrease, onDecrease }) => {
         src={imageSrc}
         alt={item.name}
         className="cart-item-image"
-        onError={(e) => (e.target.src = 'https://via.placeholder.com/50')}
+        onError={(e) => (e.target.src = 'https://via.placeholder.com/100')}
       />
 
       <div className="cart-item-details">
         <p className="cart-item-name">{item.name}</p>
-        <p className="cart-item-price">Kr {price}</p>
+        <p className="cart-item-price">{price} VND</p>
         <p className="cart-item-tax">Incl. tax 10% = Kr {tax}</p>
       </div>
 
       <div className="cart-item-quantity">
-        <button onClick={() => onDecrease(item.id)} className="quantity-button">-</button>
+        <button onClick={() => onDecrease(item.productId)} className="quantity-button">-</button>
         <span>{item.quantity}</span>
-        <button onClick={() => onIncrease(item.id)} className="quantity-button">+</button>
+        <button onClick={() => onIncrease(item.productId)} className="quantity-button">+</button>
       </div>
     </div>
   );
 };
-
-export default CartItem;
-
-function AddToCartButton({ productId }) {
-  const handleClick = async () => {
-    try {
-      const response = await fetch("http://localhost:3000/cart/add", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ productId }),
-      });
-
-      const result = await response.json();
-      alert(result.message);
-    } catch (err) {
-      console.error("Lỗi:", err);
-      alert("Thêm vào giỏ hàng thất bại!");
-    }
-  };
-
-  return <button onClick={handleClick}>🛒 Thêm vào giỏ hàng</button>;
-}
+export default YourCart;

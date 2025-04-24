@@ -4,6 +4,9 @@
     { "id": 3, "name": "hihi", "price": 122, "category": "Sea food", "sku": "403" },
     { "id": 4, "name": "Sin", "price": 122, "category": "Sea food", "sku": "404" },
     { "id": 5, "name": "cos", "price": 122, "category": "Sea food", "sku": "405" },
-    { "id": 6, "name": "mean", "price": 122, "category": "Sea food", "sku": "406" }
+    { "id": 6, "name": "mean", "price": 122, "category": "Sea food", "sku": "406" },
+    { "id": 7, "name": "Gà BBQ", "price": 45, "category": "Chicken", "sku": "407" },
+    { "id": 8, "name": "cheese burger", "price": 49, "category": "Burger", "sku": "408" },
+    { "id": 9, "name": "double whopper jr", "price": 85, "category": "Burger", "sku": "409" }
   ]
   

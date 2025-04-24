@@ -23,9 +23,10 @@
   }
   
   .menu-item-name {
-    color: #ffffff;
+    color: #ff9966;
     font-size: 18px;
     margin: 0 0 4px 0;
+    text-align: center;
   }
   
   .menu-item-price {
@@ -44,8 +45,11 @@
     font-size: 14px;
     position: absolute;
     bottom: 16px;
-    right: 16px;
+    /* right: 16px; */
     transition: background-color 0.2s ease;
+    display: 'flex'; 
+    justify-Content: 'center'; 
+    align-Items: 'center' ;
   }
   
   .menu-item-button:hover {

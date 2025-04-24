@@ -11,7 +11,6 @@ export class FoodController {
     const result = this.foodService.findAll();
     return result;
   }
-
   // Lấy món ăn theo ID
   @Get(':id')
   getById(@Param('id') id: string) {
