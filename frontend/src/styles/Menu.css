@@ -1,7 +1,8 @@
 .menu-page {
-    background-color: #1A1A1A;
+    background-color: #cecece;
     min-height: 100vh;
     padding: 16px;
+    border-radius: 1%;
   }
   
   .menu-grid {

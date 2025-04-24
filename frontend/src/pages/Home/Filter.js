@@ -17,7 +17,7 @@ const MenuList = () => {
   return (
     <div className="menu-list">
       {items.map((item) => (
-        <FilterMenu key={item.id} item={item} onAddToCart={handleAddToCart} />
+        <FilterMenu key={item.id} item={item} />
       ))}
     </div>
   );

@@ -1,5 +1,5 @@
   .app-container {
-    background-color: #1A1A1A;
+    background-color: #ffffff;
     min-height: 100vh;
     padding: 20px;
     display: flex;
@@ -33,14 +33,4 @@
   }
 
   /* RIGHT SIDE: Cart */
-  .your-cart {
-    flex: 1;
-    background-color: #2D2D2D;
-    color: #FFFFFF;
-    padding: 16px;
-    border-radius: 8px;
-    max-height: 100%;
-    height: fit-content;
-    overflow-y: auto;
-    min-width: 300px; /* Đảm bảo có chiều rộng đủ */
-  }
+

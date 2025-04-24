@@ -2,27 +2,38 @@
 .back-to-home-container {
     display: flex;
     align-items: center;
-    background-color: #1A1A1A;
-    padding: 10px 20px;
-    border-radius: 8px;
+    padding: 0.5%;
     width: fit-content;
-    border: 2px solid red;
-    z-index: 10;
+    background-color: #dad7d7;
+    border-radius: 10px;
   }
   
   .back-to-home-button {
     display: flex;
     align-items: center;
     background-color: transparent;
-    color: #FF0000;
     border: none;
     font-size: 16px;
     cursor: pointer;
+
   }
   
   .back-to-home-icon {
     margin-right: 8px;
-    font-size: 20px;
+    font-size: 40px;
     color: #FF0000;
+    background-image: url('../../public/images/house.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80% auto;
+    /* Thêm phần dưới đây để chỉnh màu nền */
+    background-color: #fff; /* màu nền bạn muốn */
+    border-radius: 50%;     /* hình tròn */
+    padding: 5px;    
+    width: 20px; /* chiều rộng của icon */
+    height: 20px;
   }
-  
+  .back-to-home-text {
+    font-size: 16px;
+    color: black;
+  }

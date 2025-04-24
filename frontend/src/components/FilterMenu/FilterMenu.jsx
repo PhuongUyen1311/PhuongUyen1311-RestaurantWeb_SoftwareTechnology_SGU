@@ -11,8 +11,7 @@ const FillterMenu = ({ item, onAddToCart }) => {
         src={`/images/${item.name.toLowerCase().replace(/\s/g, '-')}.png`}
         alt={item.name}
         className="ImageFillterMenuItem"
-        onError={(e) => (e.target.src = 'https://via.placeholder.com/100')} // Fallback image
-      />
+        onError={(e) => (e.target.src = 'https://via.placeholder.com/100')}      />
         <p>{item.name}</p>
       </button>
     </div>

@@ -1,7 +1,7 @@
 // src/components/YourCart/YourCart.jsx
 
 import React from 'react';
-import CartItem from '../../components/Cart/Yourcartcomponent'; 
+import CartItem from '../../components/Cart/YourCart'; 
 import '../../styles/YourCart.css';
 
 const YourCart = ({ cartItems = [], onIncrease, onDecrease }) => {

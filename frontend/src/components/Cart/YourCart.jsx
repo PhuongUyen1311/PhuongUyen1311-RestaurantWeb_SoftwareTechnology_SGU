@@ -32,3 +32,25 @@ const CartItem = ({ item, onIncrease, onDecrease }) => {
 };
 
 export default CartItem;
+
+function AddToCartButton({ productId }) {
+  const handleClick = async () => {
+    try {
+      const response = await fetch("http://localhost:3000/cart/add", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ productId }),
+      });
+
+      const result = await response.json();
+      alert(result.message);
+    } catch (err) {
+      console.error("Lỗi:", err);
+      alert("Thêm vào giỏ hàng thất bại!");
+    }
+  };
+
+  return <button onClick={handleClick}>🛒 Thêm vào giỏ hàng</button>;
+}
