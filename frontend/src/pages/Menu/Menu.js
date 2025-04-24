@@ -21,20 +21,26 @@ const addToCart = async (productId, quantity = 1) => {
   }
 };
 
-function Menu() {
+function Menu({ category }) {
   const [menuItems, setFoods] = useState([]);
 
-  useEffect(function () {
+  useEffect(() => {
     axios.get(`${process.env.REACT_APP_API_URL}/food`)
-      .then(function (response) {
-        setFoods(response.data);
+      .then(response => {
+        // Lọc sản phẩm theo category nếu có
+        const allItems = response.data;
+        const filteredItems = category
+          ? allItems.filter(item => item.category === category)
+          : allItems;
+
+        setFoods(filteredItems);
       })
-      .catch(function (error) {
+      .catch(error => {
         console.log('Lỗi khi lấy dữ liệu món ăn:', error);
       });
-  }, []);
+  }, [category]); // cập nhật lại khi category thay đổi
 
-  const handleAddToCart = function (item) {
+  const handleAddToCart = (item) => {
     console.log('Thêm vào giỏ hàng:', item);
     addToCart(item.id, 1);
   };
@@ -42,19 +48,16 @@ function Menu() {
   return (
     <div className="menu-page">
       <div className="menu-grid">
-        {menuItems.map(function (item) {
-          return (
-            <MenuItem
-              key={item.id}
-              image={item.image}
-              item={item}
-              onAddToCart={handleAddToCart}
-            />
-          );
-        })}
+        {menuItems.map(item => (
+          <MenuItem
+            key={item.id}
+            image={item.image}
+            item={item}
+            onAddToCart={handleAddToCart}
+          />
+        ))}
       </div>
     </div>
   );
 }
-
 export default Menu;

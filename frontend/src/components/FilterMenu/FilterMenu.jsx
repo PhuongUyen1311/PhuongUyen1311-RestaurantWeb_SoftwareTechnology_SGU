@@ -1,21 +1,25 @@
 import React from 'react';
 
-const FillterMenu = ({ item, onAddToCart }) => {
+const FilterMenu = ({ item, isSelected, onSelect, onAddToCart }) => {
   return (
-    <div className="FillterMenuItem">
+    <div className="filter-menu-item">
       <button
-        onClick={() => onAddToCart(item)}
-        className="bg-pink-500 text-white p-2 rounded mt-2 hover:bg-pink-600"
+        onClick={() => {
+          onSelect(item); // Xử lý khi chọn mục
+          onAddToCart(item); // Xử lý khi thêm vào giỏ hàng
+        }}
+        className={`flex flex-col items-center p-2 rounded ${isSelected ? 'bg-blue-400' : 'bg-gray-700'}`} // Thêm màu nền khi được chọn
       >
-      <img
-        src={`/images/${item.name.toLowerCase().replace(/\s/g, '-')}.png`}
-        alt={item.name}
-        className="ImageFillterMenuItem"
-        onError={(e) => (e.target.src = 'https://via.placeholder.com/100')}      />
-        <p>{item.name}</p>
+        <img
+          src={`/images/${item.name.toLowerCase().replace(/\s/g, '-')}.png`}
+          alt={item.name}
+          className="w-16 h-16 object-cover mb-2 rounded" // Kích thước và kiểu hình ảnh
+          onError={(e) => (e.target.src = 'https://via.placeholder.com/100')} // Hình ảnh dự phòng
+        />
+        <p className="text-white text-sm">{item.name}</p>
       </button>
     </div>
   );
 };
 
-export default FillterMenu;
+export default FilterMenu;

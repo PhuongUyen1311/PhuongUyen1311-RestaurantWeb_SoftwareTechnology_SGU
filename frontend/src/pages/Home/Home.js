@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import BackToHome from './BackToHome';
 import Menu from '../Menu/Menu';
 import Filter from './Filter';
 import YourCart from '../Cart/Cart';
 import '../../styles/Home.css';
 
-const Home = () => {
-
+function Home() {
+  const [selectedCategory, setSelectedCategory] = useState(null);
   return (
     <div className="app-container">
       <div className="back-to-home-wrapper">
@@ -15,10 +15,10 @@ const Home = () => {
       <div className="main-content">
         <div className="left-section">
           <div className="filter-products">
-            <Filter />
+            <Filter onCategoryChange={setSelectedCategory}/>
           </div>
           <div className="menu-products">
-            <Menu />
+            <Menu category={selectedCategory}/>
           </div>
         </div>
         <div className="your-cart">

@@ -1,24 +1,67 @@
-import React from 'react';
-import FilterMenu from '../../components/FilterMenu/FilterMenu'; 
-import '../../styles/Filter.css'; 
+import React, { useState, useRef } from 'react';
+import FilterMenu from '../../components/FilterMenu/FilterMenu';
+import '../../styles/Filter.css';
+import '../Menu/Menu'
+import Menu from '../Menu/Menu';
 
-const MenuList = () => {
+const MenuList = ({ onCategoryChange }) => {
   const items = [
-    { id: 1, name: '❤️Hurt' },
-    { id: 2, name: '🤡joker' },
-    { id: 3, name: '🥹Sad' },
-    { id: 4, name: '😭Cry' },
+    { id: 1, name: 'ALL' },
+    { id: 2, name: 'Juice' },
+    { id: 3, name: 'Cola' },
+    { id: 4, name: 'Pep-si' },
+    { id: 5, name: 'KFC' },
+    { id: 6, name: 'Cupcake' }, // Thêm vài mục để kiểm tra cuộn
+    { id: 7, name: 'Sea Food' },
+    { id: 8, name: 'Coca' },
   ];
 
+  const [selectedItem, setSelectedItem] = useState(items[1]); // Mặc định chọn mục "Juice"
+  const scrollRef = useRef(null); // Tham chiếu để điều khiển cuộn
+
+  const handleSelect = (item) => {
+    setSelectedItem(item);
+    onCategoryChange(item.name === 'ALL' ? null : item.name);
+  };
+
+
   const handleAddToCart = (item) => {
-    console.log(`${item.name} added to cart!`);
+    console.log(`${item.name} đã lọc `);
+  };
+
+  // Hàm cuộn sang trái
+  const scrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: -scrollRef.current.clientWidth, behavior: 'smooth' }); // Cuộn một đoạn bằng chiều rộng của thanh
+    }
+  };
+
+  // Hàm cuộn sang phải
+  const scrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: scrollRef.current.clientWidth, behavior: 'smooth' }); // Cuộn một đoạn bằng chiều rộng của thanh
+    }
   };
 
   return (
-    <div className="menu-list">
-      {items.map((item) => (
-        <FilterMenu key={item.id} item={item} />
-      ))}
+    <div className="menu-list-container">
+      <button onClick={scrollLeft} className="scroll-button left">
+        &lt;
+      </button>
+      <div className="menu-list" ref={scrollRef}>
+        {items.map((item) => (
+          <FilterMenu
+            key={item.id}
+            item={item}
+            isSelected={selectedItem.id === item.id} // Kiểm tra xem mục có được chọn không
+            onSelect={handleSelect}
+            onAddToCart={handleAddToCart}
+          />
+        ))}
+      </div>
+      <button onClick={scrollRight} className="scroll-button right">
+        &gt;
+      </button>
     </div>
   );
 };
