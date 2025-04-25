@@ -9,4 +9,4 @@ export const normalizeImageName = (name) => {
       .trim() // loại bỏ khoảng trắng đầu/cuối
       .replace(/\s+/g, "-"); // thay khoảng trắng bằng dấu gạch ngang
   };
-  
+  export default normalizeImageName;

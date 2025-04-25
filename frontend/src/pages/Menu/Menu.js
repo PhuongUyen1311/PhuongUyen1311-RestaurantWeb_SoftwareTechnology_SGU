@@ -1,8 +1,8 @@
-import MenuItem from '../../components/Menu/MenuItem';
-import '../../styles/Menu.css';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import YourCart from '../Cart/Cart';
+import MenuItem from '../../components/Menu/MenuItem';
+import ItemInfo from '../ItemInfo/ItemInfo.js'; 
+import '../../styles/Menu.css';
 
 const addToCart = async (productId, quantity = 1) => {
   try {
@@ -23,26 +23,36 @@ const addToCart = async (productId, quantity = 1) => {
 
 function Menu({ category }) {
   const [menuItems, setFoods] = useState([]);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   useEffect(() => {
     axios.get(`${process.env.REACT_APP_API_URL}/food`)
       .then(response => {
-        // Lọc sản phẩm theo category nếu có
         const allItems = response.data;
         const filteredItems = category
           ? allItems.filter(item => item.category === category)
           : allItems;
-
         setFoods(filteredItems);
       })
       .catch(error => {
         console.log('Lỗi khi lấy dữ liệu món ăn:', error);
       });
-  }, [category]); // cập nhật lại khi category thay đổi
+  }, [category]);
 
   const handleAddToCart = (item) => {
     console.log('Thêm vào giỏ hàng:', item);
-    addToCart(item.id, 1);
+    addToCart(item.id, item.quantity || 1);
+  };
+
+  const handleItemClick = (item) => {
+    setSelectedProduct(item);
+    setIsPopupOpen(true);
+  };
+
+  const closePopup = () => {
+    setIsPopupOpen(false);
+    setSelectedProduct(null);
   };
 
   return (
@@ -51,13 +61,22 @@ function Menu({ category }) {
         {menuItems.map(item => (
           <MenuItem
             key={item.id}
-            image={item.image}
             item={item}
             onAddToCart={handleAddToCart}
+            onItemClick={handleItemClick}
           />
         ))}
       </div>
+      {selectedProduct && (
+        <ItemInfo
+          item={selectedProduct}
+          isOpen={isPopupOpen}
+          onClose={closePopup}
+          onAddToCart={handleAddToCart}
+        />
+      )}
     </div>
   );
 }
+
 export default Menu;

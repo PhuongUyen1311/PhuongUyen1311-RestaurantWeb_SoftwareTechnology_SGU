@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react';
 import FilterMenu from '../../components/FilterMenu/FilterMenu';
 import '../../styles/Filter.css';
 import '../Menu/Menu'
-import Menu from '../Menu/Menu';
 
 const MenuList = ({ onCategoryChange }) => {
   const items = [
