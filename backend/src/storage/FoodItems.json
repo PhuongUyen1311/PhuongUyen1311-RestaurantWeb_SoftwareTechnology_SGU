@@ -2,701 +2,310 @@
   {
     "id": 1,
     "name": "Coca Vanilla",
-    "price": 166,
-    "category": "KFC",
-    "sku": "401"
+    "price": 30,
+    "category": "Cola",
+    "description": "Classic Coca-Cola infused with smooth vanilla taste."
   },
   {
     "id": 2,
     "name": "Zinger Burger",
-    "price": 33,
-    "category": "Juice",
-    "sku": "402"
+    "price": 125,
+    "category": "KFC",
+    "description": "Crispy chicken burger with lettuce and spicy mayo."
   },
   {
     "id": 3,
     "name": "Cheese Cupcake",
-    "price": 157,
-    "category": "Coca",
-    "sku": "403"
+    "price": 50,
+    "category": "Dessert",
+    "description": "Fluffy cupcakes with a soft, cheesy middle."
   },
   {
     "id": 4,
-    "name": "Coca Vanilla",
-    "price": 182,
-    "category": "Cupcake",
-    "sku": "404"
+    "name": "Chocolate Donut",
+    "price": 15,
+    "category": "Dessert",
+    "description": "A soft and fluffy donut covered in rich chocolate glaze."
   },
   {
     "id": 5,
     "name": "Seafood Mix",
-    "price": 192,
-    "category": "KFC",
-    "sku": "405"
+    "price": 140,
+    "category": "Sea Food",
+    "description": "Golden-battered seafood medley served hot and crispy."
   },
   {
     "id": 6,
     "name": "Apple Cola",
-    "price": 33,
+    "price": 18,
     "category": "Cola",
-    "sku": "406"
+    "description": "A refreshing cola with a crisp apple flavor twist."
   },
   {
     "id": 7,
-    "name": "Seafood Mix",
+    "name": "Grilled Salmon",
     "price": 62,
-    "category": "Coca",
-    "sku": "407"
+    "category": "Sea Food",
+    "description": "A juicy grilled salmon fillet, seasoned with herbs and spices."
   },
   {
     "id": 8,
     "name": "Pepsi Max",
-    "price": 88,
-    "category": "Sea Food",
-    "sku": "408"
+    "price": 27,
+    "category": "Cola",
+    "description": "Bold taste cola with no sugar, ideal for low-calorie diets."
   },
   {
     "id": 9,
-    "name": "Fried Chicken",
-    "price": 194,
-    "category": "Juice",
-    "sku": "409"
+    "name": "Crispy Chicken",
+    "price": 155,
+    "category": "KFC",
+    "description": "Crispy, golden fried chicken served with a juicy tenderness."
   },
   {
     "id": 10,
-    "name": "Coca Vanilla",
+    "name": "Tropical Soda",
     "price": 47,
-    "category": "Coca",
-    "sku": "410"
+    "category": "Cola",
+    "description": "A refreshing tropical soda with a blend of exotic fruit flavors."
   },
   {
     "id": 11,
     "name": "Lobster Roll",
-    "price": 151,
-    "category": "Coca",
-    "sku": "411"
+    "price": 160,
+    "category": "Sea Food",
+    "description": "Chunks of lobster meat in mayo on a toasted buttered bun."
   },
   {
     "id": 12,
-    "name": "Cheese Cupcake",
-    "price": 160,
-    "category": "Cupcake",
-    "sku": "412"
+    "name": "Cream Cupcake",
+    "price": 16,
+    "category": "Dessert",
+    "description": "A rich and creamy cheese cupcake with a soft texture."
   },
   {
     "id": 13,
     "name": "Chicken Tenders",
     "price": 57,
-    "category": "Coca",
-    "sku": "413"
+    "category": "KFC",
+    "description": "Crispy and tender chicken strips, perfect for dipping."
   },
   {
     "id": 14,
-    "name": "Coca Light",
-    "price": 122,
-    "category": "Coca",
-    "sku": "414"
+    "name": "Coca Lite",
+    "price": 22,
+    "category": "Cola",
+    "description": "A lighter version of Coca-Cola with less sugar."
   },
   {
     "id": 15,
     "name": "Mini Cupcake",
-    "price": 128,
-    "category": "Cupcake",
-    "sku": "415"
+    "price": 35,
+    "category": "Dessert",
+    "description": "Small-sized cupcakes perfect for light dessert bites."
   },
   {
     "id": 16,
-    "name": "Lobster Roll",
-    "price": 165,
-    "category": "Pep-si",
-    "sku": "416"
+    "name": "Chicken Wings",
+    "price": 95,
+    "category": "KFC",
+    "description": "Hot and spicy chicken wings with a fiery kick."
   },
   {
     "id": 17,
-    "name": "Spicy Wings",
-    "price": 172,
-    "category": "Cupcake",
-    "sku": "417"
+    "name": "Tangy Orange",
+    "price": 16,
+    "category": "Cola",
+    "description": "A tangy, refreshing orange-flavored fizzy drink."
   },
   {
     "id": 18,
-    "name": "Apple Cola",
-    "price": 102,
-    "category": "Pep-si",
-    "sku": "418"
+    "name": "Chicken Bites",
+    "price": 63,
+    "category": "KFC",
+    "description": "Crispy, tender chicken bites, perfect for dipping."
   },
   {
     "id": 19,
-    "name": "Orange Fizz",
-    "price": 56,
-    "category": "Coca",
-    "sku": "419"
+    "name": "Tropical Paradise",
+    "price": 145,
+    "category": "Juice",
+    "description": "A tropical blend of fruit juices, sweet and refreshing."
   },
   {
     "id": 20,
-    "name": "Chicken Tenders",
-    "price": 63,
-    "category": "Cola",
-    "sku": "420"
+    "name": "Golden Chicken",
+    "price": 155,
+    "category": "KFC",
+    "description": "Golden fried chicken tenders, crispy and flavorful."
   },
   {
     "id": 21,
-    "name": "Tropical Juice",
-    "price": 145,
-    "category": "Pep-si",
-    "sku": "421"
+    "name": "Spicy Burger",
+    "price": 50,
+    "category": "KFC",
+    "description": "A spicy crispy chicken burger, served with fresh veggies."
   },
   {
     "id": 22,
-    "name": "Chicken Tenders",
-    "price": 117,
-    "category": "Cupcake",
-    "sku": "422"
+    "name": "Berry Smoothie",
+    "price": 58,
+    "category": "Juice",
+    "description": "Cold smoothie with strawberries, blueberries and raspberries."
   },
   {
     "id": 23,
-    "name": "Zinger Burger",
-    "price": 124,
-    "category": "Pep-si",
-    "sku": "423"
+    "name": "Fried Chicken",
+    "price": 150,
+    "category": "KFC",
+    "description": "Juicy chicken pieces deep-fried in crispy golden batter."
   },
   {
     "id": 24,
-    "name": "Fried Chicken",
-    "price": 23,
-    "category": "Cola",
-    "sku": "424"
+    "name": "Red Velvet",
+    "price": 90,
+    "category": "Dessert",
+    "description": "Moist red cake layered with rich cream cheese frosting."
   },
   {
     "id": 25,
-    "name": "Spicy Wings",
-    "price": 139,
-    "category": "Coca",
-    "sku": "425"
+    "name": "Fruit Punch",
+    "price": 60,
+    "category": "Juice",
+    "description": "Refreshing blend of tropical and citrus fruit juices."
   },
   {
     "id": 26,
-    "name": "Berry Smoothie",
-    "price": 199,
-    "category": "Pep-si",
-    "sku": "426"
+    "name": "Shrimp Delight",
+    "price": 145,
+    "category": "Sea Food",
+    "description": "Crispy fried shrimp served with tangy dipping sauce."
   },
   {
     "id": 27,
-    "name": "Berry Smoothie",
-    "price": 37,
-    "category": "Sea Food",
-    "sku": "427"
+    "name": "Orange Fizz",
+    "price": 100,
+    "category": "Juice",
+    "description": "Sparkling orange soda with a zesty citrus twist."
   },
   {
     "id": 28,
-    "name": "Fried Chicken",
-    "price": 182,
-    "category": "Juice",
-    "sku": "428"
+    "name": "Cheese Burger",
+    "price": 131,
+    "category": "KFC",
+    "description": "Grilled beef patty topped with melted cheese and pickles."
   },
   {
     "id": 29,
-    "name": "Fried Chicken",
-    "price": 105,
-    "category": "Coca",
-    "sku": "429"
-  },
-  {
-    "id": 30,
-    "name": "Zinger Burger",
-    "price": 127,
-    "category": "Sea Food",
-    "sku": "430"
-  },
-  {
-    "id": 31,
-    "name": "Red Velvet",
-    "price": 138,
-    "category": "KFC",
-    "sku": "431"
-  },
-  {
-    "id": 32,
-    "name": "Fruit Punch",
-    "price": 177,
-    "category": "Cola",
-    "sku": "432"
-  },
-  {
-    "id": 33,
-    "name": "Pepsi Max",
-    "price": 46,
-    "category": "Cola",
-    "sku": "433"
-  },
-  {
-    "id": 34,
-    "name": "Pepsi Max",
-    "price": 180,
-    "category": "KFC",
-    "sku": "434"
-  },
-  {
-    "id": 35,
-    "name": "Coca Vanilla",
-    "price": 146,
-    "category": "KFC",
-    "sku": "435"
-  },
-  {
-    "id": 36,
-    "name": "Seafood Mix",
-    "price": 145,
-    "category": "Sea Food",
-    "sku": "436"
-  },
-  {
-    "id": 37,
-    "name": "Shrimp Delight",
-    "price": 167,
-    "category": "KFC",
-    "sku": "437"
-  },
-  {
-    "id": 38,
-    "name": "Berry Smoothie",
-    "price": 189,
-    "category": "Cola",
-    "sku": "438"
-  },
-  {
-    "id": 39,
-    "name": "Coca Vanilla",
-    "price": 135,
-    "category": "Sea Food",
-    "sku": "439"
-  },
-  {
-    "id": 40,
-    "name": "Cheese Cupcake",
-    "price": 157,
-    "category": "Coca",
-    "sku": "440"
-  },
-  {
-    "id": 41,
-    "name": "Pepsi Max",
-    "price": 29,
-    "category": "Juice",
-    "sku": "441"
-  },
-  {
-    "id": 42,
-    "name": "Spicy Wings",
-    "price": 105,
-    "category": "Cupcake",
-    "sku": "442"
-  },
-  {
-    "id": 43,
-    "name": "Lobster Roll",
-    "price": 120,
-    "category": "Juice",
-    "sku": "443"
-  },
-  {
-    "id": 44,
-    "name": "Seafood Mix",
-    "price": 115,
-    "category": "Cupcake",
-    "sku": "444"
-  },
-  {
-    "id": 45,
-    "name": "Coca Vanilla",
-    "price": 180,
-    "category": "Sea Food",
-    "sku": "445"
-  },
-  {
-    "id": 46,
-    "name": "Mini Cupcake",
-    "price": 54,
-    "category": "Cupcake",
-    "sku": "446"
-  },
-  {
-    "id": 47,
-    "name": "Zinger Burger",
-    "price": 108,
-    "category": "Pep-si",
-    "sku": "447"
-  },
-  {
-    "id": 48,
-    "name": "Orange Fizz",
-    "price": 100,
-    "category": "Sea Food",
-    "sku": "448"
-  },
-  {
-    "id": 49,
-    "name": "Zinger Burger",
-    "price": 131,
-    "category": "Cupcake",
-    "sku": "449"
-  },
-  {
-    "id": 50,
     "name": "KFC Box",
     "price": 93,
-    "category": "Sea Food",
-    "sku": "450"
-  },
-  {
-    "id": 51,
-    "name": "Coca Light",
-    "price": 136,
-    "category": "Juice",
-    "sku": "451"
-  },
-  {
-    "id": 52,
-    "name": "Coca Vanilla",
-    "price": 127,
-    "category": "Juice",
-    "sku": "452"
-  },
-  {
-    "id": 53,
-    "name": "Red Velvet",
-    "price": 33,
-    "category": "Cola",
-    "sku": "453"
-  },
-  {
-    "id": 54,
-    "name": "Fried Chicken",
-    "price": 191,
-    "category": "Sea Food",
-    "sku": "454"
-  },
-  {
-    "id": 55,
-    "name": "Pepsi Max",
-    "price": 42,
     "category": "KFC",
-    "sku": "455"
+    "description": "Combo meal with chicken, fries, and a drink."
   },
-  {
-    "id": 56,
-    "name": "Fried Chicken",
-    "price": 34,
-    "category": "Juice",
-    "sku": "456"
-  },
-  {
-    "id": 57,
-    "name": "Mini Cupcake",
-    "price": 36,
-    "category": "Cola",
-    "sku": "457"
-  },
-  {
-    "id": 58,
-    "name": "Fruit Punch",
-    "price": 137,
-    "category": "Sea Food",
-    "sku": "458"
-  },
-  {
-    "id": 59,
-    "name": "Zinger Burger",
-    "price": 44,
-    "category": "Cupcake",
-    "sku": "459"
-  },
-  {
-    "id": 60,
-    "name": "Shrimp Delight",
-    "price": 185,
-    "category": "Pep-si",
-    "sku": "460"
-  },
-  {
-    "id": 61,
-    "name": "Fish Fillet",
-    "price": 194,
-    "category": "Cola",
-    "sku": "461"
-  },
-  {
-    "id": 62,
-    "name": "Pepsi Max",
-    "price": 84,
-    "category": "Pep-si",
-    "sku": "462"
-  },
-  {
-    "id": 63,
-    "name": "Seafood Mix",
-    "price": 122,
-    "category": "Coca",
-    "sku": "463"
-  },
-  {
-    "id": 64,
-    "name": "Spicy Wings",
-    "price": 197,
-    "category": "Cupcake",
-    "sku": "464"
-  },
-  {
-    "id": 65,
-    "name": "Coca Light",
-    "price": 143,
-    "category": "Cola",
-    "sku": "465"
-  },
-  {
-    "id": 66,
-    "name": "Mini Cupcake",
-    "price": 39,
-    "category": "Coca",
-    "sku": "466"
-  },
-  {
-    "id": 67,
-    "name": "Coca Light",
-    "price": 127,
-    "category": "Cupcake",
-    "sku": "467"
-  },
-  {
-    "id": 68,
-    "name": "Zinger Burger",
-    "price": 188,
-    "category": "KFC",
-    "sku": "468"
-  },
-  {
-    "id": 69,
-    "name": "Apple Cola",
-    "price": 22,
-    "category": "Coca",
-    "sku": "469"
-  },
-  {
-    "id": 70,
-    "name": "Fried Chicken",
-    "price": 86,
-    "category": "Cupcake",
-    "sku": "470"
-  },
-  {
-    "id": 71,
-    "name": "Seafood Mix",
-    "price": 118,
-    "category": "KFC",
-    "sku": "471"
-  },
-  {
-    "id": 72,
-    "name": "Lobster Roll",
-    "price": 99,
-    "category": "Cupcake",
-    "sku": "472"
-  },
-  {
-    "id": 73,
-    "name": "Apple Cola",
-    "price": 132,
-    "category": "Sea Food",
-    "sku": "473"
-  },
-  {
-    "id": 74,
-    "name": "Zinger Burger",
-    "price": 100,
-    "category": "Cupcake",
-    "sku": "474"
-  },
-  {
-    "id": 75,
-    "name": "Fried Chicken",
-    "price": 118,
-    "category": "Juice",
-    "sku": "475"
-  },
-  {
-    "id": 76,
-    "name": "Apple Cola",
-    "price": 39,
-    "category": "Coca",
-    "sku": "476"
-  },
-  {
-    "id": 77,
-    "name": "Apple Cola",
-    "price": 134,
-    "category": "Pep-si",
-    "sku": "477"
-  },
-  {
-    "id": 78,
-    "name": "Shrimp Delight",
-    "price": 94,
-    "category": "Coca",
-    "sku": "478"
-  },
-  {
-    "id": 79,
-    "name": "KFC Box",
-    "price": 54,
-    "category": "Pep-si",
-    "sku": "479"
-  },
-  {
-    "id": 80,
-    "name": "Lobster Roll",
-    "price": 120,
-    "category": "Cola",
-    "sku": "480"
-  },
-  {
-    "id": 81,
-    "name": "KFC Box",
-    "price": 110,
-    "category": "Pep-si",
-    "sku": "481"
-  },
-  {
-    "id": 82,
-    "name": "Mini Cupcake",
-    "price": 192,
-    "category": "Coca",
-    "sku": "482"
-  },
-  {
-    "id": 83,
-    "name": "Shrimp Delight",
-    "price": 106,
-    "category": "KFC",
-    "sku": "483"
-  },
-  {
-    "id": 84,
-    "name": "Lobster Roll",
-    "price": 27,
-    "category": "Pep-si",
-    "sku": "484"
-  },
-  {
-    "id": 85,
-    "name": "Apple Cola",
-    "price": 78,
-    "category": "Sea Food",
-    "sku": "485"
-  },
-  {
-    "id": 86,
-    "name": "Apple Cola",
-    "price": 24,
-    "category": "Cupcake",
-    "sku": "486"
-  },
-  {
-    "id": 87,
-    "name": "Shrimp Delight",
-    "price": 125,
-    "category": "KFC",
-    "sku": "487"
-  },
-  {
-    "id": 88,
-    "name": "Fish Fillet",
-    "price": 158,
-    "category": "Sea Food",
-    "sku": "488"
-  },
-  {
-    "id": 89,
-    "name": "Fish Fillet",
-    "price": 82,
-    "category": "KFC",
-    "sku": "489"
-  },
-  {
-    "id": 90,
-    "name": "Chicken Tenders",
-    "price": 61,
-    "category": "Cupcake",
-    "sku": "490"
-  },
-  {
-    "id": 91,
-    "name": "Chicken Tenders",
-    "price": 107,
-    "category": "Sea Food",
-    "sku": "491"
-  },
-  {
-    "id": 92,
-    "name": "Mini Cupcake",
-    "price": 185,
-    "category": "Cola",
-    "sku": "492"
-  },
-  {
-    "id": 93,
-    "name": "Coca Light",
-    "price": 188,
-    "category": "Coca",
-    "sku": "493"
-  },
-  {
-    "id": 94,
-    "name": "Shrimp Delight",
-    "price": 22,
-    "category": "Coca",
-    "sku": "494"
-  },
-  {
-    "id": 95,
-    "name": "Shrimp Delight",
-    "price": 142,
-    "category": "Cupcake",
-    "sku": "495"
-  },
-  {
-    "id": 96,
-    "name": "Spicy Wings",
-    "price": 181,
-    "category": "Cola",
-    "sku": "496"
-  },
-  {
-    "id": 97,
-    "name": "Berry Smoothie",
-    "price": 169,
-    "category": "Pep-si",
-    "sku": "497"
-  },
-  {
-    "id": 98,
-    "name": "Lobster Roll",
-    "price": 155,
-    "category": "Coca",
-    "sku": "498"
-  },
-  {
-    "id": 99,
-    "name": "Chicken Tenders",
-    "price": 74,
-    "category": "Sea Food",
-    "sku": "499"
-  },
-  {
-    "id": 100,
-    "name": "Orange Fizz",
-    "price": 190,
-    "category": "Pep-si",
-    "sku": "500"
-  }
+    {
+      "id": 30,
+      "name": "Strawberry Cupcake",
+      "price": 32,
+      "category": "Cupcake",
+      "description": "Soft cupcake topped with fresh strawberry cream and fruit pieces."
+    },
+    {
+      "id": 31,
+      "name": "Lemon Cupcake",
+      "price": 30,
+      "category": "Cupcake",
+      "description": "Moist cupcake with zesty lemon flavor and creamy icing."
+    },
+    {
+      "id": 32,
+      "name": "Oreo Cupcake",
+      "price": 34,
+      "category": "Cupcake",
+      "description": "Chocolate cupcake with Oreo cookie crumble and whipped topping."
+    },
+    {
+      "id": 33,
+      "name": "Peanut Butter",
+      "price": 36,
+      "category": "Cupcake",
+      "description": "Rich peanut butter-flavored cupcake with nutty frosting."
+    },
+    {
+      "id": 34,
+      "name": "Matcha Cupcake",
+      "price": 38,
+      "category": "Cupcake",
+      "description": "Delicate green tea cupcake with smooth matcha cream."
+    },
+    {
+      "id": 35,
+      "name": "Crab Delight",
+      "price": 148,
+      "category": "Sea Food",
+      "description": "Pan-seared crab cakes served with tangy aioli sauce."
+    },
+    {
+      "id": 36,
+      "name": "Grilled Squid",
+      "price": 137,
+      "category": "Sea Food",
+      "description": "Tender squid grilled to perfection with garlic butter."
+    },
+    {
+      "id": 37,
+      "name": "Seafood Platter",
+      "price": 210,
+      "category": "Sea Food",
+      "description": "A large platter with shrimp, crab, and mussels in garlic butter."
+    },
+    {
+      "id": 38,
+      "name": "Mussels Wine",
+      "price": 165,
+      "category": "Sea Food",
+      "description": "Fresh mussels cooked in a white wine and herb broth."
+    },
+    {
+      "id": 39,
+      "name": "Stuffed Clams",
+      "price": 158,
+      "category": "Sea Food",
+      "description": "Baked clams filled with herbs, garlic, and breadcrumbs."
+    },
+    {
+      "id": 40,
+      "name": "Green Apple",
+      "price": 40,
+      "category": "Juice",
+      "description": "Fresh green apple juice with a crisp, tart flavor."
+    },
+    {
+      "id": 41,
+      "name": "Carrot Orange",
+      "price": 42,
+      "category": "Juice",
+      "description": "A healthy blend of fresh carrots and orange juice."
+    },
+    {
+      "id": 42,
+      "name": "Mango Blast",
+      "price": 46,
+      "category": "Juice",
+      "description": "Sweet and smooth mango juice with a tropical twist."
+    },
+    {
+      "id": 43,
+      "name": "Pineapple Passion",
+      "price": 48,
+      "category": "Juice",
+      "description": "Juice made from ripe pineapple and a hint of passion fruit."
+    },
+    {
+      "id": 44,
+      "name": "Watermelon Cooler",
+      "price": 44,
+      "category": "Juice",
+      "description": "Cool and hydrating juice made from fresh watermelon."
+    }
+  
 ]
