@@ -13,7 +13,7 @@ const addToCart = async (productId, quantity = 1) => {
 
     if (addToCartResponse.data.success) {
       alert("Đã thêm vào giỏ hàng!");
-      window.location.reload('http://localhost:3000');
+      window.dispatchEvent(new Event('cartUpdated'));
     }
   } catch (err) {
     console.error("Lỗi:", err);
@@ -43,6 +43,7 @@ function Menu({ category }) {
   const handleAddToCart = (item) => {
     console.log('Thêm vào giỏ hàng:', item);
     addToCart(item.id, item.quantity || 1);
+    closePopup(); // Đóng popup sau khi thêm vào giỏ hàng
   };
 
   const handleItemClick = (item) => {

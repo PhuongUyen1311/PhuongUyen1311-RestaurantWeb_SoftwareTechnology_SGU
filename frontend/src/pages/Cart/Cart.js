@@ -47,7 +47,16 @@ const Cart = ({ onCheckout }) => {
   };
 
   useEffect(() => {
-    fetchCartItems(); // Gọi hàm lấy dữ liệu giỏ hàng khi component mount
+    fetchCartItems(); 
+    const reloadCart = async () => {
+      const response = await axios.get("http://localhost:5000/cart");
+      setCartItems(response.data || []);
+    };
+  
+    window.addEventListener('cartUpdated', reloadCart);
+  
+    // khi component unmount thì gỡ bỏ event
+    return () => window.removeEventListener('cartUpdated', reloadCart);// Gọi hàm lấy dữ liệu giỏ hàng khi component mount
   }, []);
 
   return (
