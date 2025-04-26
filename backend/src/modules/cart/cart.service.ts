@@ -127,3 +127,4 @@ export class CartService {
     };
   }
 }
+export default CartService;

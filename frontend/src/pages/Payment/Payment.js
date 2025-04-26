@@ -1,25 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'; // Nếu bạn cần tải dữ liệu thanh toán từ server
 import '../../styles/Payment.css';
-import PaymentHeader from './PaymentHeader'
-import Pay from './Pay'
+import PaymentHeader from '../../components/Payment/PaymentHeader'
+import Pay from '../../components/Payment/PaymentForm'
 const Payment = () => {
-  const [paymentInfo, setPaymentInfo] = useState(null);
+
   const [loading, setLoading] = useState(true);
+  const [paymentInfo, setPaymentInfo] = useState({ items: [], cost: 0, tax: 0 });
+
+  const fetchPaymentInfo = async () => {
+    try {
+      const response = await axios.get("http://localhost:5000/payment");
+      const data = response.data || { items: [], cost: 0, tax: 0 };
+      console.log("Dữ liệu thanh toán: ", data);
+      setPaymentInfo(data);
+      setLoading(true);
+    } catch (err) {
+      console.error("Lỗi khi tải dữ liệu thanh toán: ", err);
+    }
+  };
 
   useEffect(() => {
-    const fetchPaymentInfo = async () => {
-      try {
-        const response = await axios.get('http://localhost:5000/payment');
-        setPaymentInfo(response.data);
-      } catch (err) {
-        console.error("Lỗi khi tải thông tin thanh toán:", err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchPaymentInfo(); 
+    fetchPaymentInfo();
   }, []);
 
   // Xử lý thanh toán 
@@ -34,7 +36,7 @@ const Payment = () => {
     }
   };
 
-  if (loading) {
+  if (!loading) {
     return <div>Đang tải thông tin thanh toán...</div>;
   }
 
@@ -42,7 +44,10 @@ const Payment = () => {
     <div className="container-payment">
       <PaymentHeader />
       <div className="content-wrapper">
-        <Pay />
+        <Pay
+        paymentInfo={paymentInfo}
+        handlePayment={handlePayment}
+         />
       </div>
     </div>
   );

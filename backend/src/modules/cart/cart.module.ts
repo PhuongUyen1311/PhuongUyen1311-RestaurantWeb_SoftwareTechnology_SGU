@@ -6,6 +6,7 @@ import { FoodModule } from '../food/food.module';
 @Module({
   imports: [FoodModule],
   controllers: [CartController],
-  providers: [CartService]
+  providers: [CartService],
+  exports: [CartService],
 })
 export class CartModule {}

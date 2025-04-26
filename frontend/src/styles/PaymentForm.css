@@ -1,0 +1,201 @@
+.payment-container {
+  display: flex;
+  max-width: 1000px;
+  margin: 5vh auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.payment-section {
+  flex: 1;
+  padding-right: 30px;
+  border-right: 1px solid #eee;
+  width: 25vw;
+  
+}
+
+.order-summary {
+  width: 300px;
+  padding-left: 30px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+/* Payment Method Styles */
+.payment-method {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 60px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+}
+
+.payment-option input[type="radio"] {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.radio-label {
+  font-size: 16px;
+  color: #333;
+  flex: 1;
+}
+
+.card-logos {
+  display: flex;
+  gap: 5px;
+}
+
+.card-logo {
+  width: 40px;
+  height: 25px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 4px;
+}
+
+.visa {
+  background-color: #1a1f71;
+}
+
+.mastercard {
+  background-color: #ff5f00;
+}
+
+.jcb {
+  background-color: #2100cf;
+}
+
+.vnpay-logo {
+  width: 40px;
+  height: 25px;
+  background-color: #e3066e;
+  border-radius: 4px;
+}
+
+/* Card Info Styles */
+.card-info input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+}
+
+.card-expiry-cvv {
+  display: flex;
+  gap: 15px;
+
+}
+.card-expiry-cvv > div {
+  flex: 1;
+}
+
+/* Order Summary Styles */
+.order-details {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+.order-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  color: #666;
+}
+
+.order-row:last-child {
+  border-bottom: none;
+}
+
+.order-row-total {
+  font-weight: bold;
+  color: #222;
+  margin-top: 15px;
+  border-top: 1px solid #ddd;
+  padding-top: 15px;
+  /* display: flex; <-- BỎ đi */
+}
+
+.order-row-total div {
+  margin-bottom: 10px;
+  /* Khoảng cách giữa Thuế và Tổng tiền */
+}
+
+.total-cost, .tax {
+  color: #008847;
+  font-weight: bold;
+}
+
+
+/* Button Styles */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  
+}
+
+.btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  flex: 1;
+  text-align: center;
+}
+
+.btn-cancel {
+  background-color: #fff;
+  color: #333;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+.btn-pay {
+  background-color: #000;
+  color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+.btn-pay:hover {
+  background-color: #333;
+}

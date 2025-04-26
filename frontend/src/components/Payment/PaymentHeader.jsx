@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/Header_payment.css';
+import '../../styles/PaymentHeader.css';
 
 const PaymentHeader = () => {
   return (
@@ -9,7 +9,7 @@ const PaymentHeader = () => {
     <nav>
       <a href="/">Home</a>
       <span>•</span>
-      <a href="/payment">Payment</a>
+      {/* <a href="/payment">Payment</a> */}
     </nav>
     </header>
   );
