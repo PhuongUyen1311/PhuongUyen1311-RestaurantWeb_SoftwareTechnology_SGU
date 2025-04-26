@@ -4,11 +4,11 @@
   padding: 16px;
   border-radius: 8px;
   border: solid 1px #ccc;
-  max-height: 80vh;
+  max-height: 800px;
   min-width: 400px;
-
-  /* margin-top: 115px; */
+  overflow-y: auto; /* Thêm thanh cuộn dọc khi nội dung vượt quá */
 }
+
 .your-cart-items {
   overflow-y: auto;
   overflow-x: auto;

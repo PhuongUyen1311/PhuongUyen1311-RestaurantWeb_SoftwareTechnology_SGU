@@ -10,5 +10,4 @@ const BackToHome = () => {
     </div>
   );
 };
-
 export default BackToHome;

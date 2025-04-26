@@ -8,11 +8,10 @@ const MenuList = ({ onCategoryChange }) => {
     { id: 1, name: 'ALL' },
     { id: 2, name: 'Juice' },
     { id: 3, name: 'Cola' },
-    { id: 4, name: 'Pep-si' },
-    { id: 5, name: 'KFC' },
-    { id: 6, name: 'Cupcake' }, // Thêm vài mục để kiểm tra cuộn
-    { id: 7, name: 'Sea Food' },
-    { id: 8, name: 'Coca' },
+    { id: 4, name: 'KFC' },
+    { id: 5, name: 'Cupcake' }, // Thêm vài mục để kiểm tra cuộn
+    { id: 6, name: 'Sea Food' },
+    { id: 7, name: 'Coca' },
   ];
 
   const [selectedItem, setSelectedItem] = useState(items[1]); // Mặc định chọn mục "Juice"

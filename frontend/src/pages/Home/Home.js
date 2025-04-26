@@ -2,27 +2,29 @@ import React, { useState } from 'react';
 import BackToHome from './BackToHome';
 import Menu from '../Menu/Menu';
 import Filter from './Filter';
-import YourCart from '../Cart/Cart';
+import Cart from '../Cart/Cart';
 import '../../styles/Home.css';
 
-function Home() {
+const Home = ({ goToPayment }) => {
+
   const [selectedCategory, setSelectedCategory] = useState(null);
+
   return (
     <div className="app-container">
-      <div className="back-to-home-wrapper">
-        <BackToHome />
-      </div>
-      <div className="main-content">
-        <div className="left-section">
-          <div className="filter-products">
-            <Filter onCategoryChange={setSelectedCategory}/>
-          </div>
-          <div className="menu-products">
-            <Menu category={selectedCategory}/>
-          </div>
+    <div className="back-to-home-wrapper">
+      <BackToHome />
+    </div>
+    <div className="main-content">
+      <div className="left-section">
+        <div className="filter-products">
+          <Filter onCategoryChange={setSelectedCategory} />
         </div>
+        <div className="menu-products">
+          <Menu category={selectedCategory} />
+        </div>
+      </div>
         <div className="your-cart">
-          <YourCart/>
+          <Cart onCheckout={goToPayment} /> 
         </div>
       </div>
     </div>
@@ -30,6 +32,7 @@ function Home() {
 };
 
 export default Home;
+
 // import React, { useState, useEffect } from 'react';
 // import BackToHome from './BackToHome';
 // import Menu from '../Menu/Menu';
