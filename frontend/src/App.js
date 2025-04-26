@@ -11,6 +11,6 @@ const App = () => {
       {currentPage === 'payment' && <Payment />}
     </>
   );
-};
 
+}
 export default App;

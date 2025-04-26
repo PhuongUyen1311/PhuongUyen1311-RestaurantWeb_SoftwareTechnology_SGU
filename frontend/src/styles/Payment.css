@@ -1,50 +1,29 @@
-/* Payment.css */
-.payment-container {
-    padding: 20px;
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  .button-return {
-    width: 40%;
-    padding: 12px;
-    background-color: #ff9966;
-    color: white;
-    font-size: 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  .payment-details ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .payment-details li {
-    margin: 10px 0;
-  }
-  
-  .payment-action {
-    margin-top: 20px;
-  }
-  
-  .payment-button, .back-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    margin: 5px;
-    cursor: pointer; 
-  }
+.container-payment {
+  background-color: #1e1e1e;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
 
-  .payment-button {
-    background-color: green;
-    color: white;
-    border: none;
-  }
-  
-  .back-button {
-    background-color: grey;
-    color: white;
-    border: none;
-  }
-  
+.payment-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.content-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-top: 60px;
+}
+
+.content-wrapper > div {
+  width: 100%;
+  max-width: 400px;
+}

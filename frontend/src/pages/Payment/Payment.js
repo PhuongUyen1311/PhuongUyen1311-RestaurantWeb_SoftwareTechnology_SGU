@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'; // Nếu bạn cần tải dữ liệu thanh toán từ server
 import '../../styles/Payment.css';
-
+import PaymentHeader from './PaymentHeader'
+import Pay from './Pay'
 const Payment = () => {
   const [paymentInfo, setPaymentInfo] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -38,32 +39,11 @@ const Payment = () => {
   }
 
   return (
-    <div className="payment-container">
-      <h2>Thông tin thanh toán</h2>
-      
-      {paymentInfo ? (
-        <div className="payment-details">
-          <h3>Đơn hàng của bạn:</h3>
-          <ul>
-            {paymentInfo.items.map((item) => (
-              <li key={item.productId}>
-                {item.productName} - {item.quantity} x {item.price} VNĐ
-              </li>
-            ))}
-          </ul>
-          <h3>Tổng tiền: {paymentInfo.totalAmount} VNĐ</h3>
-          <div className="payment-action">
-            <button onClick={handlePayment} className="payment-button">
-              Thanh toán
-            </button>
-            <button onClick={() => window.location.href = '/cart'} className="back-button">
-              Quay lại giỏ hàng
-            </button>
-          </div>
-        </div>
-      ) : (
-        <p>Không có thông tin thanh toán.</p>
-      )}
+    <div className="container-payment">
+      <PaymentHeader />
+      <div className="content-wrapper">
+        <Pay />
+      </div>
     </div>
   );
 };
