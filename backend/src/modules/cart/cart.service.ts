@@ -93,14 +93,12 @@ export class CartService {
       };
     }
   }
-  // Thêm các phương thức này vào CartService
 
   // Giảm số lượng sản phẩm trong giỏ
   decreaseQuantity(productId: string) {
     const existingItemIndex = this.cart.findIndex(item => item.productId === productId);
     if (existingItemIndex !== -1) {
-    // Nếu số lượng <= 0, xóa sản phẩm khỏi giỏ
-    if (this.cart[existingItemIndex].quantity <= 0) {
+    if (this.cart[existingItemIndex].quantity <= 1) {
       return this.removeFromCart(productId);
     }
     this.cart[existingItemIndex].quantity--;

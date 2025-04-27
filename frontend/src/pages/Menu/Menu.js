@@ -12,12 +12,10 @@ const addToCart = async (productId, quantity = 1) => {
     });
 
     if (addToCartResponse.data.success) {
-      alert("Đã thêm vào giỏ hàng!");
       window.dispatchEvent(new Event('cartUpdated'));
     }
   } catch (err) {
     console.error("Lỗi:", err);
-    alert("Thêm vào giỏ hàng thất bại!");
   }
 };
 

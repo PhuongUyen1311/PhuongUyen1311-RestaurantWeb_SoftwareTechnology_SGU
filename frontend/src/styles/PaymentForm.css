@@ -126,14 +126,8 @@ h3 {
 
 /* Card Info Styles */
 .card-info input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #8f8c8b;
-  border-radius: 4px;
-  font-size: 14px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   box-sizing: border-box;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
 }
 
 .card-expiry-cvv {

@@ -1,22 +1,25 @@
+// src/pages/Payment/Payment.js
 import React, { useState, useEffect } from 'react';
-import axios from 'axios'; // Nếu bạn cần tải dữ liệu thanh toán từ server
+import axios from 'axios';
+import { useLocation } from 'react-router-dom';
 import '../../styles/Payment.css';
-import PaymentHeader from '../../components/Payment/PaymentHeader'
-import Pay from '../../components/Payment/PaymentForm'
-const Payment = () => {
+import PaymentHeader from '../../components/Payment/PaymentHeader';
+import Pay from '../../components/Payment/PaymentForm';
 
+const Payment = () => {
   const [loading, setLoading] = useState(true);
   const [paymentInfo, setPaymentInfo] = useState({ items: [], cost: 0, tax: 0 });
+  const location = useLocation();
 
   const fetchPaymentInfo = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/payment");
+      const response = await axios.get('http://localhost:5000/payment');
       const data = response.data || { items: [], cost: 0, tax: 0 };
-      console.log("Dữ liệu thanh toán: ", data);
+      console.log('Dữ liệu thanh toán: ', data);
       setPaymentInfo(data);
       setLoading(true);
     } catch (err) {
-      console.error("Lỗi khi tải dữ liệu thanh toán: ", err);
+      console.error('Lỗi khi tải dữ liệu thanh toán: ', err);
     }
   };
 
@@ -24,17 +27,44 @@ const Payment = () => {
     fetchPaymentInfo();
   }, []);
 
-  // Xử lý thanh toán 
-  const handlePayment = async () => {
+  const handlePayment = async (paymentMethod) => {
     try {
-      await axios.post('http://localhost:5000/payment/checkout', paymentInfo);
-      alert('Thanh toán thành công!');
-      window.location.href = '/'; // Quay lại trang chủ sau khi thanh toán thành công
+      if (paymentMethod === 'vnpay' || paymentMethod === 'credit') {
+        const response = await axios.post('http://localhost:5000/payment/vnpay', {
+          amount: (paymentInfo.cost + paymentInfo.tax) * 100,
+          orderId: `ORDER_${Date.now()}`,
+          orderInfo: `Thanh toán đơn hàng #${Date.now()}`,
+          // Dùng vnp_OrderType để chỉ định loại thanh toán
+          orderType: paymentMethod === 'credit' ? 'creditcard' : 'billpayment',
+        });
+        window.location.href = response.data.paymentUrl; // Chuyển hướng đến giao diện VNPay
+
+      } else if (paymentMethod === 'cod') {
+        alert('Thanh toán thành công!');
+        window.location.href = '/';
+
+      } else if (paymentMethod === 'bank') {
+        await axios.post('http://localhost:5000/payment/checkout', paymentInfo);
+        alert('Thanh toán thành công!');
+        window.location.href = '/';
+      }
     } catch (err) {
-      console.error("Lỗi thanh toán:", err);
+      console.error('Lỗi thanh toán:', err);
       alert('Thanh toán thất bại, vui lòng thử lại!');
     }
   };
+  useEffect(() => {
+    const query = new URLSearchParams(location.search);
+    const vnp_ResponseCode = query.get('vnp_ResponseCode');
+    if (vnp_ResponseCode) {
+      if (vnp_ResponseCode === '00') {
+        alert('Thanh toán qua VNPay thành công!');
+        window.location.href = '/';
+      } else {
+        alert('Thanh toán qua VNPay thất bại. Vui lòng thử lại!');
+      }
+    }
+  }, [location]);
 
   if (!loading) {
     return <div>Đang tải thông tin thanh toán...</div>;
@@ -44,10 +74,7 @@ const Payment = () => {
     <div className="container-payment">
       <PaymentHeader />
       <div className="content-wrapper">
-        <Pay
-        paymentInfo={paymentInfo}
-        handlePayment={handlePayment}
-         />
+        <Pay paymentInfo={paymentInfo} onCheckout={handlePayment} />
       </div>
     </div>
   );

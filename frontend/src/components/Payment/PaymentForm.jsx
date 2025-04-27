@@ -1,16 +1,61 @@
-import React, { useState } from 'react';
+// src/components/Payment/PaymentForm.jsx
+import React, { useEffect ,useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import '../../styles/PaymentForm.css';
 
-const Pay = ({ paymentInfo, handlePayment }) => {
+const Pay = ({ paymentInfo, onCheckout }) => {
   const [cardNumber, setCardNumber] = useState('');
+  const [cardHolder, setCardHolder] = useState('');
   const [expiry, setExpiry] = useState('');
   const [cvv, setCvv] = useState('');
-  const [paymentMethod, setPaymentMethod] = useState('credit', 'vnpay', 'bank', 'cod');
+  const [paymentMethod, setPaymentMethod] = useState('credit');
+  const [errors, setErrors] = useState({});
+  const [orderId, setOrderId] = useState('');
+  const navigate = useNavigate(); // Khởi tạo useNavigate
 
   const totalItems = paymentInfo.items.reduce((total, item) => total + item.quantity, 0);
 
   const handlePaymentMethodChange = (method) => {
     setPaymentMethod(method);
+    setErrors({});
+  };
+  useEffect(() => {
+    // Chỉ tạo orderId khi component mount
+    setOrderId(`${Date.now()}`);
+  }, []);
+
+  const validateCardInfo = () => {
+    const newErrors = {};
+    if (paymentMethod === 'credit' || paymentMethod === 'bank') {
+      if (!cardNumber || !/^\d{16}$/.test(cardNumber.replace(/\s/g, ''))) {
+        newErrors.cardNumber = 'Số thẻ phải có 16 chữ số';
+      }
+      if (!cardHolder || cardHolder.trim().length < 2) {
+        newErrors.cardHolder = 'Tên chủ thẻ không hợp lệ';
+      }
+      if (!expiry || !/^(0[1-9]|1[0-2])\/\d{2}$/.test(expiry)) {
+        newErrors.expiry = 'Ngày hết hạn phải có định dạng MM/YY';
+      }
+      if (!cvv || !/^\d{3}$/.test(cvv)) {
+        newErrors.cvv = 'CVV phải có 3 chữ số';
+      }
+    }
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = () => {
+    if (paymentMethod === 'bank') {
+      // Điều hướng đến trang BankTransferPage và truyền thông tin cần thiết
+      navigate('/bank-transfer', {
+        state: {
+          paymentInfo,
+          orderId: orderId || `${Date.now()}`,
+        },
+      });
+    } else if (validateCardInfo()) {
+      onCheckout(paymentMethod);
+    }
   };
 
   return (
@@ -66,12 +111,11 @@ const Pay = ({ paymentInfo, handlePayment }) => {
           </label>
         </div>
 
-        {/* Chỉ xuất hiện form thông tin thẻ khi chọn thanh toán bằng thẻ*/}
-        {paymentMethod !== 'cod' && (
+        {(paymentMethod === 'credit') && (
           <div className="card-info">
             <h3>Thông tin thẻ</h3>
-
             <div className="card-number">
+              {errors.cardNumber && <span className="error">{errors.cardNumber}</span>}
               <input
                 type="text"
                 value={cardNumber}
@@ -79,14 +123,15 @@ const Pay = ({ paymentInfo, handlePayment }) => {
                 placeholder="Số thẻ"
               />
             </div>
-
             <div className="card-name">
+              {errors.cardHolder && <span className="error">{errors.cardHolder}</span>}
               <input
                 type="text"
+                value={cardHolder}
+                onChange={(e) => setCardHolder(e.target.value)}
                 placeholder="Tên chủ thẻ"
               />
             </div>
-
             <div className="card-expiry-cvv">
               <div className="card-expiry">
                 <input
@@ -95,6 +140,7 @@ const Pay = ({ paymentInfo, handlePayment }) => {
                   onChange={(e) => setExpiry(e.target.value)}
                   placeholder="Ngày hết hạn (MM/YY)"
                 />
+                {errors.expiry && <span className="error">{errors.expiry}</span>}
               </div>
               <div className="card-cvv">
                 <input
@@ -103,6 +149,7 @@ const Pay = ({ paymentInfo, handlePayment }) => {
                   onChange={(e) => setCvv(e.target.value)}
                   placeholder="CVV"
                 />
+                {errors.cvv && <span className="error">{errors.cvv}</span>}
               </div>
             </div>
           </div>
@@ -111,35 +158,34 @@ const Pay = ({ paymentInfo, handlePayment }) => {
 
       <div className="order-summary">
         <h2>Thông tin đơn hàng</h2>
-
         <div className="order-details">
           <div className="order-row">
             <span>Số lượng sản phẩm:</span>
             <span>{totalItems}</span>
-
           </div>
           <div className="order-row">
             <span>Tạm tính:</span>
-            <span>{paymentInfo.cost.toFixed(3)}đ</span>
+            <span>{(paymentInfo.cost - paymentInfo.tax).toFixed(3)}đ</span>
           </div>
-
           <div className="order-row">
             <span>Mã giao dịch</span>
-            <span>XXXXXXXXXXX</span>
+            <span>OD{orderId}</span>
           </div>
-          <div className='order-cost'>
+          <div className="order-cost">
             <div className="order-row">
               <span>Thuế 10%:</span>
               <span className="tax">{paymentInfo.tax.toFixed(3)}đ</span>
             </div>
             <div className="order-row">
               <span>Tổng tiền:</span>
-              <span className="total-cost">{(paymentInfo.cost + paymentInfo.tax).toFixed(3)}đ</span>
+              <span className="total-cost">{paymentInfo.cost.toFixed(3)}đ</span>
             </div>
           </div>
           <div className="action-buttons">
-            <button className="btn btn-cancel" onClick={() => window.location.href = '/'}>Hủy</button>     
-            <button className="btn btn-pay" onClick={handlePayment}>
+            <button className="btn btn-cancel" onClick={() => (window.location.href = '/')}>
+              Hủy
+            </button>
+            <button className="btn btn-pay" onClick={handleSubmit}>
               Thanh toán
             </button>
           </div>

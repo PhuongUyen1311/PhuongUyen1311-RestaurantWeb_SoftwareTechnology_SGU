@@ -1,39 +1,42 @@
+// src/pages/Cart/Cart.js
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Thêm useNavigate
 import axios from 'axios';
-import '../../styles/YourCart.css'; // Import CSS styles for the cart component
-import YourCart from '../../components/Cart/YourCart';  
+import '../../styles/YourCart.css';
+import YourCart from '../../components/Cart/YourCart';
 
-const Cart = ({ onCheckout }) => {
+const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
+  const navigate = useNavigate(); // Khởi tạo useNavigate
 
   // Lấy dữ liệu giỏ hàng
   const fetchCartItems = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/cart");
+      const response = await axios.get('http://localhost:5000/cart');
       const items = response.data || [];
       setCartItems(items);
     } catch (err) {
-      console.error("Lỗi khi tải giỏ hàng:", err);
+      console.error('Lỗi khi tải giỏ hàng:', err);
     }
   };
 
   // Tăng số lượng sản phẩm trong giỏ hàng
   const handleIncrease = async (productId) => {
     try {
-      await axios.post("http://localhost:5000/cart/increase", { productId });
-      fetchCartItems(); // Cập nhật lại giỏ hàng
+      await axios.post('http://localhost:5000/cart/increase', { productId });
+      fetchCartItems();
     } catch (err) {
-      console.error("Lỗi khi tăng số lượng:", err);
+      console.error('Lỗi khi tăng số lượng:', err);
     }
   };
 
   // Giảm số lượng sản phẩm trong giỏ hàng
   const handleDecrease = async (productId) => {
     try {
-      await axios.post("http://localhost:5000/cart/decrease", { productId });
-      fetchCartItems(); // Cập nhật lại giỏ hàng
+      await axios.post('http://localhost:5000/cart/decrease', { productId });
+      fetchCartItems();
     } catch (err) {
-      console.error("Lỗi khi giảm số lượng:", err);
+      console.error('Lỗi khi giảm số lượng:', err);
     }
   };
 
@@ -43,20 +46,19 @@ const Cart = ({ onCheckout }) => {
       alert('Giỏ hàng trống. Vui lòng thêm sản phẩm!');
       return;
     }
-    onCheckout(); // Gọi hàm điều hướng
+    navigate('/payment'); // Điều hướng đến trang /payment
   };
 
   useEffect(() => {
-    fetchCartItems(); 
+    fetchCartItems();
     const reloadCart = async () => {
-      const response = await axios.get("http://localhost:5000/cart");
+      const response = await axios.get('http://localhost:5000/cart');
       setCartItems(response.data || []);
     };
-  
+
     window.addEventListener('cartUpdated', reloadCart);
-  
-    // khi component unmount thì gỡ bỏ event
-    return () => window.removeEventListener('cartUpdated', reloadCart);// Gọi hàm lấy dữ liệu giỏ hàng khi component mount
+
+    return () => window.removeEventListener('cartUpdated', reloadCart);
   }, []);
 
   return (
