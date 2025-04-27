@@ -1,20 +1,19 @@
 .payment-container {
   display: flex;
   max-width: 1000px;
-  margin: 5vh auto;
+  margin-top: 50px;
   padding: 20px;
   font-family: Arial, sans-serif;
   background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .payment-section {
   flex: 1;
   padding-right: 30px;
-  border-right: 1px solid #eee;
+  border-right: 1px solid #e56701;
   width: 25vw;
-  
 }
 
 .order-summary {
@@ -25,13 +24,14 @@
 h2 {
   font-size: 24px;
   margin-bottom: 20px;
-  color: #222;
+  color: #e56701;
+  text-align: center;
 }
 
 h3 {
   font-size: 18px;
   margin-bottom: 15px;
-  color: #222;
+  color: #e56701;
 }
 
 /* Payment Method Styles */
@@ -48,13 +48,13 @@ h3 {
   align-items: center;
   justify-content: space-between;
   padding: 15px;
-  border: 1px solid #ddd;
+  border: 1px solid #f5ba9b;
   border-radius: 5px;
   cursor: pointer;
   width: 100%;
   box-sizing: border-box;
   min-height: 60px;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 5px #fee1d1;
 }
 
 .payment-option input[type="radio"] {
@@ -64,7 +64,7 @@ h3 {
 
 .radio-label {
   font-size: 16px;
-  color: #333;
+  color: #222;
   flex: 1;
 }
 
@@ -80,32 +80,55 @@ h3 {
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 4px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.visa {
+.card-logo.visa {
   background-color: #1a1f71;
+  font-family: 'Arial Black', 'Arial Bold', sans-serif;
+  font-size: 10px; 
 }
 
-.mastercard {
+.card-logo.mastercard {
   background-color: #ff5f00;
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
+  font-size: 6px; 
+
 }
 
-.jcb {
+.card-logo.jcb {
   background-color: #2100cf;
+  font-family: 'Roboto', 'Arial', sans-serif;
+  font-size: 10px; 
 }
+
 
 .vnpay-logo {
-  width: 40px;
-  height: 25px;
-  background-color: #e3066e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px; 
+  height: 25px; 
+  background-color: #e3066e; 
   border-radius: 4px;
+  color: white; 
+  font-size: 13px; 
+  font-family: 'Arial', sans-serif; 
+  font-weight: bold; 
+  text-transform: uppercase; 
+  text-align: center;
 }
 
 /* Card Info Styles */
 .card-info input {
   width: 100%;
   padding: 12px;
-  border: 1px solid #ccc;
+  border: 1px solid #8f8c8b;
   border-radius: 4px;
   font-size: 14px;
   margin-bottom: 15px;
@@ -122,9 +145,32 @@ h3 {
   flex: 1;
 }
 
+.card-number input,
+.card-name input,
+.card-expiry input,
+.card-cvv input {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #f5ba9b; 
+  border-radius: 6px;
+  background-color: #fefcfc; 
+  outline: none; 
+  transition: border-color 0.3s, background-color 0.3s;
+  box-shadow: 0 5px 5px #fee1d1;
+}
+
+.card-number input:focus,
+.card-name input:focus,
+.card-expiry input:focus,
+.card-cvv input:focus {
+  border-color: #e56701; 
+  background-color: #fff; 
+}
+
 /* Order Summary Styles */
 .order-details {
-  background-color: #f9f9f9;
+  background-color: #fefcfc;
   padding: 15px;
   border-radius: 5px;
   margin-bottom: 20px;
@@ -136,7 +182,7 @@ h3 {
   display: flex;
   justify-content: space-between;
   padding: 10px 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #fee1d1;
   color: #666;
 }
 
@@ -148,7 +194,7 @@ h3 {
   font-weight: bold;
   color: #222;
   margin-top: 15px;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #fee1d1;
   padding-top: 15px;
   /* display: flex; <-- BỎ đi */
 }
@@ -183,19 +229,26 @@ h3 {
 }
 
 .btn-cancel {
-  background-color: #fff;
-  color: #333;
+  background-color: #fefcfc;
+  color: #e56701;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-
+  border: 1px solid #e56701
 }
 
 .btn-pay {
-  background-color: #000;
-  color: #fff;
+  background-color: #fefcfc;
+  color: #e56701;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-
+  border: 1px solid #e56701
 }
 
 .btn-pay:hover {
-  background-color: #333;
+  background-color: #e56701;
+  color: white;
+  box-shadow: 0 5px 10px#fee1d1;
+}
+.btn-cancel:hover{
+  background-color: #fee1d1;
+  color: #e56701;
+  box-shadow: 0 5px 10px#fee1d1;
 }
