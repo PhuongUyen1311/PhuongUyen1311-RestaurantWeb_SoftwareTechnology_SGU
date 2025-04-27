@@ -138,7 +138,9 @@ const Pay = ({ paymentInfo, handlePayment }) => {
             </div>
           </div>
           <div className="action-buttons">
-            <button className="btn btn-cancel" onClick={() => window.location.href = '/'}>Hủy</button>     
+            <button className="btn btn-cancel" onClick={() => window.location.href = '/'}>
+              Hủy
+            </button>
             <button className="btn btn-pay" onClick={handlePayment}>
               Thanh toán
             </button>

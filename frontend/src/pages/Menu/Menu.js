@@ -27,8 +27,8 @@ function Menu({ category }) {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_API_URL}/food`)
-      .then(response => {
+    axios.get('http://localhost:5000/food')
+    .then(response => {
         const allItems = response.data;
         const filteredItems = category
           ? allItems.filter(item => item.category === category)
@@ -58,26 +58,31 @@ function Menu({ category }) {
 
   return (
     <div className="menu-page">
-      <div className="menu-grid">
-        {menuItems.map(item => (
-          <MenuItem
-            key={item.id}
-            item={item}
-            onAddToCart={handleAddToCart}
-            onItemClick={handleItemClick}
-          />
-        ))}
-      </div>
-      {selectedProduct && (
-        <ItemInfo
-          item={selectedProduct}
-          isOpen={isPopupOpen}
-          onClose={closePopup}
-          onAddToCart={handleAddToCart}
-        />
+      {menuItems.length === 0 ? (
+        <p>Không có món ăn nào.</p>
+      ) : (
+        <>
+          <div className="menu-grid">
+            {menuItems.map(item => (
+              <MenuItem
+                key={item.id}
+                item={item}
+                onAddToCart={handleAddToCart}
+                onItemClick={handleItemClick}
+              />
+            ))}
+          </div>
+          {selectedProduct && (
+            <ItemInfo
+              item={selectedProduct}
+              isOpen={isPopupOpen}
+              onClose={closePopup}
+              onAddToCart={handleAddToCart}
+            />
+          )}
+        </>
       )}
     </div>
   );
 }
-
 export default Menu;

@@ -15,60 +15,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  /* padding: 20px; */
   margin-top: 60px;
-  background-color: #fff;
-}
-
-.payment-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px;
-  background-color: #333; /* thêm màu nền cho dễ nhìn nếu cần */
-}
-
-.back-btn {
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 16px;
-  cursor: pointer;
-  text-decoration: none; /* Nếu dùng thẻ a */
-  display: flex;
-  align-items: center;
-}
-
-.back-btn:hover {
-  color: #ccc;
-}
-
-.payment-header h1 {
-  font-size: 20px;
-  font-weight: bold;
-  color: #fff;
-  margin: 0;
-  flex-grow: 1;
-  text-align: center;
-}
-
-.payment-header nav {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.payment-header nav a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.payment-header nav a:hover {
-  text-decoration: underline;
-}
-
-.payment-header nav span {
-  color: #fff;
-  font-size: 14px;
+  background-color: #f8f3ef;
 }

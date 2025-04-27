@@ -44,7 +44,9 @@ const MenuList = ({ onCategoryChange }) => {
   return (
     <div className="menu-list-container">
       <button onClick={scrollLeft} className="scroll-button left">
-        &lt;
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+          <path d="M11 2L3 8l8 6V2z"/>
+        </svg>     
       </button>
       <div className="menu-list" ref={scrollRef}>
         {items.map((item) => (
@@ -58,8 +60,11 @@ const MenuList = ({ onCategoryChange }) => {
         ))}
       </div>
       <button onClick={scrollRight} className="scroll-button right">
-        &gt;
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+          <path d="M5 2l8 6-8 6V2z"/>
+        </svg>     
       </button>
+
     </div>
   );
 };

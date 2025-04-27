@@ -1,5 +1,5 @@
 .your-cart {
-  background-color: #ffffff;
+  background-color: #f0b464;
   color: black;
   padding: 16px;
   border-radius: 8px;
@@ -26,7 +26,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 12px;
-  background-color: #ccc;
+  background-color: #f8e5cdd5;
   padding: 10px;
   border-radius: 8px;
 }
@@ -67,7 +67,7 @@
   font-weight: bold;
 }
 .quantity-button {
-  background-color: #ff9966;
+  background-color: rgb(249, 122, 48);
   border: none;
   color: white;
   padding: 4px 8px;
@@ -79,12 +79,35 @@
 }
 
 .checkout-button {
-  width: 40%;
-  padding: 12px;
-  background-color: #ff9966;
+  width: 35%;
+  padding: 8px;
+  background-color: rgb(249, 122, 48);
   color: white;
   font-size: 20px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  font-weight: bold;
+  font-family:'Times New Roman', Times, serif;
+  transition: transform 0.3s ease, opacity 0.3s ease; 
+}
+
+.checkout-button:hover {
+  transform: scale(1.05);
+  background-color: rgb(200, 76, 5);
+  color: white;
+
+}
+
+
+.your-cart-container h2{
+  color: rgb(200, 76, 5);
+  font-family:'Times New Roman', Times, serif;
+  font-size: 27px;
+}
+
+.cart-total h3{
+  color: rgb(200, 76, 5);
+  font-family:'Times New Roman', Times, serif;
+  font-size: 18px;
 }
