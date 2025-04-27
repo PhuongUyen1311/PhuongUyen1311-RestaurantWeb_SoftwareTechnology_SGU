@@ -28,9 +28,9 @@ const Pay = ({ paymentInfo, handlePayment }) => {
             />
             <span className="radio-label">Thẻ tín dụng / Ghi nợ</span>
             <div className="card-logos">
-              <span className="card-logo visa"></span>
-              <span className="card-logo mastercard"></span>
-              <span className="card-logo jcb"></span>
+              <span className="card-logo visa">Visa</span>
+              <span className="card-logo mastercard">Mastercard</span>
+              <span className="card-logo jcb">JCB</span>
             </div>
           </label>
 
@@ -52,7 +52,7 @@ const Pay = ({ paymentInfo, handlePayment }) => {
               onChange={() => handlePaymentMethodChange('vnpay')}
             />
             <span className="radio-label">Ví VN Pay</span>
-            <span className="vnpay-logo"></span>
+            <span className="vnpay-logo">VNPAY</span>
           </label>
 
           <label className="payment-option">
@@ -138,7 +138,7 @@ const Pay = ({ paymentInfo, handlePayment }) => {
             </div>
           </div>
           <div className="action-buttons">
-          <button className="btn btn-cancel" onClick={() => window.location.href = '/'}>Hủy</button>
+            <button className="btn btn-cancel">Hủy</button>
             <button className="btn btn-pay" onClick={handlePayment}>
               Thanh toán
             </button>
