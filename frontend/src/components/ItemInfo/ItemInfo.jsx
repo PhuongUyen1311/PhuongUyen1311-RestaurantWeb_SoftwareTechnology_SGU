@@ -24,7 +24,7 @@ const Item = ({ item, quantity, onAddToCart, onClose, onDecrease, onIncrease }) 
                 </div>
 
                 <div className="item-details">
-                    <div className="item-name"><strong>Tên:</strong> {item.name}</div>
+                    <div className="item-name">{item.name}</div>
                     <div className="item-category"><strong>Danh mục:</strong> {item.category}</div>
                     <div className="item-price"><strong>Giá:</strong> {item.price.toFixed(3)}VNĐ</div>
                     <div className="item-description"><strong>Mô tả:</strong> {item.description}</div>

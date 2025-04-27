@@ -7,11 +7,10 @@ const MenuList = ({ onCategoryChange }) => {
   const items = [
     { id: 1, name: 'ALL' },
     { id: 2, name: 'Juice' },
-    { id: 3, name: 'Cola' },
+    { id: 3, name: 'Soda' },
     { id: 4, name: 'KFC' },
     { id: 5, name: 'Cupcake' }, // Thêm vài mục để kiểm tra cuộn
     { id: 6, name: 'Sea Food' },
-    { id: 7, name: 'Coca' },
   ];
 
   const [selectedItem, setSelectedItem] = useState(items[1]); // Mặc định chọn mục "Juice"
@@ -44,7 +43,9 @@ const MenuList = ({ onCategoryChange }) => {
   return (
     <div className="menu-list-container">
       <button onClick={scrollLeft} className="scroll-button left">
-        &lt;
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+          <path d="M11 2L3 8l8 6V2z"/>
+        </svg>     
       </button>
       <div className="menu-list" ref={scrollRef}>
         {items.map((item) => (
@@ -58,8 +59,11 @@ const MenuList = ({ onCategoryChange }) => {
         ))}
       </div>
       <button onClick={scrollRight} className="scroll-button right">
-        &gt;
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+          <path d="M5 2l8 6-8 6V2z"/>
+        </svg>     
       </button>
+
     </div>
   );
 };

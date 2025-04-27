@@ -18,7 +18,7 @@ const BankingtHeader = () => {
         <span className="back-text">Back</span>
       </button>
 
-      <h1>PAYMENT</h1>
+      <h1>Payment</h1>
       <nav>
         <a href="/">Home</a>
         {/* <span>•</span> */}

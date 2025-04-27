@@ -169,7 +169,7 @@ const Pay = ({ paymentInfo, onCheckout }) => {
           </div>
           <div className="order-row">
             <span>Mã giao dịch</span>
-            <span>OD{orderId}</span>
+            <span>{orderId}</span>
           </div>
           <div className="order-cost">
             <div className="order-row">
@@ -182,7 +182,7 @@ const Pay = ({ paymentInfo, onCheckout }) => {
             </div>
           </div>
           <div className="action-buttons">
-            <button className="btn btn-cancel" onClick={() => (window.location.href = '/')}>
+            <button className="btn btn-cancel" onClick={() => window.location.href = '/'}>
               Hủy
             </button>
             <button className="btn btn-pay" onClick={handleSubmit}>

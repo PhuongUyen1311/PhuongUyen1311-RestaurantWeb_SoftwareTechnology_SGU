@@ -3,35 +3,37 @@
   justify-content: space-between;
   align-items: center;
   padding: 16px;
-  background-color: #ff9966; /* thêm màu nền cho dễ nhìn nếu cần */
+  background-color: #f0bb75; /* thêm màu nền cho dễ nhìn nếu cần */
 }
 
 .back-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px; 
+  width: 70px; 
   height: 30px;
   text-decoration: none;
   cursor: pointer;
-  color: white; 
   font-size: 18px;
   transition: fill 0.3s, transform 0.3s;
   font-weight: bold;
+  background: none;
+  border: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
 .back-btn:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .back-icon {
   width: 16px;
   height: 16px;
-  fill: white; 
 }
 
 .back-btn:hover .back-icon {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .back-text {
@@ -43,28 +45,28 @@
 .payment-header h1 {
   font-size: 26px;
   font-weight: bold;
-  color: #fff;
+  color: black;
   margin: 0;
   flex-grow: 1;
   text-align: center;
-  letter-spacing: 4px; 
+  letter-spacing: 1px; 
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
 }
 
 
 .payment-header nav {
-  color:white;
+  color:black;
   display: flex;
   align-items: center;
   gap: 4px;
 }
 
 .payment-header nav a {
-  color:white;
+  color:black;
   text-decoration: none;
   font-size: 18px;
   font-weight: bold;
-
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .payment-header nav a:hover {

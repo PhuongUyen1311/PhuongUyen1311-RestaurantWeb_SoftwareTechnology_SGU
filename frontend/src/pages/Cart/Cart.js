@@ -64,10 +64,10 @@ const Cart = () => {
   return (
     <>
       <div className="your-cart-container">
-        <h2>Giỏ hàng</h2>
+        <h2>Giỏ Hàng</h2>
         <div className="your-cart-items">
           {cartItems.length === 0 ? (
-            <p>Giỏ hàng của bạn đang trống.</p>
+            <p>(Giỏ hàng của bạn đang trống)</p>
           ) : (
             cartItems.map((item) => (
               <YourCart

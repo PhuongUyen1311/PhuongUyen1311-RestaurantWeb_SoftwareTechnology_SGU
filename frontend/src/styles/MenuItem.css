@@ -23,37 +23,41 @@
   }
   
   .menu-item-name {
-    color: #ff9966;
+    color: #fbb33f;
     font-size: 18px;
     margin: 0 0 4px 0;
     text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   
   .menu-item-price {
-    color: #a0a0a0;
+    color: #929191;
     font-size: 16px;
     margin: 0 0 8px 0;
   }
   
   .menu-item-button {
-    background-color: #ff9966;
-    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    background-color: #fee8c3;
+    color: #fba417;
     padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
+    border: 1px solid #fbb33f;
+    border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
     position: absolute;
     bottom: 16px;
-    /* right: 16px; */
-    transition: background-color 0.2s ease;
-    display: 'flex'; 
-    justify-Content: 'center'; 
-    align-Items: 'center' ;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s ease, transform 0.2s ease; /* thêm transform */
   }
   
   .menu-item-button:hover {
-    background-color: #ff9966;
+    background-color: #fbb33f;
+    transform: scale(1.05); 
+    color: white;
   }
   
 

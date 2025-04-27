@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Coca Vanilla",
     "price": 30,
-    "category": "Cola",
+    "category": "Soda",
     "description": "Classic Coca-Cola infused with smooth vanilla taste."
   },
   {
@@ -38,7 +38,7 @@
     "id": 6,
     "name": "Apple Cola",
     "price": 18,
-    "category": "Cola",
+    "category": "Soda",
     "description": "A refreshing cola with a crisp apple flavor twist."
   },
   {
@@ -52,7 +52,7 @@
     "id": 8,
     "name": "Pepsi Max",
     "price": 27,
-    "category": "Cola",
+    "category": "Soda",
     "description": "Bold taste cola with no sugar, ideal for low-calorie diets."
   },
   {
@@ -66,7 +66,7 @@
     "id": 10,
     "name": "Tropical Soda",
     "price": 47,
-    "category": "Cola",
+    "category": "Soda",
     "description": "A refreshing tropical soda with a blend of exotic fruit flavors."
   },
   {
@@ -94,7 +94,7 @@
     "id": 14,
     "name": "Coca Lite",
     "price": 22,
-    "category": "Cola",
+    "category": "Soda",
     "description": "A lighter version of Coca-Cola with less sugar."
   },
   {
@@ -115,7 +115,7 @@
     "id": 17,
     "name": "Tangy Orange",
     "price": 16,
-    "category": "Cola",
+    "category": "Soda",
     "description": "A tangy, refreshing orange-flavored fizzy drink."
   },
   {

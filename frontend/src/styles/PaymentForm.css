@@ -24,14 +24,14 @@
 h2 {
   font-size: 24px;
   margin-bottom: 20px;
-  color: #e56701;
+  color: #e38f20;
   text-align: center;
 }
 
 h3 {
   font-size: 18px;
   margin-bottom: 15px;
-  color: #e56701;
+  color: #e38f20;
 }
 
 /* Payment Method Styles */
@@ -224,25 +224,25 @@ h3 {
 
 .btn-cancel {
   background-color: #fefcfc;
-  color: #e56701;
+  color: #dc8008;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  border: 1px solid #e56701
+  border: 1px solid #dc8008
 }
 
 .btn-pay {
   background-color: #fefcfc;
-  color: #e56701;
+  color: #dc8008;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  border: 1px solid #e56701
+  border: 1px solid #dc8008
 }
 
 .btn-pay:hover {
-  background-color: #e56701;
+  background-color: #dc8008;
   color: white;
   box-shadow: 0 5px 10px#fee1d1;
 }
 .btn-cancel:hover{
   background-color: #fee1d1;
-  color: #e56701;
+  color: #dc8008;
   box-shadow: 0 5px 10px#fee1d1;
 }

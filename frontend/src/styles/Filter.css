@@ -5,7 +5,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  background-color: #dac5c5; /* Màu nền giống hình */
+  background-color: #f0a8346e; /* Màu nền giống hình */
   border-radius: 10px;
   padding: 16px 40px; /* Tăng padding hai bên để tạo khoảng cách cho nút cuộn */
   width: 65vw; /* Chiếm 3/4 chiều rộng màn hình (viewport width) */
@@ -30,26 +30,37 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5); /* Nền mờ giống hình */
+  background-color: #f0a834cf; /* Nền mờ giống hình */
   color: white;
   border: none;
   padding: 8px;
   cursor: pointer;
   font-size: 18px;
-  border-radius: 4px;
+  border-radius: 5px;
   z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .scroll-button.left {
   left: 8px; /* Cách mép trái của container 8px */
 }
 
+/* SVG icon bên trong button */
+.scroll-button svg {
+  width: 16px;
+  height: 16px;
+  fill: white;
+}
+
+
 .scroll-button.right {
   right: 8px; /* Cách mép phải của container 8px */
 }
 
 .scroll-button:hover {
-  background-color: rgba(0, 0, 0, 0.8); /* Hiệu ứng hover */
+  background-color: #7c7a7a88; /* Hiệu ứng hover */
 }
 
 .filter-menu-item {
@@ -62,7 +73,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #555; /* Màu nền mặc định */
+  background-color: #55555588; /* Màu nền mặc định */
   padding: 8px;
   border-radius: 8px;
   border: none;
@@ -73,11 +84,11 @@
 }
 
 .filter-menu-item button:hover {
-  background-color: #666; /* Màu khi hover */
+  background-color: #89868683; /* Màu khi hover */
 }
 
 .filter-menu-item button.bg-blue-400 {
-  background-color: #77b5fe; /* Màu nền khi được chọn (giống hình) */
+  background-color: #32b6b8c0; /* Màu nền khi được chọn (giống hình) */
 }
 
 .filter-menu-item img {
@@ -93,3 +104,4 @@
   margin: 0;
   color: white;
 }
+
