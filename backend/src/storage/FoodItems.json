@@ -4,308 +4,351 @@
     "name": "Coca Vanilla",
     "price": 30,
     "category": "Soda",
-    "description": "Classic Coca-Cola infused with smooth vanilla taste."
+    "description": "Classic Coca-Cola infused with smooth vanilla taste.",
+    "currentQuantity": 137
   },
   {
     "id": 2,
     "name": "Zinger Burger",
     "price": 125,
     "category": "KFC",
-    "description": "Crispy chicken burger with lettuce and spicy mayo."
+    "description": "Crispy chicken burger with lettuce and spicy mayo.",
+    "currentQuantity": 83
   },
   {
     "id": 3,
     "name": "Cheese Cupcake",
     "price": 50,
     "category": "Dessert",
-    "description": "Fluffy cupcakes with a soft, cheesy middle."
+    "description": "Fluffy cupcakes with a soft, cheesy middle.",
+    "currentQuantity": 95
   },
   {
     "id": 4,
     "name": "Chocolate Donut",
     "price": 15,
     "category": "Dessert",
-    "description": "A soft and fluffy donut covered in rich chocolate glaze."
+    "description": "A soft and fluffy donut covered in rich chocolate glaze.",
+    "currentQuantity": 78
   },
   {
     "id": 5,
     "name": "Seafood Mix",
     "price": 140,
     "category": "Sea Food",
-    "description": "Golden-battered seafood medley served hot and crispy."
+    "description": "Golden-battered seafood medley served hot and crispy.",
+    "currentQuantity": 46
   },
   {
     "id": 6,
     "name": "Apple Cola",
     "price": 18,
     "category": "Soda",
-    "description": "A refreshing cola with a crisp apple flavor twist."
+    "description": "A refreshing cola with a crisp apple flavor twist.",
+    "currentQuantity": 121
   },
   {
     "id": 7,
     "name": "Grilled Salmon",
     "price": 62,
     "category": "Sea Food",
-    "description": "A juicy grilled salmon fillet, seasoned with herbs and spices."
+    "description": "A juicy grilled salmon fillet, seasoned with herbs and spices.",
+    "currentQuantity": 34
   },
   {
     "id": 8,
     "name": "Pepsi Max",
     "price": 27,
     "category": "Soda",
-    "description": "Bold taste cola with no sugar, ideal for low-calorie diets."
+    "description": "Bold taste cola with no sugar, ideal for low-calorie diets.",
+    "currentQuantity": 132
   },
   {
     "id": 9,
     "name": "Crispy Chicken",
     "price": 155,
     "category": "KFC",
-    "description": "Crispy, golden fried chicken served with a juicy tenderness."
+    "description": "Crispy, golden fried chicken served with a juicy tenderness.",
+    "currentQuantity": 88
   },
   {
     "id": 10,
     "name": "Tropical Soda",
     "price": 47,
     "category": "Soda",
-    "description": "A refreshing tropical soda with a blend of exotic fruit flavors."
+    "description": "A refreshing tropical soda with a blend of exotic fruit flavors.",
+    "currentQuantity": 126
   },
   {
     "id": 11,
     "name": "Lobster Roll",
     "price": 160,
     "category": "Sea Food",
-    "description": "Chunks of lobster meat in mayo on a toasted buttered bun."
+    "description": "Chunks of lobster meat in mayo on a toasted buttered bun.",
+    "currentQuantity": 41
   },
   {
     "id": 12,
     "name": "Cream Cupcake",
     "price": 16,
     "category": "Dessert",
-    "description": "A rich and creamy cheese cupcake with a soft texture."
+    "description": "A rich and creamy cheese cupcake with a soft texture.",
+    "currentQuantity": 97
   },
   {
     "id": 13,
     "name": "Chicken Tenders",
     "price": 57,
     "category": "KFC",
-    "description": "Crispy and tender chicken strips, perfect for dipping."
+    "description": "Crispy and tender chicken strips, perfect for dipping.",
+    "currentQuantity": 91
   },
   {
     "id": 14,
     "name": "Coca Lite",
     "price": 22,
     "category": "Soda",
-    "description": "A lighter version of Coca-Cola with less sugar."
+    "description": "A lighter version of Coca-Cola with less sugar.",
+    "currentQuantity": 112
   },
   {
     "id": 15,
     "name": "Mini Cupcake",
     "price": 35,
     "category": "Dessert",
-    "description": "Small-sized cupcakes perfect for light dessert bites."
+    "description": "Small-sized cupcakes perfect for light dessert bites.",
+    "currentQuantity": 89
   },
   {
     "id": 16,
     "name": "Chicken Wings",
     "price": 95,
     "category": "KFC",
-    "description": "Hot and spicy chicken wings with a fiery kick."
+    "description": "Hot and spicy chicken wings with a fiery kick.",
+    "currentQuantity": 84
   },
   {
     "id": 17,
     "name": "Tangy Orange",
     "price": 16,
     "category": "Soda",
-    "description": "A tangy, refreshing orange-flavored fizzy drink."
+    "description": "A tangy, refreshing orange-flavored fizzy drink.",
+    "currentQuantity": 130
   },
   {
     "id": 18,
     "name": "Chicken Bites",
     "price": 63,
     "category": "KFC",
-    "description": "Crispy, tender chicken bites, perfect for dipping."
+    "description": "Crispy, tender chicken bites, perfect for dipping.",
+    "currentQuantity": 82
   },
   {
     "id": 19,
     "name": "Tropical Paradise",
     "price": 145,
     "category": "Juice",
-    "description": "A tropical blend of fruit juices, sweet and refreshing."
+    "description": "A tropical blend of fruit juices, sweet and refreshing.",
+    "currentQuantity": 142
   },
   {
     "id": 20,
     "name": "Golden Chicken",
     "price": 155,
     "category": "KFC",
-    "description": "Golden fried chicken tenders, crispy and flavorful."
+    "description": "Golden fried chicken tenders, crispy and flavorful.",
+    "currentQuantity": 96
   },
   {
     "id": 21,
     "name": "Spicy Burger",
     "price": 50,
     "category": "KFC",
-    "description": "A spicy crispy chicken burger, served with fresh veggies."
+    "description": "A spicy crispy chicken burger, served with fresh veggies.",
+    "currentQuantity": 77
   },
   {
     "id": 22,
     "name": "Berry Smoothie",
     "price": 58,
     "category": "Juice",
-    "description": "Cold smoothie with strawberries, blueberries and raspberries."
+    "description": "Cold smoothie with strawberries, blueberries and raspberries.",
+    "currentQuantity": 135
   },
   {
     "id": 23,
     "name": "Fried Chicken",
     "price": 150,
     "category": "KFC",
-    "description": "Juicy chicken pieces deep-fried in crispy golden batter."
+    "description": "Juicy chicken pieces deep-fried in crispy golden batter.",
+    "currentQuantity": 90
   },
   {
     "id": 24,
     "name": "Red Velvet",
     "price": 90,
     "category": "Dessert",
-    "description": "Moist red cake layered with rich cream cheese frosting."
+    "description": "Moist red cake layered with rich cream cheese frosting.",
+    "currentQuantity": 86
   },
   {
     "id": 25,
     "name": "Fruit Punch",
     "price": 60,
     "category": "Juice",
-    "description": "Refreshing blend of tropical and citrus fruit juices."
+    "description": "Refreshing blend of tropical and citrus fruit juices.",
+    "currentQuantity": 145
   },
   {
     "id": 26,
     "name": "Shrimp Delight",
     "price": 145,
     "category": "Sea Food",
-    "description": "Crispy fried shrimp served with tangy dipping sauce."
+    "description": "Crispy fried shrimp served with tangy dipping sauce.",
+    "currentQuantity": 38
   },
   {
     "id": 27,
     "name": "Orange Fizz",
     "price": 100,
     "category": "Juice",
-    "description": "Sparkling orange soda with a zesty citrus twist."
+    "description": "Sparkling orange soda with a zesty citrus twist.",
+    "currentQuantity": 118
   },
   {
     "id": 28,
     "name": "Cheese Burger",
     "price": 131,
     "category": "KFC",
-    "description": "Grilled beef patty topped with melted cheese and pickles."
+    "description": "Grilled beef patty topped with melted cheese and pickles.",
+    "currentQuantity": 81
   },
   {
     "id": 29,
     "name": "KFC Box",
     "price": 93,
     "category": "KFC",
-    "description": "Combo meal with chicken, fries, and a drink."
+    "description": "Combo meal with chicken, fries, and a drink.",
+    "currentQuantity": 94
   },
-    {
-      "id": 30,
-      "name": "Strawberry Cupcake",
-      "price": 32,
-      "category": "Cupcake",
-      "description": "Soft cupcake topped with fresh strawberry cream and fruit pieces."
-    },
-    {
-      "id": 31,
-      "name": "Lemon Cupcake",
-      "price": 30,
-      "category": "Cupcake",
-      "description": "Moist cupcake with zesty lemon flavor and creamy icing."
-    },
-    {
-      "id": 32,
-      "name": "Oreo Cupcake",
-      "price": 34,
-      "category": "Cupcake",
-      "description": "Chocolate cupcake with Oreo cookie crumble and whipped topping."
-    },
-    {
-      "id": 33,
-      "name": "Peanut Butter",
-      "price": 36,
-      "category": "Cupcake",
-      "description": "Rich peanut butter-flavored cupcake with nutty frosting."
-    },
-    {
-      "id": 34,
-      "name": "Matcha Cupcake",
-      "price": 38,
-      "category": "Cupcake",
-      "description": "Delicate green tea cupcake with smooth matcha cream."
-    },
-    {
-      "id": 35,
-      "name": "Crab Delight",
-      "price": 148,
-      "category": "Sea Food",
-      "description": "Pan-seared crab cakes served with tangy aioli sauce."
-    },
-    {
-      "id": 36,
-      "name": "Grilled Squid",
-      "price": 137,
-      "category": "Sea Food",
-      "description": "Tender squid grilled to perfection with garlic butter."
-    },
-    {
-      "id": 37,
-      "name": "Seafood Platter",
-      "price": 210,
-      "category": "Sea Food",
-      "description": "A large platter with shrimp, crab, and mussels in garlic butter."
-    },
-    {
-      "id": 38,
-      "name": "Mussels Wine",
-      "price": 165,
-      "category": "Sea Food",
-      "description": "Fresh mussels cooked in a white wine and herb broth."
-    },
-    {
-      "id": 39,
-      "name": "Stuffed Clams",
-      "price": 158,
-      "category": "Sea Food",
-      "description": "Baked clams filled with herbs, garlic, and breadcrumbs."
-    },
-    {
-      "id": 40,
-      "name": "Green Apple",
-      "price": 40,
-      "category": "Juice",
-      "description": "Fresh green apple juice with a crisp, tart flavor."
-    },
-    {
-      "id": 41,
-      "name": "Carrot Orange",
-      "price": 42,
-      "category": "Juice",
-      "description": "A healthy blend of fresh carrots and orange juice."
-    },
-    {
-      "id": 42,
-      "name": "Mango Blast",
-      "price": 46,
-      "category": "Juice",
-      "description": "Sweet and smooth mango juice with a tropical twist."
-    },
-    {
-      "id": 43,
-      "name": "Pineapple Passion",
-      "price": 48,
-      "category": "Juice",
-      "description": "Juice made from ripe pineapple and a hint of passion fruit."
-    },
-    {
-      "id": 44,
-      "name": "Watermelon Cooler",
-      "price": 44,
-      "category": "Juice",
-      "description": "Cool and hydrating juice made from fresh watermelon."
-    }
-  
+  {
+    "id": 30,
+    "name": "Strawberry Cupcake",
+    "price": 32,
+    "category": "Cupcake",
+    "description": "Soft cupcake topped with fresh strawberry cream and fruit pieces.",
+    "currentQuantity": 75
+  },
+  {
+    "id": 31,
+    "name": "Lemon Cupcake",
+    "price": 30,
+    "category": "Cupcake",
+    "description": "Moist cupcake with zesty lemon flavor and creamy icing.",
+    "currentQuantity": 72
+  },
+  {
+    "id": 32,
+    "name": "Oreo Cupcake",
+    "price": 34,
+    "category": "Cupcake",
+    "description": "Chocolate cupcake with Oreo cookie crumble and whipped topping.",
+    "currentQuantity": 79
+  },
+  {
+    "id": 33,
+    "name": "Peanut Butter",
+    "price": 36,
+    "category": "Cupcake",
+    "description": "Rich peanut butter-flavored cupcake with nutty frosting.",
+    "currentQuantity": 87
+  },
+  {
+    "id": 34,
+    "name": "Matcha Cupcake",
+    "price": 38,
+    "category": "Cupcake",
+    "description": "Delicate green tea cupcake with smooth matcha cream.",
+    "currentQuantity": 74
+  },
+  {
+    "id": 35,
+    "name": "Crab Delight",
+    "price": 148,
+    "category": "Sea Food",
+    "description": "Pan-seared crab cakes served with tangy aioli sauce.",
+    "currentQuantity": 47
+  },
+  {
+    "id": 36,
+    "name": "Grilled Squid",
+    "price": 137,
+    "category": "Sea Food",
+    "description": "Tender squid grilled to perfection with garlic butter.",
+    "currentQuantity": 32
+  },
+  {
+    "id": 37,
+    "name": "Seafood Platter",
+    "price": 210,
+    "category": "Sea Food",
+    "description": "A large platter with shrimp, crab, and mussels in garlic butter.",
+    "currentQuantity": 44
+  },
+  {
+    "id": 38,
+    "name": "Mussels Wine",
+    "price": 165,
+    "category": "Sea Food",
+    "description": "Fresh mussels cooked in a white wine and herb broth.",
+    "currentQuantity": 30
+  },
+  {
+    "id": 39,
+    "name": "Stuffed Clams",
+    "price": 158,
+    "category": "Sea Food",
+    "description": "Baked clams filled with herbs, garlic, and breadcrumbs.",
+    "currentQuantity": 39
+  },
+  {
+    "id": 40,
+    "name": "Green Apple",
+    "price": 40,
+    "category": "Juice",
+    "description": "Fresh green apple juice with a crisp, tart flavor.",
+    "currentQuantity": 129
+  },
+  {
+    "id": 41,
+    "name": "Carrot Orange",
+    "price": 42,
+    "category": "Juice",
+    "description": "A healthy blend of fresh carrots and orange juice.",
+    "currentQuantity": 116
+  },
+  {
+    "id": 42,
+    "name": "Mango Blast",
+    "price": 46,
+    "category": "Juice",
+    "description": "Sweet and smooth mango juice with a tropical twist.",
+    "currentQuantity": 138
+  },
+  {
+    "id": 43,
+    "name": "Pineapple Passion",
+    "price": 48,
+    "category": "Juice",
+    "description": "Juice made from ripe pineapple and a hint of passion fruit.",
+    "currentQuantity": 140
+  },
+  {
+    "id": 44,
+    "name": "Watermelon Cooler",
+    "price": 44,
+    "category": "Juice",
+    "description": "Cool and hydrating juice made from fresh watermelon.",
+    "currentQuantity": 141
+  }
 ]
