@@ -4,7 +4,7 @@
     "name": "Coca Vanilla",
     "price": 30,
     "category": "Soda",
-    "description": "Classic Coca-Cola infused with smooth vanilla taste.",
+    "description": "Coca-Cola hương cổ điển mix cùng vị vani tươi mới, độc đáo.",
     "currentQuantity": 137
   },
   {
@@ -12,7 +12,7 @@
     "name": "Zinger Burger",
     "price": 125,
     "category": "KFC",
-    "description": "Crispy chicken burger with lettuce and spicy mayo.",
+    "description": "Burger gà ăn kèm rau xanh và sốt mayonnaise cay.",
     "currentQuantity": 83
   },
   {
@@ -20,7 +20,7 @@
     "name": "Cheese Cupcake",
     "price": 50,
     "category": "Dessert",
-    "description": "Fluffy cupcakes with a soft, cheesy middle.",
+    "description": "Bánh cupcake mềm xốp với nhân phô mai béo ngậy.",
     "currentQuantity": 95
   },
   {
@@ -28,7 +28,7 @@
     "name": "Chocolate Donut",
     "price": 15,
     "category": "Dessert",
-    "description": "A soft and fluffy donut covered in rich chocolate glaze.",
+    "description": "Bánh donut mềm xốp phủ lớp chocolate ngọt ngào.",
     "currentQuantity": 78
   },
   {
@@ -36,7 +36,7 @@
     "name": "Seafood Mix",
     "price": 140,
     "category": "Sea Food",
-    "description": "Golden-battered seafood medley served hot and crispy.",
+    "description": "Mix 7749 loại hải sản chiên vàng giòn, nóng hổi.",
     "currentQuantity": 46
   },
   {
@@ -44,7 +44,7 @@
     "name": "Apple Cola",
     "price": 18,
     "category": "Soda",
-    "description": "A refreshing cola with a crisp apple flavor twist.",
+    "description": "Cola mát lạnh pha hương vị táo tươi mát, sảng khoái.",
     "currentQuantity": 121
   },
   {
@@ -52,7 +52,7 @@
     "name": "Grilled Salmon",
     "price": 62,
     "category": "Sea Food",
-    "description": "A juicy grilled salmon fillet, seasoned with herbs and spices.",
+    "description": "Cá hồi nướng mọng nước, tẩm ướp thảo mộc.",
     "currentQuantity": 34
   },
   {
@@ -60,7 +60,7 @@
     "name": "Pepsi Max",
     "price": 27,
     "category": "Soda",
-    "description": "Bold taste cola with no sugar, ideal for low-calorie diets.",
+    "description": "Cola không đường, phù hợp cho chế độ ăn kiêng.",
     "currentQuantity": 132
   },
   {
@@ -68,7 +68,7 @@
     "name": "Crispy Chicken",
     "price": 155,
     "category": "KFC",
-    "description": "Crispy, golden fried chicken served with a juicy tenderness.",
+    "description": "Gà rán giòn tan, bên trong mọng mềm.",
     "currentQuantity": 88
   },
   {
@@ -76,7 +76,7 @@
     "name": "Tropical Soda",
     "price": 47,
     "category": "Soda",
-    "description": "A refreshing tropical soda with a blend of exotic fruit flavors.",
+    "description": "Nước ngọt nhiệt đới pha trộn hương trái cây tươi mát, sảng khoái.",
     "currentQuantity": 126
   },
   {
@@ -84,7 +84,7 @@
     "name": "Lobster Roll",
     "price": 160,
     "category": "Sea Food",
-    "description": "Chunks of lobster meat in mayo on a toasted buttered bun.",
+    "description": "Bánh mì kẹp tôm phủ sốt mayonnaise thơm béo.",
     "currentQuantity": 41
   },
   {
@@ -92,7 +92,7 @@
     "name": "Cream Cupcake",
     "price": 16,
     "category": "Dessert",
-    "description": "A rich and creamy cheese cupcake with a soft texture.",
+    "description": "Bánh cupcake phô mai béo ngậy, mềm mịn.",
     "currentQuantity": 97
   },
   {
@@ -100,7 +100,7 @@
     "name": "Chicken Tenders",
     "price": 57,
     "category": "KFC",
-    "description": "Crispy and tender chicken strips, perfect for dipping.",
+    "description": "Gà miếng chiên giòn tẩm sốt - giòn tan, bùng vị.",
     "currentQuantity": 91
   },
   {
@@ -108,7 +108,7 @@
     "name": "Coca Lite",
     "price": 22,
     "category": "Soda",
-    "description": "A lighter version of Coca-Cola with less sugar.",
+    "description": " Coca-Cola giảm đường.",
     "currentQuantity": 112
   },
   {
@@ -116,7 +116,7 @@
     "name": "Mini Cupcake",
     "price": 35,
     "category": "Dessert",
-    "description": "Small-sized cupcakes perfect for light dessert bites.",
+    "description": "Bánh cupcake nhỏ xinh, món tráng miệng nhẹ nhàng cho từng bữa ăn.",
     "currentQuantity": 89
   },
   {
@@ -124,7 +124,7 @@
     "name": "Chicken Wings",
     "price": 95,
     "category": "KFC",
-    "description": "Hot and spicy chicken wings with a fiery kick.",
+    "description": "Cánh gà chiên cay nồng, thơm ngon đậm đà.",
     "currentQuantity": 84
   },
   {
@@ -132,7 +132,7 @@
     "name": "Tangy Orange",
     "price": 16,
     "category": "Soda",
-    "description": "A tangy, refreshing orange-flavored fizzy drink.",
+    "description": "Nước ngọt hương cam chua nhẹ, sảng khoái.",
     "currentQuantity": 130
   },
   {
@@ -140,7 +140,7 @@
     "name": "Chicken Bites",
     "price": 63,
     "category": "KFC",
-    "description": "Crispy, tender chicken bites, perfect for dipping.",
+    "description": "Gà viên chiên giòn, mềm ngọt bên trong.",
     "currentQuantity": 82
   },
   {
@@ -148,7 +148,7 @@
     "name": "Tropical Paradise",
     "price": 145,
     "category": "Juice",
-    "description": "A tropical blend of fruit juices, sweet and refreshing.",
+    "description": "Nước trái cây nhiệt đới tươi mát và sảng khoái.",
     "currentQuantity": 142
   },
   {
@@ -156,7 +156,7 @@
     "name": "Golden Chicken",
     "price": 155,
     "category": "KFC",
-    "description": "Golden fried chicken tenders, crispy and flavorful.",
+    "description": "Gà chiên vàng giòn, đậm đà hương vị.",
     "currentQuantity": 96
   },
   {
@@ -164,7 +164,7 @@
     "name": "Spicy Burger",
     "price": 50,
     "category": "KFC",
-    "description": "A spicy crispy chicken burger, served with fresh veggies.",
+    "description": "Burger gà giòn cay ăn kèm rau tươi - thơm ngon, hấp dẫn.",
     "currentQuantity": 77
   },
   {
@@ -172,7 +172,7 @@
     "name": "Berry Smoothie",
     "price": 58,
     "category": "Juice",
-    "description": "Cold smoothie with strawberries, blueberries and raspberries.",
+    "description": "Sinh tố lạnh từ dâu tây, việt quất và mâm xôi.",
     "currentQuantity": 135
   },
   {
@@ -180,7 +180,7 @@
     "name": "Fried Chicken",
     "price": 150,
     "category": "KFC",
-    "description": "Juicy chicken pieces deep-fried in crispy golden batter.",
+    "description": "Gà chiên giòn vàng, mọng nước và đậm đà hương vị.",
     "currentQuantity": 90
   },
   {
@@ -188,7 +188,7 @@
     "name": "Red Velvet",
     "price": 90,
     "category": "Dessert",
-    "description": "Moist red cake layered with rich cream cheese frosting.",
+    "description": "Bánh velvet đỏ mềm min, phủ lớp kem phô mai béo ngậy tuyết đối.",
     "currentQuantity": 86
   },
   {
@@ -196,7 +196,7 @@
     "name": "Fruit Punch",
     "price": 60,
     "category": "Juice",
-    "description": "Refreshing blend of tropical and citrus fruit juices.",
+    "description": "Thức uống mix từ các loại trái cây nhiệt đới và cam chanh.",
     "currentQuantity": 145
   },
   {
@@ -204,7 +204,7 @@
     "name": "Shrimp Delight",
     "price": 145,
     "category": "Sea Food",
-    "description": "Crispy fried shrimp served with tangy dipping sauce.",
+    "description": "Tôm chiên giòn, ăn kèm nước sốt chua cay hấp dẫn.",
     "currentQuantity": 38
   },
   {
@@ -212,7 +212,7 @@
     "name": "Orange Fizz",
     "price": 100,
     "category": "Juice",
-    "description": "Sparkling orange soda with a zesty citrus twist.",
+    "description": "Nước cam có ga sảng khoái với hương vị cam tươi mát.",
     "currentQuantity": 118
   },
   {
@@ -220,7 +220,7 @@
     "name": "Cheese Burger",
     "price": 131,
     "category": "KFC",
-    "description": "Grilled beef patty topped with melted cheese and pickles.",
+    "description": "Burger bò nướng phủ phô mai tan chảy ăn kèm dưa muối.",
     "currentQuantity": 81
   },
   {
@@ -228,7 +228,7 @@
     "name": "KFC Box",
     "price": 93,
     "category": "KFC",
-    "description": "Combo meal with chicken, fries, and a drink.",
+    "description": "Combo KFC gồm gà, khoai tây chiên và nước uống.",
     "currentQuantity": 94
   },
   {
@@ -236,7 +236,7 @@
     "name": "Strawberry Cupcake",
     "price": 32,
     "category": "Cupcake",
-    "description": "Soft cupcake topped with fresh strawberry cream and fruit pieces.",
+    "description": "Cupcake mềm phủ kem dâu tươi và trái cây cắt lát.",
     "currentQuantity": 75
   },
   {
@@ -244,7 +244,7 @@
     "name": "Lemon Cupcake",
     "price": 30,
     "category": "Cupcake",
-    "description": "Moist cupcake with zesty lemon flavor and creamy icing.",
+    "description": "Cupcake mềm mịn với hương vị chanh thơm mát .",
     "currentQuantity": 72
   },
   {
@@ -252,7 +252,7 @@
     "name": "Oreo Cupcake",
     "price": 34,
     "category": "Cupcake",
-    "description": "Chocolate cupcake with Oreo cookie crumble and whipped topping.",
+    "description": "Cupcake socola phủ vụn bánh Oreo và kem tươi mềm mịn.",
     "currentQuantity": 79
   },
   {
@@ -260,7 +260,7 @@
     "name": "Peanut Butter",
     "price": 36,
     "category": "Cupcake",
-    "description": "Rich peanut butter-flavored cupcake with nutty frosting.",
+    "description": "Cupcake đậm vị bơ đậu phộng với lớp kem béo ngậy.",
     "currentQuantity": 87
   },
   {
@@ -268,7 +268,7 @@
     "name": "Matcha Cupcake",
     "price": 38,
     "category": "Cupcake",
-    "description": "Delicate green tea cupcake with smooth matcha cream.",
+    "description": "Cupcake 'babyThree' nhẹ nhàng phủ bởi lớp kem matcha mịn màng.",
     "currentQuantity": 74
   },
   {
@@ -276,7 +276,7 @@
     "name": "Crab Delight",
     "price": 148,
     "category": "Sea Food",
-    "description": "Pan-seared crab cakes served with tangy aioli sauce.",
+    "description": "Bánh cua chiên vàng ăn kèm sốt aioli chua ngọt.",
     "currentQuantity": 47
   },
   {
@@ -284,7 +284,7 @@
     "name": "Grilled Squid",
     "price": 137,
     "category": "Sea Food",
-    "description": "Tender squid grilled to perfection with garlic butter.",
+    "description": "Mực nướng thơm lừng hương bơ tỏi béo ngậy.",
     "currentQuantity": 32
   },
   {
@@ -292,7 +292,7 @@
     "name": "Seafood Platter",
     "price": 210,
     "category": "Sea Food",
-    "description": "A large platter with shrimp, crab, and mussels in garlic butter.",
+    "description": "Đĩa hải sản lớn gồm tôm, cua và vẹm xào bơ tỏi.",
     "currentQuantity": 44
   },
   {
@@ -300,7 +300,7 @@
     "name": "Mussels Wine",
     "price": 165,
     "category": "Sea Food",
-    "description": "Fresh mussels cooked in a white wine and herb broth.",
+    "description": "Vẹm tươi nấu với rượu vang trắng và thảo mộc.",
     "currentQuantity": 30
   },
   {
@@ -308,7 +308,7 @@
     "name": "Stuffed Clams",
     "price": 158,
     "category": "Sea Food",
-    "description": "Baked clams filled with herbs, garlic, and breadcrumbs.",
+    "description": "Ngao nướng nhồi gia vị va tỏi thơm ngon khó cưỡng .",
     "currentQuantity": 39
   },
   {
@@ -316,7 +316,7 @@
     "name": "Green Apple",
     "price": 40,
     "category": "Juice",
-    "description": "Fresh green apple juice with a crisp, tart flavor.",
+    "description": "Nước ép táo xanh tươi mát, vị chua nhẹ tự nhiên.",
     "currentQuantity": 129
   },
   {
@@ -324,7 +324,7 @@
     "name": "Carrot Orange",
     "price": 42,
     "category": "Juice",
-    "description": "A healthy blend of fresh carrots and orange juice.",
+    "description": "Nước ép tươi từ cà rốt và cam, giàu vitamin.",
     "currentQuantity": 116
   },
   {
@@ -332,7 +332,7 @@
     "name": "Mango Blast",
     "price": 46,
     "category": "Juice",
-    "description": "Sweet and smooth mango juice with a tropical twist.",
+    "description": "Nước ép xoài ngọt dịu, thơm lừng hương nhiệt đới.",
     "currentQuantity": 138
   },
   {
@@ -340,7 +340,7 @@
     "name": "Pineapple Passion",
     "price": 48,
     "category": "Juice",
-    "description": "Juice made from ripe pineapple and a hint of passion fruit.",
+    "description": "Nước ép dứa pha chút hương chanh dây tươi mát.",
     "currentQuantity": 140
   },
   {
@@ -348,7 +348,7 @@
     "name": "Watermelon Cooler",
     "price": 44,
     "category": "Juice",
-    "description": "Cool and hydrating juice made from fresh watermelon.",
+    "description": "Nước ép dưa hấu mát lạnh, giải khát tuyệt đối.",
     "currentQuantity": 141
-  }
+  }  
 ]
