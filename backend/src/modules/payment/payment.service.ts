@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { CartService, CartItem } from '../cart/cart.service';
 import * as crypto from 'crypto';
+import { FoodService } from '../food/food.service';
 
 export interface PaymentInfo {
   items: CartItem[];
@@ -16,7 +17,9 @@ export class PaymentService {
   private vnp_ReturnUrl = 'http://localhost:3000/payment/return'; // Cập nhật nếu dùng ngrok
   private vnp_IPNUrl = 'http://localhost:5000/payment/ipn'; // Cập nhật nếu dùng ngrok
 
-  constructor(private readonly cartService: CartService) { }
+  constructor(
+    private readonly cartService: CartService,
+  ) { }
 
   getPaymentInfo(): PaymentInfo {
     const items = this.cartService.getCart();
@@ -89,4 +92,5 @@ export class PaymentService {
 
     return secureHash === calculatedHash;
   }
+  
 }

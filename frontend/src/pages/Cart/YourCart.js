@@ -4,10 +4,30 @@ import { useNavigate } from 'react-router-dom'; // Thêm useNavigate
 import axios from 'axios';
 import '../../styles/YourCart.css';
 import YourCart from '../../components/Cart/YourCart';
-
+import ItemInfo from '../ItemInfo/ItemInfo';
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
-  const navigate = useNavigate(); // Khởi tạo useNavigate
+  const navigate = useNavigate();
+
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const updateCart = async (id, quantity) => {
+    try {
+      const Response = await axios.post("http://localhost:5000/cart/update", {
+        id,
+        quantity
+      });
+  
+      if (Response.data.success) {
+        localStorage.setItem('cart', JSON.stringify(Response.data));
+        window.dispatchEvent(new Event('cartUpdated'));
+      }
+      console.log("Cập nhật giỏ hàng thành công:", Response.data);
+    } catch (err) {
+      console.error("Lỗi:", err);
+    }
+  };
 
   // Lấy dữ liệu giỏ hàng
   const fetchCartItems = async () => {
@@ -21,9 +41,16 @@ const Cart = () => {
   };
 
   // Tăng số lượng sản phẩm trong giỏ hàng
-  const handleIncrease = async (productId) => {
+  const handleIncrease = async (id) => {
     try {
-      await axios.post('http://localhost:5000/cart/increase', { productId });
+      const res = await axios.post('http://localhost:5000/cart/increase', { id });
+      const data = res.data;
+      localStorage.setItem('cart', JSON.stringify(res.data));
+
+      if (!data.success) {
+        alert(data.message);
+      }
+
       fetchCartItems();
     } catch (err) {
       console.error('Lỗi khi tăng số lượng:', err);
@@ -31,15 +58,35 @@ const Cart = () => {
   };
 
   // Giảm số lượng sản phẩm trong giỏ hàng
-  const handleDecrease = async (productId) => {
+  const handleDecrease = async (id) => {
     try {
-      await axios.post('http://localhost:5000/cart/decrease', { productId });
+      const res = await axios.post('http://localhost:5000/cart/decrease', { id });
+      const data = res.data;
+
+      if (!data.success) {
+        alert(data.message);
+      }
+
       fetchCartItems();
     } catch (err) {
       console.error('Lỗi khi giảm số lượng:', err);
     }
   };
 
+  const handleRemove = async (id) => {
+    try {
+      const Response = await axios.post("http://localhost:5000/cart/remove", {
+        id
+      });
+
+      if (Response.data.success) {
+        window.dispatchEvent(new Event('cartUpdated'));
+      }
+      console.log("xóa khỏi giỏ hàng thành công", Response.data);
+    } catch (err) {
+      console.error("Lỗi:", err);
+    }
+  };
   // Khi nhấn nút thanh toán
   const handleCheckout = () => {
     if (cartItems.length === 0) {
@@ -61,6 +108,16 @@ const Cart = () => {
     return () => window.removeEventListener('cartUpdated', reloadCart);
   }, []);
 
+  const handleItemClick = (item) => {
+    setSelectedProduct(item);
+    setIsPopupOpen(true);
+  };
+
+  const closePopup = () => {
+    setIsPopupOpen(false);
+    setSelectedProduct(null);
+  };
+  
   return (
     <>
       <div className="your-cart-container">
@@ -72,13 +129,24 @@ const Cart = () => {
             cartItems.map((item) => (
               <YourCart
                 item={item}
-                key={item.productId}
+                key={item.id}
                 onIncrease={handleIncrease}
                 onDecrease={handleDecrease}
+                onRemove={handleRemove}
+                onItemClick={handleItemClick}
               />
             ))
           )}
         </div>
+        {selectedProduct && (
+            <ItemInfo
+              item={selectedProduct}
+              quantity={selectedProduct.quantity}
+              isOpen={isPopupOpen}
+              onClose={closePopup}
+              onAddToCart={updateCart}
+            />
+          )}
       </div>
       <div className="cart-total">
         <h3>

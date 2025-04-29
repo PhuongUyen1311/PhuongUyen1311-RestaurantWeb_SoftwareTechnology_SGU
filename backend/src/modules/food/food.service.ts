@@ -1,65 +1,72 @@
 import { Injectable } from '@nestjs/common';
 import { readItemsJson } from 'src/common/utils/readJson';
-//import { writeItemsJson } from 'src/common/utils/writeJson'; // Đảm bảo bạn đã có hàm này để ghi vào file JSON
+import { writeItemsJson } from 'src/common/utils/writeJson';
+
+const foodFilePath = '../src/storage/FoodItems.json';
 
 @Injectable()
 export class FoodService {
-  // Lấy tất cả món ăn
+  // Lấy toàn bộ danh sách món ăn
   getAllFood() {
-    return readItemsJson('../src/storage/FoodItems.json');
+    const foodItems = readItemsJson(foodFilePath);
+    return foodItems.filter(item => item.currentQuantity > 0);
   }
+  
 
   // Lấy món ăn theo ID
   getFoodById(id: string) {
     const foodItems = this.getAllFood();
-    return foodItems.find((item) => item.id === id);
+    return foodItems.find(item => item.id === id);
   }
 
-  // Lấy món ăn theo danh mục
+  // Lọc món ăn theo danh mục
   getFoodByCategory(category: string) {
     const foodItems = this.getAllFood();
-    return foodItems.filter((item) => item.category === category);
+    return foodItems.filter(item => item.category === category && item.currentQuantity >0);
   }
 
-  // Thêm món ăn mới (create)
+  // Thêm món ăn mới
   create(newFood: any) {
     const foodItems = this.getAllFood();
     foodItems.push(newFood);
-    //writeItemsJson('src/storage/FoodItems.json', foodItems);  // Ghi lại danh sách món ăn vào file
+    this.saveFood(foodItems);
     return newFood;
   }
 
-  // Lấy tất cả món ăn (findAll)
+  // Trả về toàn bộ món ăn
   findAll() {
     return this.getAllFood();
   }
 
-  // Lấy món ăn theo ID (findOne)
+  // Trả về một món ăn theo ID
   findOne(id: string) {
     return this.getFoodById(id);
   }
 
-  // Cập nhật món ăn (update)
+  // Cập nhật món ăn theo ID
   update(id: string, updatedFood: any) {
-    let foodItems = this.getAllFood();
-    const foodIndex = foodItems.findIndex((item) => item.id === id);
-    if (foodIndex === -1) {
-      return null; // Không tìm thấy món ăn
-    }
-    foodItems[foodIndex] = { ...foodItems[foodIndex], ...updatedFood };
-    //writeItemsJson('src/storage/FoodItems.json', foodItems);  // Ghi lại danh sách món ăn vào file
-    return foodItems[foodIndex];
+    const foodItems = this.getAllFood();
+    const index = foodItems.findIndex(item => item.id === id);
+    if (index === -1) return null;
+
+    foodItems[index] = { ...foodItems[index], ...updatedFood };
+    this.saveFood(foodItems);
+    return foodItems[index];
   }
 
-  // Xóa món ăn (remove)
+  // Xóa món ăn theo ID
   remove(id: string) {
-    let foodItems = this.getAllFood();
-    const foodIndex = foodItems.findIndex((item) => item.id === id);
-    if (foodIndex === -1) {
-      return null; // Không tìm thấy món ăn
-    }
-    const deletedFood = foodItems.splice(foodIndex, 1);
-    //writeItemsJson('src/storage/FoodItems.json', foodItems);  // Ghi lại danh sách món ăn vào file
-    return deletedFood;
+    const foodItems = this.getAllFood();
+    const index = foodItems.findIndex(item => item.id === id);
+    if (index === -1) return null;
+
+    const [deleted] = foodItems.splice(index, 1);
+    this.saveFood(foodItems);
+    return deleted;
+  }
+
+  // Lưu danh sách món ăn xuống file JSON
+  private saveFood(foodItems: any[]) {
+    writeItemsJson(foodFilePath, foodItems);
   }
 }

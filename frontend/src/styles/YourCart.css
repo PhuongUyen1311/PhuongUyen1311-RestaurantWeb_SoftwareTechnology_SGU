@@ -27,6 +27,7 @@
 .cart-item {
   display: flex;
   align-items: center;
+  gap: 12px;
   margin-bottom: 12px;
   background-color: #f8e5cdd5;
   padding: 10px;
@@ -112,4 +113,24 @@
   color: rgb(200, 76, 5);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 18px;
+}
+.cart-item-remove {
+  align-self: stretch; /* tự giãn theo chiều cao cha flex */
+  display: flex;
+  align-items: top right;
+  border: none;
+  border-radius: 6px;
+}
+
+.remove-button {
+  background-color: transparent;
+  background-image: url('../../public/images/x.svg');
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: 30px 30px; /* 👈 chỉnh kích thước ảnh */
+  width: 30px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+  /* margin-top: 10px; */
 }

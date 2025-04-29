@@ -7,4 +7,3 @@ export function readItemsJson(filePath: string){
   const fileContent = readFileSync(fullPath, 'utf-8');
   return JSON.parse(fileContent);
 }
-readItemsJson('../src/storage/FoodItems.json');

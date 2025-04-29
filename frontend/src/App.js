@@ -1,9 +1,8 @@
 // src/App.js
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 import Home from './pages/Home/Home';
-import Cart from './pages/Cart/Cart';
+import Cart from './pages/Cart/YourCart';
 import Payment from './pages/Payment/Payment';
 import BankingQRCodePage from './pages/BankingQRCode/BankingQRCode';
 import Main from './pages/Main/Main';

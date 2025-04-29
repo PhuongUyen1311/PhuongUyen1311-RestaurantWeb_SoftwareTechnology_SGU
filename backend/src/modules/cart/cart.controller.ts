@@ -8,28 +8,26 @@ export class CartController {
   @Get()
   getCart() {
     const cart = this.cartService.getCart();
-    console.log('Giỏ hàng hiện tại:', cart);
     return cart;
   }
 
   @Post('add')
-  async addToCart(@Body() body: { productId: string; quantity: number }) {
-    const cart = this.cartService.addToCart(body.productId, body.quantity);
-    return cart
+  async addToCart(@Body() body: { id: string; quantity: number }) {
+    const cart = this.cartService.addToCart(body.id, body.quantity);
+    return cart;
   }
 
   @Post('increase')
-  async increaseQuantity(@Body() body: { productId: string}) {
-      // Tăng số lượng
-      return this.cartService.increaseQuantity(body.productId);
-    }
-
-  @Post('decrease')
-  async decreaseQuantity(@Body() body: { productId: string}) {
-    // Giảm số lượng
-    return this.cartService.decreaseQuantity(body.productId);
+  async increaseQuantity(@Body() body: { id: string }) {
+    // Tăng số lượng
+    return this.cartService.increaseQuantity(body.id);
   }
 
+  @Post('decrease')
+  async decreaseQuantity(@Body() body: { id: string }) {
+    // Giảm số lượng
+    return this.cartService.decreaseQuantity(body.id);
+  }
 
   @Delete()
   clearCart() {
@@ -37,7 +35,14 @@ export class CartController {
   }
   
   @Post('remove')
-  removeFromCart(@Body() body: { productId: string }) {
-    return this.cartService.removeFromCart(body.productId);
+  removeFromCart(@Body() body: { id: string }) {
+    return this.cartService.removeFromCart(body.id);
   }
+
+  @Post('update')
+  async updateCartItem(@Body() body: { id: string; quantity: number }) {
+    // Cập nhật số lượng sản phẩm trong giỏ hàng
+    return this.cartService.updateCartItem(body.id, body.quantity);
+  }
+
 }

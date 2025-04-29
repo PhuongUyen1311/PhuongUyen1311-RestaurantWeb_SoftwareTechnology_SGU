@@ -1,92 +1,118 @@
 import { Injectable } from '@nestjs/common';
 import { FoodService } from '../food/food.service';
+import { writeItemsJson } from 'src/common/utils/writeJson';
+import { readItemsJson } from 'src/common/utils/readJson';
+const cartFilePath = '../src/storage/CartItems.json';
 
-// Định nghĩa CartItem ngoài class để dễ dàng tái sử dụng
 export interface CartItem {
-  productId: string;
+  id: string;
   name: string;
   price: number;
   category: string;
+  currentQuantity: number;
   quantity: number;
 }
 
 @Injectable()
 export class CartService {
-  constructor(private readonly foodService: FoodService) {}
+  private cart: CartItem[] = Array.isArray(readItemsJson(cartFilePath)) 
+  ? readItemsJson(cartFilePath).filter(item => item.currentQuantity > 0) 
+  : [];
+  constructor(private readonly foodService: FoodService) { }
 
-  private cart: CartItem[] = [];
+  private saveCart() {
+    writeItemsJson(cartFilePath, this.cart);
+  }
 
-  // Thêm sản phẩm vào giỏ
-  async addToCart(productId: string, quantity: number) {
-    // Lấy thông tin sản phẩm từ foodService
-    const foodItem = await this.foodService.getFoodById(productId);
-    
-    // Kiểm tra nếu sản phẩm đã tồn tại trong giỏ
-    const existingItemIndex = this.cart.findIndex(item => item.productId === productId);
+  async addToCart(id: string, quantity: number) {
+    const foodItem = await this.foodService.getFoodById(id);
+    const existingItemIndex = this.cart.findIndex(item => item.id === id);
     if (existingItemIndex !== -1) {
       // Nếu sản phẩm đã có trong giỏ, tăng số lượng
       this.cart[existingItemIndex].quantity += quantity;
+      if (this.cart[existingItemIndex].quantity > 99) {
+        this.cart[existingItemIndex].quantity = 99;
+      }
+
+      if (this.cart[existingItemIndex].quantity > foodItem.currentQuantity) {
+        this.cart[existingItemIndex].quantity = foodItem.currentQuantity;
+      }
+
     } else {
       // Nếu chưa có, thêm sản phẩm mới vào giỏ
       this.cart.push({
-        productId: foodItem.id,
+        id: foodItem.id,
         name: foodItem.name,
         price: foodItem.price,
         category: foodItem.category,
+        currentQuantity: foodItem.currentQuantity,
         quantity: quantity,
       });
+
     }
+    this.saveCart();
     return {
       success: true,
       cart: this.cart,
     };
   }
 
-  // Lấy tất cả sản phẩm trong giỏ
   getCart() {
-    return this.cart;
+    return readItemsJson(cartFilePath);
   }
 
-  // Xóa giỏ hàng
+
   clearCart() {
     this.cart = [];
+    this.saveCart();
     return { success: true };
   }
 
-  // Lấy thông tin sản phẩm từ foodService, nếu cần thiết
-  async getCartItems(productId: string) {
-    const foodItem = await this.foodService.getFoodById(productId);
+
+  async getCartItems(id: string) {
+    const foodItem = await this.foodService.getFoodById(id);
     return foodItem;
   }
 
-  async increaseQuantity(productId: string) {
-    const foodItem = await this.foodService.getFoodById(productId);
-    const maxAvailable = foodItem.availableQuantity; // Lấy số lượng tối đa từ kho
-  
-    const existingItem = this.cart.find(item => item.productId === productId);
+  async increaseQuantity(id: string) {
+    const foodItem = await this.foodService.getFoodById(id);
+    const maxAvailable = foodItem.currentQuantity;
+
+    const existingItem = this.cart.find(item => item.id === id);
     if (existingItem) {
+      if (existingItem.quantity >= 99) {
+        this.saveCart();
+        return {
+          success: false,
+          message: 'Không thể thêm quá 99 sản phẩm cho mỗi mặt hàng',
+        };
+      }
       const maxCanAdd = maxAvailable - existingItem.quantity;
       if (maxCanAdd <= 0) {
+        this.saveCart();
         return {
           success: false,
           message: 'Số lượng sản phẩm trong giỏ đã đạt mức tối đa có thể mua',
         };
       }
-      existingItem.quantity += 1; // Tăng số lượng sản phẩm trong giỏ hàng
+      existingItem.quantity += 1;
+      this.saveCart();
       return {
         success: true,
         cart: this.cart,
       };
-    } 
+    }
     else {
       // Nếu sản phẩm chưa có trong giỏ, thêm mới
       this.cart.push({
-        productId: foodItem.id,
+        id: foodItem.id,
         name: foodItem.name,
         price: foodItem.price,
         category: foodItem.category,
-        quantity: 1, // Bắt đầu với số lượng 1
+        currentQuantity: foodItem.currentQuantity,
+        quantity: 1,
       });
+      this.saveCart();
       return {
         success: true,
         cart: this.cart,
@@ -94,35 +120,72 @@ export class CartService {
     }
   }
 
-  // Giảm số lượng sản phẩm trong giỏ
-  decreaseQuantity(productId: string) {
-    const existingItemIndex = this.cart.findIndex(item => item.productId === productId);
-    if (existingItemIndex !== -1) {
+  decreaseQuantity(id: string) {
+    const existingItemIndex = this.cart.findIndex(item => item.id === id);
+    if (existingItemIndex === -1) return { success: false };
+
     if (this.cart[existingItemIndex].quantity <= 1) {
-      return this.removeFromCart(productId);
-    }
-    this.cart[existingItemIndex].quantity--;
-      return {
-        success: true,
-        cart: this.cart,
-      };
-    }
-    
-    return {
-      success: false,
-      message: 'Sản phẩm không có trong giỏ hàng',
-    };
-  }
+      this.cart[existingItemIndex].quantity = 1;
 
-  // Xóa một sản phẩm khỏi giỏ
-  removeFromCart(productId: string) {
+    } else {
+      this.cart[existingItemIndex].quantity--;
+    }
+    this.saveCart();
+
+    return { success: true, cart: this.cart };
+  }
+  removeFromCart(id: string) {
     const initialLength = this.cart.length;
-    this.cart = this.cart.filter(item => item.productId !== productId);
+    this.cart = this.cart.filter(item => item.id !== id);
     console.log('Giỏ hàng sau khi xóa:', this.cart);
+    this.saveCart();
     return {
       success: this.cart.length < initialLength,
       cart: this.cart,
     };
+  }
+
+  async updateCartItem(id: string, quantity: number) {
+    const existingItemIndex = this.cart.findIndex(item => item.id === id);
+    if (existingItemIndex === -1) {
+      return {
+        success: false,
+        message: 'Sản phẩm không tồn tại trong giỏ hàng',
+      };
+    }
+
+    if (quantity <= 0) {
+      return this.removeFromCart(id);
+    }
+
+    if (quantity > 99) {
+      return {
+        success: false,
+        message: 'Không thể cập nhật số lượng vượt quá 99',
+      };
+    }
+
+    try {
+      const foodItem = await this.foodService.getFoodById(id);
+      if (quantity > foodItem.currentQuantity) {
+        return {
+          success: false,
+          message: 'Số lượng cập nhật vượt quá số lượng hiện có trong kho',
+        };
+      }
+
+      this.cart[existingItemIndex].quantity = quantity;
+      this.saveCart();
+      return {
+        success: true,
+        cart: this.cart,
+      };
+    } catch (error) {
+      return {
+        success: false,
+        message: 'Không thể xác thực thông tin sản phẩm',
+      };
+    }
   }
 }
 export default CartService;

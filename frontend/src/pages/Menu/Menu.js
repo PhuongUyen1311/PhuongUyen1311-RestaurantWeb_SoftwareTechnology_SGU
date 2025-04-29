@@ -4,16 +4,17 @@ import MenuItem from '../../components/Menu/MenuItem';
 import ItemInfo from '../ItemInfo/ItemInfo.js'; 
 import '../../styles/Menu.css';
 
-const addToCart = async (productId, quantity = 1) => {
+const addToCart = async (id, quantity = 1) => {
   try {
     const addToCartResponse = await axios.post("http://localhost:5000/cart/add", {
-      productId,
+      id,
       quantity
     });
 
     if (addToCartResponse.data.success) {
       window.dispatchEvent(new Event('cartUpdated'));
     }
+    console.log("Thêm vào giỏ hàng thành công:", addToCartResponse.data);
   } catch (err) {
     console.error("Lỗi:", err);
   }
@@ -25,23 +26,25 @@ function Menu({ category }) {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/food')
-    .then(response => {
-        const allItems = response.data;
-        const filteredItems = category
-          ? allItems.filter(item => item.category === category)
-          : allItems;
-        setFoods(filteredItems);
-      })
-      .catch(error => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/food/category', {
+          params: { category },
+        });
+
+        setFoods(response.data);
+        console.log("Kết quả lấy món ăn theo category:", response.data);
+      } catch (error) {
         console.log('Lỗi khi lấy dữ liệu món ăn:', error);
-      });
+      }
+    };
+
+    fetchData();
   }, [category]);
 
   const handleAddToCart = (item) => {
-    console.log('Thêm vào giỏ hàng:', item);
-    addToCart(item.id, item.quantity || 1);
-    closePopup(); // Đóng popup sau khi thêm vào giỏ hàng
+    addToCart(item.id, 1);
+    closePopup();
   };
 
   const handleItemClick = (item) => {
@@ -73,9 +76,10 @@ function Menu({ category }) {
           {selectedProduct && (
             <ItemInfo
               item={selectedProduct}
+              quantity={1}
               isOpen={isPopupOpen}
               onClose={closePopup}
-              onAddToCart={handleAddToCart}
+              onAddToCart={addToCart} // truyền quantity vào đây
             />
           )}
         </>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import BackToHome from './BackToHome';
 import Menu from '../Menu/Menu';
 import Filter from './Filter';
-import Cart from '../Cart/Cart';
+import Cart from '../Cart/YourCart';
 import '../../styles/Home.css';
 
 const Home = ({ goToPayment }) => {
@@ -56,18 +56,18 @@ export default Home;
 //     }
 //   };
 
-//   const handleIncrease = async (productId) => {
+//   const handleIncrease = async (id) => {
 //     try {
-//       await axios.post("http://localhost:5000/cart/increase", { productId });
+//       await axios.post("http://localhost:5000/cart/increase", { id });
 //       fetchCartItems();
 //     } catch (err) {
 //       console.error("Lỗi khi tăng số lượng:", err);
 //     }
 //   };
 
-//   const handleDecrease = async (productId) => {
+//   const handleDecrease = async (id) => {
 //     try {
-//       await axios.post("http://localhost:5000/cart/decrease", { productId });
+//       await axios.post("http://localhost:5000/cart/decrease", { id });
 //       fetchCartItems();
 //     } catch (err) {
 //       console.error("Lỗi khi giảm số lượng:", err);

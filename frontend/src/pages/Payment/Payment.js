@@ -32,38 +32,59 @@ const Payment = () => {
       if (paymentMethod === 'vnpay' || paymentMethod === 'credit') {
         const response = await axios.post('http://localhost:5000/payment/vnpay', {
           amount: (paymentInfo.cost + paymentInfo.tax) * 100,
-          orderId: `ORDER_${Date.now()}`,
+          orderId: `OD${Date.now()}`,
           orderInfo: `Thanh toán đơn hàng #${Date.now()}`,
-          // Dùng vnp_OrderType để chỉ định loại thanh toán
           orderType: paymentMethod === 'credit' ? 'creditcard' : 'billpayment',
         });
+
         window.location.href = response.data.paymentUrl; // Chuyển hướng đến giao diện VNPay
 
       } else if (paymentMethod === 'cod') {
+        const updateResponse = await axios.post('http://localhost:5000/food/update');
+        console.log('Cập nhật giỏ hàng thành công:', updateResponse.data);
+
         alert('Thanh toán thành công!');
+        await axios.delete('http://localhost:5000/cart')
         window.location.href = '/';
 
       } else if (paymentMethod === 'bank') {
-        await axios.post('http://localhost:5000/payment/checkout', paymentInfo);
+        const paymentResponse = await axios.post('http://localhost:5000/payment/checkout', paymentInfo);
+        console.log('Thanh toán thành công:', paymentResponse.data);
+
+        const updateResponse = await axios.post('http://localhost:5000/food/update');
+        console.log('Cập nhật giỏ hàng thành công:', updateResponse.data);
+
         alert('Thanh toán thành công!');
+        await axios.delete('http://localhost:5000/cart')
         window.location.href = '/';
       }
+
     } catch (err) {
       console.error('Lỗi thanh toán:', err);
       alert('Thanh toán thất bại, vui lòng thử lại!');
     }
   };
   useEffect(() => {
-    const query = new URLSearchParams(location.search);
-    const vnp_ResponseCode = query.get('vnp_ResponseCode');
-    if (vnp_ResponseCode) {
-      if (vnp_ResponseCode === '00') {
-        alert('Thanh toán qua VNPay thành công!');
-        window.location.href = '/';
-      } else {
-        alert('Thanh toán qua VNPay thất bại. Vui lòng thử lại!');
+    const handleVNPayResponse = async () => {
+      const query = new URLSearchParams(location.search);
+      const vnp_ResponseCode = query.get('vnp_ResponseCode');
+      if (vnp_ResponseCode) {
+        if (vnp_ResponseCode === '00') {
+
+          const updateResponse = await axios.post('http://localhost:5000/food/update');
+          console.log('Cập nhật giỏ hàng thành công:', updateResponse.data);
+
+          alert('Thanh toán qua VNPay thành công!');
+          await axios.delete('http://localhost:5000/cart')
+          
+          window.location.href = '/';
+        } else {
+          alert('Thanh toán qua VNPay thất bại. Vui lòng thử lại!');
+        }
       }
-    }
+    };
+
+    handleVNPayResponse();
   }, [location]);
 
   if (!loading) {
