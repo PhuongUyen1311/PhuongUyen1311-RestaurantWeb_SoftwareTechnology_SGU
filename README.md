@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# MÔ HÌNH MVP CỦA NHÀ HÀNG TUI ❤️
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Đây là mô hình triển khai ban đầu của hệ thống nhà hàng mình. Chứa các chức năng cơ bản như menu chính, thêm giỏ hàng, thanh toán qua nhiều phương thức. Hy vọng bạn sẽ có trải nghiệm tốt khi xem dự án mình🥰. 
 
-## Available Scripts
+## Các Thành Phần Chính
 
-In the project directory, you can run:
+1. **Frontend**:
+   - Xây dựng bằng **React**.
+   - Cung cấp giao diện người dùng cho khách hàng  chọn món ăn, thêm vào giỏ hàng và thanh toán.
 
-### `npm start`
+2. **Backend**:
+   - Xây dựng bằng **NestJS**.
+   - Up dữ liệu từ file json lên local storage.
+## Partner của mình ❤️
+- 3122410461 : [Uyên k24](https://github.com/PhuongUyen1311)
+- 3119480093 : [Trân k21](https://github.com/trannguyen5801)
+- 3122410253 : [Nam k24](https://github.com/NhatNam15151515)
+- 3122410132 : [Hoành k24](https://github.com/hoanhviplengend)
+## 📁 Cấu trúc thư mục
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+.
+├── backend
+│   ├── Docker_Nest -->docker
+│   ├── src --> thư mục chính
+│   ├── package.json --> Thư viện chính
+│   └── ...
+├── frontend
+│   ├── Docker_React --> docker
+│   ├── src --> thư mục chính
+│   ├── package.json  --> thư viện chính 
+│   └── ... -
+├── docker-compose.yml --> docker
+└── README.md --> Mô tả
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Cài Đặt Dự Án
 
-### `npm test`
+### Bạn có thể build dự án thông qua hai cách.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Docker** (optional, nếu bạn muốn sử dụng Docker)
+- **Truyền thống** (optional, nếu bạn muốn sử dụng Docker Compose)
 
-### `npm run build`
+### Bước 1: Clone Dự Án từ github của mình 🤣 nếu hay cho mình 1 start nhá 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+git clone https://github.com/hoanhviplengend/Assigment_CNPM.git
+```
+### Bước 2: Chạy dự án.
+#### Tiếp cận bằng docker.
+- Yêu cần bạn phải có docker
+- Cài đặt [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+##### Từ thư mục gốc để built :
+```bash
+docker-compose up --build
+```
+##### Từ thư mục gốc để run 🏃:
+```bash
+docker-compose up
+```
+#### Tiếp cận thông thường.
+##### Từ Thư mục frontend
+- cài đặt npm ⚙️
+```bash
+npm install
+```
+- chạy Front end 🛠️
+```bash
+npm start
+```
+##### Từ Thư mục backend
+- cài đặt npm ⚙️
+```bash
+npm install
+```
+- Chạy Back end 🛠️
+```bash
+npm run start
+```
