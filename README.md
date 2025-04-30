@@ -41,7 +41,7 @@
 - **Docker** (optional, nếu bạn muốn sử dụng Docker)
 - **Truyền thống** (optional, nếu bạn muốn sử dụng Docker Compose)
 
-### Bước 1: Clone Dự Án từ github của mình 🤣 nếu hay cho mình 1 start nhá 
+### Bước 1: Clone Dự Án từ github của mình 🤣 nếu hay cho mình 1 sao nhá 
 
 ```bash
 git clone https://github.com/hoanhviplengend/Assigment_CNPM.git
