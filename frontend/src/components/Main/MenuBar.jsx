@@ -17,9 +17,9 @@ const Menu = ({ scrollToContact, scrollToMenu, scrollToAboutUs, scrollToHome }) 
   const handleClick = (index) => {
     setActiveIndex(index);
     const item = menuItems[index];
-    
+
     if (item === 'Order') {
-      navigate('/'); 
+      navigate('/');
     } else {
       scrollTo[item]();  // Gọi hàm tương ứng với mục menu khác
     }

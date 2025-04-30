@@ -11,7 +11,7 @@ export class FoodService {
     const foodItems = readItemsJson(foodFilePath);
     return foodItems.filter(item => item.currentQuantity > 0);
   }
-  
+
 
   // Lấy món ăn theo ID
   getFoodById(id: string) {
@@ -22,7 +22,7 @@ export class FoodService {
   // Lọc món ăn theo danh mục
   getFoodByCategory(category: string) {
     const foodItems = this.getAllFood();
-    return foodItems.filter(item => item.category === category && item.currentQuantity >0);
+    return foodItems.filter(item => item.category === category && item.currentQuantity > 0);
   }
 
   // Thêm món ăn mới

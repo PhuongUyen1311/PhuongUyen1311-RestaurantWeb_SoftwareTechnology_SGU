@@ -5,24 +5,35 @@
   position: relative;
   display: flex;
   align-items: center;
-  background-color: #f0a8346e; /* Màu nền giống hình */
+  background-color: #f0a8346e;
+  /* Màu nền giống hình */
   border-radius: 10px;
-  padding: 16px 40px; /* Tăng padding hai bên để tạo khoảng cách cho nút cuộn */
-  width: 65vw; /* Chiếm 3/4 chiều rộng màn hình (viewport width) */
-  max-width: 1200px; /* Giới hạn chiều rộng tối đa nếu màn hình quá lớn */
-  margin: 0 auto; /* Căn giữa thanh */
-  box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước container */
+  padding: 16px 40px;
+  /* Tăng padding hai bên để tạo khoảng cách cho nút cuộn */
+  width: 65vw;
+  /* Chiếm 3/4 chiều rộng màn hình (viewport width) */
+  max-width: 1200px;
+  /* Giới hạn chiều rộng tối đa nếu màn hình quá lớn */
+  margin: 0 auto;
+  /* Căn giữa thanh */
+  box-sizing: border-box;
+  /* Đảm bảo padding không làm tăng kích thước container */
 }
 
 /* Danh sách menu */
 .menu-list {
   display: flex;
-  gap: 16px; /* Khoảng cách giữa các mục */
+  gap: 16px;
+  /* Khoảng cách giữa các mục */
   padding: 0 16px;
-  white-space: nowrap; /* Không xuống dòng */
-  overflow-x: hidden; /* Ẩn thanh cuộn mặc định */
-  width: 100%; /* Chiếm toàn bộ chiều rộng của container */
-  scroll-behavior: smooth; /* Cuộn mượt mà */
+  white-space: nowrap;
+  /* Không xuống dòng */
+  overflow-x: hidden;
+  /* Ẩn thanh cuộn mặc định */
+  width: 100%;
+  /* Chiếm toàn bộ chiều rộng của container */
+  scroll-behavior: smooth;
+  /* Cuộn mượt mà */
 }
 
 /* Nút cuộn trái/phải */
@@ -30,7 +41,8 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: #f0a834cf; /* Nền mờ giống hình */
+  background-color: #f0a834cf;
+  /* Nền mờ giống hình */
   color: white;
   border: none;
   padding: 8px;
@@ -44,7 +56,8 @@
 }
 
 .scroll-button.left {
-  left: 8px; /* Cách mép trái của container 8px */
+  left: 8px;
+  /* Cách mép trái của container 8px */
 }
 
 /* SVG icon bên trong button */
@@ -56,16 +69,20 @@
 
 
 .scroll-button.right {
-  right: 8px; /* Cách mép phải của container 8px */
+  right: 8px;
+  /* Cách mép phải của container 8px */
 }
 
 .scroll-button:hover {
-  background-color: #7c7a7a88; /* Hiệu ứng hover */
+  background-color: #7c7a7a88;
+  /* Hiệu ứng hover */
 }
 
 .filter-menu-item {
-  flex: 0 0 calc((100% - 4 * 16px) / 5); /* Chiều rộng mỗi mục = (chiều rộng container - tổng khoảng cách) / 5 */
-  height: 110px; /* Đặt chiều cao cố định */
+  flex: 0 0 calc((100% - 4 * 16px) / 5);
+  /* Chiều rộng mỗi mục = (chiều rộng container - tổng khoảng cách) / 5 */
+  height: 110px;
+  /* Đặt chiều cao cố định */
 }
 
 /* Kiểu dáng cho các mục */
@@ -73,22 +90,27 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #55555588; /* Màu nền mặc định */
+  background-color: #55555588;
+  /* Màu nền mặc định */
   padding: 8px;
   border-radius: 8px;
   border: none;
   cursor: pointer;
   transition: background-color 0.2s;
-  width: 100%; /* Đảm bảo button chiếm toàn bộ chiều rộng của .filter-menu-item */
-  height: 100%; /* Chiếm toàn bộ chiều cao của .filter-menu-item */
+  width: 100%;
+  /* Đảm bảo button chiếm toàn bộ chiều rộng của .filter-menu-item */
+  height: 100%;
+  /* Chiếm toàn bộ chiều cao của .filter-menu-item */
 }
 
 .filter-menu-item button:hover {
-  background-color: #89868683; /* Màu khi hover */
+  background-color: #89868683;
+  /* Màu khi hover */
 }
 
 .filter-menu-item button.bg-blue-400 {
-  background-color: #32b6b8c0; /* Màu nền khi được chọn (giống hình) */
+  background-color: #32b6b8c0;
+  /* Màu nền khi được chọn (giống hình) */
 }
 
 .filter-menu-item img {
@@ -96,7 +118,8 @@
   height: 64px;
   object-fit: cover;
   margin-bottom: 8px;
-  border-radius: 8px; /* Bo góc hình ảnh */
+  border-radius: 8px;
+  /* Bo góc hình ảnh */
 }
 
 .filter-menu-item p {
@@ -104,4 +127,3 @@
   margin: 0;
   color: white;
 }
-

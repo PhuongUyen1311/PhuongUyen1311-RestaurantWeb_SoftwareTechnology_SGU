@@ -1,7 +1,7 @@
 // src/components/MainContent.jsx
 import React from 'react';
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useNavigate } from 'react-router-dom';
 
@@ -38,7 +38,7 @@ const MainContent = ({ homeRef, contactRef, menuRef, aboutUsRef }) => {
         <div className="menu-image">
           <img src="/images/menu.png" alt="menu" />
         </div>
-        <button className="gotoCart" onClick={() => navigate('/')}>Go to Cart</button> 
+        <button className="gotoCart" onClick={() => navigate('/')}>Go to Cart</button>
       </div>
 
       <div className="aboutUs" ref={aboutUsRef}>

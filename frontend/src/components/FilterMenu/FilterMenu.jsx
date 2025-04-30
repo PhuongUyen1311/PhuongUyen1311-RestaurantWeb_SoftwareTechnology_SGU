@@ -6,8 +6,8 @@ const FilterMenu = ({ item, isSelected, onSelect, onAddToCart }) => {
     <div className="filter-menu-item">
       <button
         onClick={() => {
-          onSelect(item); // Xử lý khi chọn mục
-          onAddToCart(item); // Xử lý khi thêm vào giỏ hàng
+          onSelect(item);
+          onAddToCart(item);
         }}
         className={`flex flex-col items-center p-2 rounded ${isSelected ? 'bg-blue-400' : 'bg-gray-700'}`} // Thêm màu nền khi được chọn
       >

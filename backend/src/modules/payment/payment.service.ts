@@ -7,6 +7,7 @@ export interface PaymentInfo {
   items: CartItem[];
   cost: number;
   tax: number;
+  note: string;
 }
 
 @Injectable()
@@ -17,6 +18,13 @@ export class PaymentService {
   private vnp_ReturnUrl = 'http://localhost:3000/payment/return'; // Cập nhật nếu dùng ngrok
   private vnp_IPNUrl = 'http://localhost:5000/payment/ipn'; // Cập nhật nếu dùng ngrok
 
+  paymentInfo: PaymentInfo = {
+    items: [],
+    cost: 0,
+    tax: 0,
+    note: '',
+  };
+
   constructor(
     private readonly cartService: CartService,
   ) { }
@@ -26,11 +34,13 @@ export class PaymentService {
     const costWithOutTax = items.reduce((total, item) => total + item.price * item.quantity, 0);
     const tax = costWithOutTax * 0.1;
     const cost = costWithOutTax + tax;
+    const note = items.map(item => item.note).join('\n');
 
     return {
       items,
       cost,
       tax,
+      note
     };
   }
 
@@ -92,5 +102,13 @@ export class PaymentService {
 
     return secureHash === calculatedHash;
   }
-  
+  clearPaymentInfo(): void {
+    this.paymentInfo = {
+      items: [],
+      cost: 0,
+      tax: 0,
+      note: '',
+    };
+    console.log('Payment info cleared');
+  }
 }

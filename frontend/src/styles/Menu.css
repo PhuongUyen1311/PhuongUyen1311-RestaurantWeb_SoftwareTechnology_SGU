@@ -1,16 +1,15 @@
 .menu-page {
-    background-color: #cecece8e;
-    min-height: 80vh;
-    max-height: 80vh;
-    padding: 16px;
-    border-radius: 10px;
-    overflow-y: auto;
-    overflow-x: auto;
-  }
-  
-  .menu-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-  }
-  
+  background-color: #cecece8e;
+  min-height: 80vh;
+  max-height: 80vh;
+  padding: 16px;
+  border-radius: 10px;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}

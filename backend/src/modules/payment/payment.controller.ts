@@ -47,5 +47,10 @@ export class PaymentController {
 
     res.json(response);
   }
-  
+  @Post('clear')
+  clearPaymentInfo() {
+    this.paymentService.clearPaymentInfo();
+    return { message: 'Payment information cleared successfully' };
+  }
+
 }

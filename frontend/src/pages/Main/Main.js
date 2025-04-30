@@ -31,14 +31,14 @@ const Home = () => {
   };
 
   return (
-    <div> 
-      <Header 
+    <div>
+      <Header
         scrollToHome={scrollToHome}
-        scrollToContact={scrollToContact} 
+        scrollToContact={scrollToContact}
         scrollToMenu={scrollToMenu}
         scrollToAboutUs={scrollToAboutUs}
       />
-      <MainContent 
+      <MainContent
         homeRef={homeRef}
         contactRef={contactRef}
         menuRef={menuRef}

@@ -19,15 +19,15 @@
     "id": 3,
     "name": "Cheese Cupcake",
     "price": 50,
-    "category": "Dessert",
+    "category": "Cupcake",
     "description": "Bánh cupcake mềm xốp với nhân phô mai béo ngậy.",
-    "currentQuantity": 0
+    "currentQuantity": 70
   },
   {
     "id": 4,
     "name": "Chocolate Donut",
     "price": 15,
-    "category": "Dessert",
+    "category": "Cupcake",
     "description": "Bánh donut mềm xốp phủ lớp chocolate ngọt ngào.",
     "currentQuantity": 78
   },
@@ -91,7 +91,7 @@
     "id": 12,
     "name": "Cream Cupcake",
     "price": 16,
-    "category": "Dessert",
+    "category": "Cupcake",
     "description": "Bánh cupcake phô mai béo ngậy, mềm mịn.",
     "currentQuantity": 97
   },
@@ -115,7 +115,7 @@
     "id": 15,
     "name": "Mini Cupcake",
     "price": 35,
-    "category": "Dessert",
+    "category": "Cupcake",
     "description": "Bánh cupcake nhỏ xinh, món tráng miệng nhẹ nhàng cho từng bữa ăn.",
     "currentQuantity": 89
   },
@@ -187,7 +187,7 @@
     "id": 24,
     "name": "Red Velvet",
     "price": 90,
-    "category": "Dessert",
+    "category": "Cupcake",
     "description": "Bánh velvet đỏ mềm min, phủ lớp kem phô mai béo ngậy tuyết đối.",
     "currentQuantity": 86
   },
@@ -253,7 +253,7 @@
     "price": 34,
     "category": "Cupcake",
     "description": "Cupcake socola phủ vụn bánh Oreo và kem tươi mềm mịn.",
-    "currentQuantity": 79
+    "currentQuantity": 78
   },
   {
     "id": 33,

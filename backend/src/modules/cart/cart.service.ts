@@ -11,24 +11,26 @@ export interface CartItem {
   category: string;
   currentQuantity: number;
   quantity: number;
+  note: string;
 }
 
 @Injectable()
 export class CartService {
-  private cart: CartItem[] = Array.isArray(readItemsJson(cartFilePath)) 
-  ? readItemsJson(cartFilePath).filter(item => item.currentQuantity > 0) 
-  : [];
+  private cart: CartItem[] = Array.isArray(readItemsJson(cartFilePath))
+    ? readItemsJson(cartFilePath).filter(item => item.currentQuantity > 0)
+    : [];
   constructor(private readonly foodService: FoodService) { }
 
   private saveCart() {
     writeItemsJson(cartFilePath, this.cart);
   }
 
-  async addToCart(id: string, quantity: number) {
+  async addToCart(id: string, quantity: number, note: string) {
     const foodItem = await this.foodService.getFoodById(id);
     const existingItemIndex = this.cart.findIndex(item => item.id === id);
     if (existingItemIndex !== -1) {
       // Nếu sản phẩm đã có trong giỏ, tăng số lượng
+      this.cart[existingItemIndex].note += "\n" + (note || '');
       this.cart[existingItemIndex].quantity += quantity;
       if (this.cart[existingItemIndex].quantity > 99) {
         this.cart[existingItemIndex].quantity = 99;
@@ -37,6 +39,8 @@ export class CartService {
       if (this.cart[existingItemIndex].quantity > foodItem.currentQuantity) {
         this.cart[existingItemIndex].quantity = foodItem.currentQuantity;
       }
+
+
 
     } else {
       // Nếu chưa có, thêm sản phẩm mới vào giỏ
@@ -47,6 +51,7 @@ export class CartService {
         category: foodItem.category,
         currentQuantity: foodItem.currentQuantity,
         quantity: quantity,
+        note: note || ''
       });
 
     }
@@ -77,7 +82,6 @@ export class CartService {
   async increaseQuantity(id: string) {
     const foodItem = await this.foodService.getFoodById(id);
     const maxAvailable = foodItem.currentQuantity;
-
     const existingItem = this.cart.find(item => item.id === id);
     if (existingItem) {
       if (existingItem.quantity >= 99) {
@@ -111,6 +115,7 @@ export class CartService {
         category: foodItem.category,
         currentQuantity: foodItem.currentQuantity,
         quantity: 1,
+        note: ''
       });
       this.saveCart();
       return {
@@ -137,7 +142,6 @@ export class CartService {
   removeFromCart(id: string) {
     const initialLength = this.cart.length;
     this.cart = this.cart.filter(item => item.id !== id);
-    console.log('Giỏ hàng sau khi xóa:', this.cart);
     this.saveCart();
     return {
       success: this.cart.length < initialLength,
@@ -145,7 +149,7 @@ export class CartService {
     };
   }
 
-  async updateCartItem(id: string, quantity: number) {
+  async updateCartItem(id: string, quantity: number, note: string) {
     const existingItemIndex = this.cart.findIndex(item => item.id === id);
     if (existingItemIndex === -1) {
       return {
@@ -175,6 +179,7 @@ export class CartService {
       }
 
       this.cart[existingItemIndex].quantity = quantity;
+      this.cart[existingItemIndex].note = note || ''
       this.saveCart();
       return {
         success: true,

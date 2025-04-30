@@ -5,8 +5,17 @@ import { normalizeImageName } from '../../utils/Normalize.js';
 
 export const YourCart = ({ item, onIncrease, onDecrease, onRemove, onItemClick }) => {
   const imageSrc = `/images/${normalizeImageName(item.name)}.jpg`;
-  const tax = (item.price * 0.1).toFixed(3);
-  const price = item.price.toFixed(3);
+  const price = Number(item.price).toLocaleString('vi-VN', {
+    minimumFractionDigits: 3,
+    maximumFractionDigits: 3,
+  });
+
+  const tax = Number(item.price * 0.1).toLocaleString('vi-VN', {
+    minimumFractionDigits: 3,
+    maximumFractionDigits: 3,
+  });
+
+
 
   const holdDelay = 100; // Thời gian giữa mỗi lần tăng/giảm (ms)
   const intervalRef = useRef(null);
@@ -27,7 +36,7 @@ export const YourCart = ({ item, onIncrease, onDecrease, onRemove, onItemClick }
 
   return (
     <div className="cart-item" >
-      <img 
+      <img
         onClick={() => onItemClick(item)} // Mở popup khi nhấn item
         role="button"
         tabIndex={0}
@@ -38,7 +47,7 @@ export const YourCart = ({ item, onIncrease, onDecrease, onRemove, onItemClick }
         onError={(e) => (e.target.src = 'https://via.placeholder.com/100')}
       />
 
-      <div className="cart-item-details" 
+      <div className="cart-item-details"
         onClick={() => onItemClick(item)} // Mở popup khi nhấn item
         role="button"
         tabIndex={0}

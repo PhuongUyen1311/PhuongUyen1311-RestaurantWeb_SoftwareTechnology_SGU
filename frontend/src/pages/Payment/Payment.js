@@ -8,13 +8,13 @@ import Pay from '../../components/Payment/PaymentForm';
 
 const Payment = () => {
   const [loading, setLoading] = useState(true);
-  const [paymentInfo, setPaymentInfo] = useState({ items: [], cost: 0, tax: 0 });
+  const [paymentInfo, setPaymentInfo] = useState({ items: [], cost: 0, tax: 0, note: '' });
   const location = useLocation();
 
   const fetchPaymentInfo = async () => {
     try {
       const response = await axios.get('http://localhost:5000/payment');
-      const data = response.data || { items: [], cost: 0, tax: 0 };
+      const data = response.data || { items: [], cost: 0, tax: 0, note: '' };
       console.log('Dữ liệu thanh toán: ', data);
       setPaymentInfo(data);
       setLoading(true);
@@ -76,7 +76,7 @@ const Payment = () => {
 
           alert('Thanh toán qua VNPay thành công!');
           await axios.delete('http://localhost:5000/cart')
-          
+
           window.location.href = '/';
         } else {
           alert('Thanh toán qua VNPay thất bại. Vui lòng thử lại!');

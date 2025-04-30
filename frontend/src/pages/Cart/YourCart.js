@@ -12,13 +12,20 @@ const Cart = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
-  const updateCart = async (id, quantity) => {
+  const total = Number(
+    cartItems.reduce((total, item) => total + item.price * item.quantity + item.price * 0.1, 0)).toLocaleString('vi-VN', {
+      minimumFractionDigits: 3,
+      maximumFractionDigits: 3,
+    });
+
+  const updateCart = async (id, quantity, note) => {
     try {
       const Response = await axios.post("http://localhost:5000/cart/update", {
         id,
-        quantity
+        quantity,
+        note
       });
-  
+
       if (Response.data.success) {
         localStorage.setItem('cart', JSON.stringify(Response.data));
         window.dispatchEvent(new Event('cartUpdated'));
@@ -117,7 +124,7 @@ const Cart = () => {
     setIsPopupOpen(false);
     setSelectedProduct(null);
   };
-  
+
   return (
     <>
       <div className="your-cart-container">
@@ -139,21 +146,20 @@ const Cart = () => {
           )}
         </div>
         {selectedProduct && (
-            <ItemInfo
-              item={selectedProduct}
-              quantity={selectedProduct.quantity}
-              isOpen={isPopupOpen}
-              onClose={closePopup}
-              onAddToCart={updateCart}
-            />
-          )}
+          <ItemInfo
+            item={selectedProduct}
+            quantity={selectedProduct.quantity}
+            note={selectedProduct.note}
+            isOpen={isPopupOpen}
+            onClose={closePopup}
+            onAddToCart={updateCart}
+          />
+        )}
       </div>
       <div className="cart-total">
         <h3>
           Tổng tiền:{' '}
-          {cartItems
-            .reduce((total, item) => total + item.price * item.quantity, 0)
-            .toFixed(3)}{' '}
+          {total}
           VNĐ
         </h3>
         <button className="checkout-button" onClick={handleCheckout}>

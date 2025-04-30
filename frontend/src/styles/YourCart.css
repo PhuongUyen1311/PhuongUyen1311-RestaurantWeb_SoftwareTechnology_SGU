@@ -6,7 +6,8 @@
   border: solid 1px #ccc;
   max-height: 800px;
   min-width: 400px;
-  overflow-y: auto; /* Thêm thanh cuộn dọc khi nội dung vượt quá */
+  overflow-y: auto;
+  /* Thêm thanh cuộn dọc khi nội dung vượt quá */
 }
 
 .your-cart-items {
@@ -17,6 +18,7 @@
   max-height: 60vh;
   border-radius: 8px;
 }
+
 .your-cart-header {
   display: flex;
   justify-content: space-between;
@@ -40,14 +42,18 @@
   margin-right: 12px;
   border-radius: 8px;
   object-fit: cover;
+  cursor: pointer;
 }
 
 .cart-item-details {
   flex: 1;
+  cursor: pointer;
 }
-.cart-item-details p{
+
+.cart-item-details p {
   margin: 10px 0;
 }
+
 .cart-item-name {
   font-weight: bold;
 }
@@ -57,18 +63,21 @@
   align-items: center;
   gap: 8px;
 }
+
 .cart-item-quantity span {
   width: 15px;
   height: 20px;
   text-align: center;
   justify-content: center;
 }
+
 .cart-total {
   display: flex;
   justify-content: space-between;
   margin-top: 16px;
   font-weight: bold;
 }
+
 .quantity-button {
   background-color: rgb(249, 122, 48);
   border: none;
@@ -92,7 +101,7 @@
   cursor: pointer;
   font-weight: bold;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  transition: transform 0.3s ease, opacity 0.3s ease; 
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .checkout-button:hover {
@@ -103,19 +112,21 @@
 }
 
 
-.your-cart-container h2{
+.your-cart-container h2 {
   color: rgb(200, 76, 5);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 27px;
 }
 
-.cart-total h3{
+.cart-total h3 {
   color: rgb(200, 76, 5);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 18px;
 }
+
 .cart-item-remove {
-  align-self: stretch; /* tự giãn theo chiều cao cha flex */
+  align-self: stretch;
+  /* tự giãn theo chiều cao cha flex */
   display: flex;
   align-items: top right;
   border: none;
@@ -127,7 +138,8 @@
   background-image: url('../../public/images/x.svg');
   background-repeat: no-repeat;
   background-position: top right;
-  background-size: 30px 30px; /* 👈 chỉnh kích thước ảnh */
+  background-size: 30px 30px;
+  /* 👈 chỉnh kích thước ảnh */
   width: 30px;
   height: 30px;
   border: none;

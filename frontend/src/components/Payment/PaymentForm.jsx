@@ -1,5 +1,5 @@
 // src/components/Payment/PaymentForm.jsx
-import React, { useEffect ,useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import '../../styles/PaymentForm.css';
 
@@ -11,18 +11,35 @@ const Pay = ({ paymentInfo, onCheckout }) => {
   const [paymentMethod, setPaymentMethod] = useState('credit');
   const [errors, setErrors] = useState({});
   const [orderId, setOrderId] = useState('');
+  const [note, setNote] = useState(paymentInfo.note);
   const navigate = useNavigate(); // Khởi tạo useNavigate
 
   const totalItems = paymentInfo.items.reduce((total, item) => total + item.quantity, 0);
+
+  const tempPrice = (paymentInfo.cost - paymentInfo.tax).toLocaleString('vi-VN', {
+    minimumFractionDigits: 3,
+    maximumFractionDigits: 3,
+  });
+
+  const tax = paymentInfo.tax.toLocaleString('vi-VN', {
+    minimumFractionDigits: 3,
+    maximumFractionDigits: 3,
+  });
+
+  const cost = paymentInfo.cost.toLocaleString('vi-VN', {
+    minimumFractionDigits: 3,
+    maximumFractionDigits: 3,
+  });
+
 
   const handlePaymentMethodChange = (method) => {
     setPaymentMethod(method);
     setErrors({});
   };
   useEffect(() => {
-    // Chỉ tạo orderId khi component mount
     setOrderId(`${Date.now()}`);
-  }, []);
+    setNote(paymentInfo.note);
+  }, [paymentInfo.note]);
 
   const validateCardInfo = () => {
     const newErrors = {};
@@ -165,7 +182,7 @@ const Pay = ({ paymentInfo, onCheckout }) => {
           </div>
           <div className="order-row">
             <span>Tạm tính:</span>
-            <span>{(paymentInfo.cost - paymentInfo.tax).toFixed(3)}đ</span>
+            <span>{tempPrice} VND</span>
           </div>
           <div className="order-row">
             <span>Mã giao dịch</span>
@@ -174,21 +191,29 @@ const Pay = ({ paymentInfo, onCheckout }) => {
           <div className="order-cost">
             <div className="order-row">
               <span>Thuế 10%:</span>
-              <span className="tax">{paymentInfo.tax.toFixed(3)}đ</span>
+              <span className="tax">{tax} VND</span>
             </div>
             <div className="order-row">
               <span>Tổng tiền:</span>
-              <span className="total-cost">{paymentInfo.cost.toFixed(3)}đ</span>
+              <span className="total-cost">{cost} VND</span>
             </div>
           </div>
-          <div className="action-buttons">
-            <button className="btn btn-cancel" onClick={() => window.location.href = '/'}>
-              Hủy
-            </button>
-            <button className="btn btn-pay" onClick={handleSubmit}>
-              Thanh toán
-            </button>
-          </div>
+        </div>
+        <div className='order-note'>
+          <textarea className='order-note-input'
+            value={note}
+            onChange={(e) => setNote(e.target.value)}
+            placeholder="Ghi chú cho món ăn"
+            rows={4}
+          />
+        </div>
+        <div className="action-buttons">
+          <button className="btn btn-cancel" onClick={() => window.location.href = '/'}>
+            Hủy
+          </button>
+          <button className="btn btn-pay" onClick={handleSubmit}>
+            Thanh toán
+          </button>
         </div>
       </div>
     </div>

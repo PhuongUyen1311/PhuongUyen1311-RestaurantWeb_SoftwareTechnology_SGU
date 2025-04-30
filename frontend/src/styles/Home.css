@@ -14,7 +14,8 @@
   .main-content {
     display: flex;
     gap: 20px;
-    align-items: flex-start; /* Căn theo chiều trên cùng */
+    align-items: flex-start;
+    /* Căn theo chiều trên cùng */
   }
 
   /* LEFT SIDE: Filter + Menu */
@@ -29,4 +30,3 @@
   }
 
   /* RIGHT SIDE: Cart */
-

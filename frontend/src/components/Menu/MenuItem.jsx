@@ -3,6 +3,10 @@ import '../../styles/MenuItem.css';
 import { normalizeImageName } from '../../utils/Normalize.js';
 
 const MenuItem = ({ item, onAddToCart, onItemClick }) => {
+  const price = Number(item.price).toLocaleString('vi-VN', {
+    minimumFractionDigits: 3,
+    maximumFractionDigits: 3,
+  });
   return (
     <div
       className="menu-item"
@@ -18,7 +22,7 @@ const MenuItem = ({ item, onAddToCart, onItemClick }) => {
         className="menu-item-image"
       />
       <h3 className="menu-item-name">{item.name.toUpperCase()}</h3>
-      <p className="menu-item-price">{item.price.toFixed(0)}k</p>
+      <p className="menu-item-price">{price} VND</p>
       <button
         className="menu-item-button"
         onClick={(e) => {

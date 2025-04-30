@@ -8,13 +8,17 @@ const BankingQRCodePage = () => {
 
   // Lấy thông tin từ state được truyền từ trang trước
   const { paymentInfo, orderId } = location.state || {};
+  const cost = paymentInfo.cost.toLocaleString('vi-VN', {
+    minimumFractionDigits: 3,
+    maximumFractionDigits: 3,
+  });
 
   // Thông tin tài khoản ngân hàng (giả lập, bạn có thể thay đổi)
   const bankInfo = {
     bankName: 'ACB',
     accountNumber: '28256177',
     accountHolder: 'Tran Ngo Nhat Nam',
-    amount: paymentInfo ? (paymentInfo.cost + paymentInfo.tax).toFixed(3) : 0,
+    amount: paymentInfo ? cost : 0,
     orderId: orderId || `${Date.now()}`,
   };
 

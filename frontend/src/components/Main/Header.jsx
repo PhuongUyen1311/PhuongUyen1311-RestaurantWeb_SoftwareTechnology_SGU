@@ -1,12 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom'; // Thêm import useNavigate
-import Menu from './MenuBar';  
+import Menu from './MenuBar';
 
 function Header({ scrollToContact, scrollToMenu, scrollToAboutUs, scrollToHome }) {
   const navigate = useNavigate(); // Khởi tạo navigate
 
   const handleOrderNow = () => {
-    navigate('/'); 
+    navigate('/');
   };
 
   return (
@@ -19,10 +19,10 @@ function Header({ scrollToContact, scrollToMenu, scrollToAboutUs, scrollToHome }
       <div className="part2">
         <div className="opening">
           <div className="hello">Hey there, snack lover! Ready to treat yourself?</div>
-          <br/> 
-          <div className="slogan">"Small Bites, Big Smiles!"</div> 
+          <br />
+          <div className="slogan">"Small Bites, Big Smiles!"</div>
         </div>
-        <Menu 
+        <Menu
           scrollToContact={scrollToContact}
           scrollToMenu={scrollToMenu}
           scrollToAboutUs={scrollToAboutUs}

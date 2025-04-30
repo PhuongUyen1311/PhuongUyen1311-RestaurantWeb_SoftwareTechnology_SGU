@@ -3,7 +3,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 16px;
-  background-color: #f0bb75; /* thêm màu nền cho dễ nhìn nếu cần */
+  background-color: #f0bb75;
+  /* thêm màu nền cho dễ nhìn nếu cần */
   height: 30px;
   border: none;
 }
@@ -12,7 +13,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 70px; 
+  width: 70px;
   height: 30px;
   text-decoration: none;
   cursor: pointer;
@@ -39,7 +40,7 @@
 }
 
 .back-text {
-  color: inherit; 
+  color: inherit;
   font-size: inherit;
 }
 
@@ -51,20 +52,20 @@
   margin: 0;
   flex-grow: 1;
   text-align: center;
-  letter-spacing: 1px; 
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+  letter-spacing: 1px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 
 .payment-header nav {
-  color:black;
+  color: black;
   display: flex;
   align-items: center;
   gap: 4px;
 }
 
 .payment-header nav a {
-  color:black;
+  color: black;
   text-decoration: none;
   font-size: 18px;
   font-weight: bold;

@@ -5,7 +5,7 @@ const BackToHome = () => {
   const navigate = useNavigate();
 
   const handleBackToHome = () => {
-    navigate('/main');  
+    navigate('/main');
   };
 
   return (

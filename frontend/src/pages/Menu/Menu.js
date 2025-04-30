@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import MenuItem from '../../components/Menu/MenuItem';
-import ItemInfo from '../ItemInfo/ItemInfo.js'; 
+import ItemInfo from '../ItemInfo/ItemInfo.js';
 import '../../styles/Menu.css';
 
-const addToCart = async (id, quantity = 1) => {
+const addToCart = async (id, quantity = 1, note) => {
   try {
-    const addToCartResponse = await axios.post("http://localhost:5000/cart/add", {
+    const Response = await axios.post("http://localhost:5000/cart/add", {
       id,
-      quantity
+      quantity,
+      note
     });
 
-    if (addToCartResponse.data.success) {
+    if (Response.data.success) {
       window.dispatchEvent(new Event('cartUpdated'));
     }
-    console.log("Thêm vào giỏ hàng thành công:", addToCartResponse.data);
+    console.log("Thêm vào giỏ hàng thành công:", Response.data);
   } catch (err) {
     console.error("Lỗi:", err);
   }
@@ -43,7 +44,7 @@ function Menu({ category }) {
   }, [category]);
 
   const handleAddToCart = (item) => {
-    addToCart(item.id, 1);
+    addToCart(item.id, 1, '');
     closePopup();
   };
 
@@ -77,9 +78,10 @@ function Menu({ category }) {
             <ItemInfo
               item={selectedProduct}
               quantity={1}
+              note={''}
               isOpen={isPopupOpen}
               onClose={closePopup}
-              onAddToCart={addToCart} // truyền quantity vào đây
+              onAddToCart={addToCart}
             />
           )}
         </>

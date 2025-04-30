@@ -19,6 +19,8 @@
 .order-summary {
   width: 300px;
   padding-left: 30px;
+  display: flex;
+  flex-direction: column;
 }
 
 h2 {
@@ -40,7 +42,7 @@ h3 {
   flex-direction: column;
   gap: 10px;
   width: 100%;
-  
+
 }
 
 .payment-option {
@@ -91,20 +93,20 @@ h3 {
 .card-logo.visa {
   background-color: #1a1f71;
   font-family: 'Arial Black', 'Arial Bold', sans-serif;
-  font-size: 10px; 
+  font-size: 10px;
 }
 
 .card-logo.mastercard {
   background-color: #ff5f00;
   font-family: 'Helvetica Neue', 'Arial', sans-serif;
-  font-size: 6px; 
+  font-size: 6px;
 
 }
 
 .card-logo.jcb {
   background-color: #2100cf;
   font-family: 'Roboto', 'Arial', sans-serif;
-  font-size: 10px; 
+  font-size: 10px;
 }
 
 
@@ -112,15 +114,15 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px; 
-  height: 25px; 
-  background-color: #e3066e; 
+  width: 50px;
+  height: 25px;
+  background-color: #e3066e;
   border-radius: 4px;
-  color: white; 
-  font-size: 13px; 
-  font-family: 'Arial', sans-serif; 
-  font-weight: bold; 
-  text-transform: uppercase; 
+  color: white;
+  font-size: 13px;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
   text-align: center;
 }
 
@@ -135,7 +137,8 @@ h3 {
   gap: 15px;
 
 }
-.card-expiry-cvv > div {
+
+.card-expiry-cvv>div {
   flex: 1;
 }
 
@@ -146,10 +149,10 @@ h3 {
   width: 100%;
   padding: 8px 12px;
   font-size: 14px;
-  border: 1px solid #f5ba9b; 
+  border: 1px solid #f5ba9b;
   border-radius: 6px;
-  background-color: #fefcfc; 
-  outline: none; 
+  background-color: #fefcfc;
+  outline: none;
   transition: border-color 0.3s, background-color 0.3s;
   box-shadow: 0 5px 5px #fee1d1;
 }
@@ -158,8 +161,8 @@ h3 {
 .card-name input:focus,
 .card-expiry input:focus,
 .card-cvv input:focus {
-  border-color: #e56701; 
-  background-color: #fff; 
+  border-color: #e56701;
+  background-color: #fff;
 }
 
 /* Order Summary Styles */
@@ -198,7 +201,8 @@ h3 {
   /* Khoảng cách giữa Thuế và Tổng tiền */
 }
 
-.total-cost, .tax {
+.total-cost,
+.tax {
   color: #008847;
   font-weight: bold;
 }
@@ -208,7 +212,8 @@ h3 {
 .action-buttons {
   display: flex;
   gap: 10px;
-  
+  margin-top: auto;
+
 }
 
 .btn {
@@ -241,8 +246,30 @@ h3 {
   color: white;
   box-shadow: 0 5px 10px#fee1d1;
 }
-.btn-cancel:hover{
+
+.btn-cancel:hover {
   background-color: #fee1d1;
   color: #dc8008;
   box-shadow: 0 5px 10px#fee1d1;
+}
+
+.order-note {
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  /* đảm bảo nó mở rộng theo chiều dọc */
+  margin-bottom: 20px;
+}
+
+.order-note-input {
+  width: 100%;
+  resize: vertical;
+  /* chỉ cho phép thu phóng chiều dọc */
+  min-height: 60px;
+  max-height: 150px;
+  padding: 8px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 1rem;
 }

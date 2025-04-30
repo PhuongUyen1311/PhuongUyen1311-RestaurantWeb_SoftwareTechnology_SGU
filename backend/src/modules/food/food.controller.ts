@@ -23,8 +23,8 @@ export class FoodController {
   // Lấy món ăn theo danh mục
   @Get('category')
   getByCategory(@Query('category') category: string) {
-    if(category){
-    return this.foodService.getFoodByCategory(category);
+    if (category) {
+      return this.foodService.getFoodByCategory(category);
     }
     return this.foodService.getAllFood()
   }

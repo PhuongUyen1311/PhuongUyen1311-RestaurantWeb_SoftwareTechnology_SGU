@@ -3,8 +3,8 @@ import { CartService } from './cart.service';
 
 @Controller('cart')
 export class CartController {
-  constructor(private readonly cartService: CartService) {}
-  
+  constructor(private readonly cartService: CartService) { }
+
   @Get()
   getCart() {
     const cart = this.cartService.getCart();
@@ -12,8 +12,9 @@ export class CartController {
   }
 
   @Post('add')
-  async addToCart(@Body() body: { id: string; quantity: number }) {
-    const cart = this.cartService.addToCart(body.id, body.quantity);
+  async addToCart(@Body() body: { id: string; quantity: number; note: string }) {
+    console.log(body)
+    const cart = this.cartService.addToCart(body.id, body.quantity, body.note);
     return cart;
   }
 
@@ -33,16 +34,15 @@ export class CartController {
   clearCart() {
     return this.cartService.clearCart();
   }
-  
+
   @Post('remove')
   removeFromCart(@Body() body: { id: string }) {
     return this.cartService.removeFromCart(body.id);
   }
 
   @Post('update')
-  async updateCartItem(@Body() body: { id: string; quantity: number }) {
-    // Cập nhật số lượng sản phẩm trong giỏ hàng
-    return this.cartService.updateCartItem(body.id, body.quantity);
+  async updateCartItem(@Body() body: { id: string; quantity: number, note: string }) {
+    return this.cartService.updateCartItem(body.id, body.quantity, body.note);
   }
 
 }
