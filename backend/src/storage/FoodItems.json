@@ -13,7 +13,7 @@
     "price": 125,
     "category": "KFC",
     "description": "Burger gà ăn kèm rau xanh và sốt mayonnaise cay.",
-    "currentQuantity": 57
+    "currentQuantity": 97
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "price": 50,
     "category": "Cupcake",
     "description": "Bánh cupcake mềm xốp với nhân phô mai béo ngậy.",
-    "currentQuantity": 70
+    "currentQuantity": 69
   },
   {
     "id": 4,

@@ -172,9 +172,12 @@ export class CartService {
     try {
       const foodItem = await this.foodService.getFoodById(id);
       if (quantity > foodItem.currentQuantity) {
+        this.cart[existingItemIndex].quantity = foodItem.currentQuantity;
+        this.cart[existingItemIndex].note = note || '';
+        this.saveCart();
         return {
-          success: false,
-          message: 'Số lượng cập nhật vượt quá số lượng hiện có trong kho',
+          success: true,
+          message: `Chỉ còn ${foodItem.currentQuantity} sản phẩm trong kho`,
         };
       }
 
