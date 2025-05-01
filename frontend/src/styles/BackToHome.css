@@ -10,16 +10,13 @@
   background-color: transparent;
   cursor: pointer;
   transition: transform 0.3s ease, opacity 0.3s ease;
-  background-color: #fdd27cef;
+  background-color: #f1b744ef;
   padding: 0.5%;
   width: fit-content;
   border-radius: 5px;
+  border: 2px solid #ad7607ef;
 }
 
-/* .back-to-home-button:hover {
-  transform: scale(1.1);
- 
-} */
 .back-to-home-icon {
   margin-right: 8px;
   font-size: 40px;
@@ -27,14 +24,10 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: 80% auto;
-  /* Thêm phần dưới đây để chỉnh màu nền */
   background-color: #f0a834c2;
-  /* màu nền bạn muốn */
   border-radius: 50%;
-  /* hình tròn */
   padding: 5px;
   width: 20px;
-  /* chiều rộng của icon */
   height: 20px;
 }
 

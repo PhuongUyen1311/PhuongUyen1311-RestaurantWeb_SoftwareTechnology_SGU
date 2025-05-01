@@ -5,7 +5,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  background-color: #f0a8346e;
+  background-color: #962d3b44;
   /* Màu nền giống hình */
   border-radius: 10px;
   padding: 16px 40px;
@@ -41,7 +41,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: #f0a834cf;
+  background-color: #c8596860;
   /* Nền mờ giống hình */
   color: white;
   border: none;
@@ -74,7 +74,7 @@
 }
 
 .scroll-button:hover {
-  background-color: #7c7a7a88;
+  background-color: #96182944;
   /* Hiệu ứng hover */
 }
 
@@ -109,7 +109,7 @@
 }
 
 .filter-menu-item button.bg-blue-400 {
-  background-color: #32b6b8c0;
+  background-color: #1790927c;
   /* Màu nền khi được chọn (giống hình) */
 }
 

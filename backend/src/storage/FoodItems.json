@@ -69,7 +69,7 @@
     "price": 155,
     "category": "KFC",
     "description": "Gà rán giòn tan, bên trong mọng mềm.",
-    "currentQuantity": 88
+    "currentQuantity": 85
   },
   {
     "id": 10,
@@ -85,7 +85,7 @@
     "price": 160,
     "category": "Sea Food",
     "description": "Bánh mì kẹp tôm phủ sốt mayonnaise thơm béo.",
-    "currentQuantity": 41
+    "currentQuantity": 40
   },
   {
     "id": 12,
@@ -141,7 +141,7 @@
     "price": 63,
     "category": "KFC",
     "description": "Gà viên chiên giòn, mềm ngọt bên trong.",
-    "currentQuantity": 82
+    "currentQuantity": 81
   },
   {
     "id": 19,
@@ -181,7 +181,7 @@
     "price": 150,
     "category": "KFC",
     "description": "Gà chiên giòn vàng, mọng nước và đậm đà hương vị.",
-    "currentQuantity": 90
+    "currentQuantity": 89
   },
   {
     "id": 24,
@@ -277,7 +277,7 @@
     "price": 148,
     "category": "Sea Food",
     "description": "Bánh cua chiên vàng ăn kèm sốt aioli chua ngọt.",
-    "currentQuantity": 47
+    "currentQuantity": 46
   },
   {
     "id": 36,

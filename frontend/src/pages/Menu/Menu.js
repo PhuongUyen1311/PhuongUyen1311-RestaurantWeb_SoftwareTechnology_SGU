@@ -3,23 +3,34 @@ import axios from 'axios';
 import MenuItem from '../../components/Menu/MenuItem';
 import ItemInfo from '../ItemInfo/ItemInfo.js';
 import '../../styles/Menu.css';
+import { toast } from 'react-toastify'; 
 
-const addToCart = async (id, quantity = 1, note) => {
+const addToCart = async (id, quantity = 1, note = '') => {
   try {
-    const Response = await axios.post("http://localhost:5000/cart/add", {
+    const response = await axios.post("http://localhost:5000/cart/add", {
       id,
       quantity,
       note
     });
 
-    if (Response.data.success) {
+    if (response.data.success) {
       window.dispatchEvent(new Event('cartUpdated'));
+      toast.success("Đã thêm sản phẩm vào giỏ hàng!", {
+        autoClose: 1000, 
+      });
+    } else {
+      toast.warning("Không thể thêm sản phẩm: " + response.data.message);
     }
-    console.log("Thêm vào giỏ hàng thành công:", Response.data);
+
+    return response.data.cart || []; 
   } catch (err) {
     console.error("Lỗi:", err);
+    toast.error("❌ Lỗi khi thêm sản phẩm vào giỏ hàng!");
+    return [];
   }
 };
+
+
 
 function Menu({ category }) {
   const [menuItems, setFoods] = useState([]);
@@ -32,22 +43,21 @@ function Menu({ category }) {
         const response = await axios.get('http://localhost:5000/food/category', {
           params: { category },
         });
-
         setFoods(response.data);
-        console.log("Kết quả lấy món ăn theo category:", response.data);
       } catch (error) {
         console.log('Lỗi khi lấy dữ liệu món ăn:', error);
       }
     };
-
     fetchData();
   }, [category]);
 
-  const handleAddToCart = (item) => {
+  const handleAddToCart = async (item) => {
     addToCart(item.id, 1, '');
+    window.dispatchEvent(new Event('cartUpdated')); // để đảm bảo Cart nhận được
     closePopup();
   };
 
+  
   const handleItemClick = (item) => {
     setSelectedProduct(item);
     setIsPopupOpen(true);
