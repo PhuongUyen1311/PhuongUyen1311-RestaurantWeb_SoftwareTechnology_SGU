@@ -34,8 +34,11 @@ export class PaymentService {
     const costWithOutTax = items.reduce((total, item) => total + item.price * item.quantity, 0);
     const tax = costWithOutTax * 0.1;
     const cost = costWithOutTax + tax;
-    const note = items.map(item => item.note).join('\n');
-
+    const note = items
+    .map(item => item.note?.trim())       
+    .filter(note => note)                 
+    .join('\n');                          
+  
     return {
       items,
       cost,

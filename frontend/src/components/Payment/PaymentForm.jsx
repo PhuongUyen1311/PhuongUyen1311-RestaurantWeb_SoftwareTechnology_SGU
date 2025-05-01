@@ -201,9 +201,9 @@ const Pay = ({ paymentInfo, onCheckout }) => {
         </div>
         <div className='order-note'>
           <textarea className='order-note-input'
-            value={note}
+            value={note || ''}
             onChange={(e) => setNote(e.target.value)}
-            placeholder="Ghi chú cho món ăn"
+            placeholder="Ghi chú cho đơn hàng"
             rows={4}
           />
         </div>
