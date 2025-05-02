@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "id": 3,
+    "name": "Cheese Cupcake",
+    "price": 50,
+    "category": "Cupcake",
+    "currentQuantity": 65,
+    "quantity": 1,
+    "note": ""
+  },
+  {
+    "id": 18,
+    "name": "Chicken Bites",
+    "price": 63,
+    "category": "KFC",
+    "currentQuantity": 81,
+    "quantity": 1,
+    "note": ""
+  }
+]

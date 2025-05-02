@@ -1,6 +1,8 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import BankingQRCode from '../../components/BankingQRCode/BankingQRCode';
 import PaymentHeader from '../../components/Payment/PaymentHeader';
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 
 const BankingQRCodePage = () => {
   const location = useLocation();
@@ -29,11 +31,11 @@ const BankingQRCodePage = () => {
     // Giả lập xác nhận chuyển khoản thành công
     try {
       // Bạn có thể gọi API để lưu đơn hàng nếu cần
-      alert('Xác nhận chuyển khoản thành công!');
+      toast.success('Xác nhận chuyển khoản thành công!');
       navigate('/'); // Chuyển hướng về trang chủ
     } catch (err) {
       console.error('Lỗi xác nhận chuyển khoản:', err);
-      alert('Xác nhận chuyển khoản thất bại, vui lòng thử lại!');
+      toast.error('Xác nhận chuyển khoản thất bại, vui lòng thử lại!');
     }
   };
   return (

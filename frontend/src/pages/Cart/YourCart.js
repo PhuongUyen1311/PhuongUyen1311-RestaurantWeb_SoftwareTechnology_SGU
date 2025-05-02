@@ -133,7 +133,7 @@ const Cart = () => {
     
   const handleCheckout = () => {
     if (cartItems.length === 0) {
-      alert('Giỏ hàng trống. Vui lòng thêm sản phẩm!');
+      toast.error('Giỏ hàng trống. Vui lòng thêm sản phẩm!');
       return;
     }
     navigate('/payment');
@@ -178,31 +178,38 @@ const Cart = () => {
     <>
       <div className="your-cart-container">
         <div className="top-your-cart">
-          <h2>Giỏ Hàng</h2>
+          <h2 className="your-cart-title">Giỏ Hàng</h2>
           <p>({cartItems.length})</p>
-          <img
-            className="trash-btn"
-            src="/images/trash.svg"
-            alt="xóa"
-            onClick={handleClearCart}
-          />
-          </div>
-        <div className="your-cart-items" ref={cartItemsRef}>
-          {cartItems.length === 0 ? (
-            <p>Giỏ hàng của bạn đang trống !</p>
-          ) : (
-            cartItems.map((item) => (
-              <YourCart
-                item={item}
-                key={item.id}
-                onIncrease={handleIncrease}
-                onDecrease={handleDecrease}
-                onRemove={handleRemove}
-                onItemClick={handleItemClick}
-              />
-            ))
+          {cartItems.length > 0 && (
+          <p className="trash-btn" onClick={handleClearCart}>
+            • Dọn dẹp giỏ hàng
+          </p>
           )}
-        </div>
+      </div>
+
+      <div
+        className={
+          cartItems.length === 0
+          ? "your-cart-items empty-cart"
+          : "your-cart-items"
+        }
+        ref={cartItemsRef}
+      >
+      {cartItems.length === 0 ? (
+        <p className="empty-message">Giỏ hàng của bạn đang trống!</p>
+        ) : (
+          cartItems.map((item) => (
+          <YourCart
+            item={item}
+            key={item.id}
+            onIncrease={handleIncrease}
+            onDecrease={handleDecrease}
+            onRemove={handleRemove}
+            onItemClick={handleItemClick}
+          />
+        ))
+      )}
+    </div>
         {selectedProduct && (
           <ItemInfo
             item={selectedProduct}

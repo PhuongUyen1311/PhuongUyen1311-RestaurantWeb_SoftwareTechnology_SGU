@@ -5,6 +5,8 @@ import { useLocation } from 'react-router-dom';
 import '../../styles/Payment.css';
 import PaymentHeader from '../../components/Payment/PaymentHeader';
 import Pay from '../../components/Payment/PaymentForm';
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 
 const Payment = () => {
   const [loading, setLoading] = useState(true);
@@ -43,7 +45,7 @@ const Payment = () => {
         const updateResponse = await axios.post('http://localhost:5000/food/update');
         console.log('Cập nhật giỏ hàng thành công:', updateResponse.data);
 
-        alert('Thanh toán thành công!');
+        toast.success('Thanh toán thành công!');
         await axios.delete('http://localhost:5000/cart')
         window.location.href = '/';
 
@@ -54,14 +56,14 @@ const Payment = () => {
         const updateResponse = await axios.post('http://localhost:5000/food/update');
         console.log('Cập nhật giỏ hàng thành công:', updateResponse.data);
 
-        alert('Thanh toán thành công!');
+        toast.success('Thanh toán thành công!');
         await axios.delete('http://localhost:5000/cart')
         window.location.href = '/';
       }
 
     } catch (err) {
       console.error('Lỗi thanh toán:', err);
-      alert('Thanh toán thất bại, vui lòng thử lại!');
+      toast.error('Thanh toán thất bại, vui lòng thử lại!');
     }
   };
   useEffect(() => {
@@ -74,12 +76,12 @@ const Payment = () => {
           const updateResponse = await axios.post('http://localhost:5000/food/update');
           console.log('Cập nhật giỏ hàng thành công:', updateResponse.data);
 
-          alert('Thanh toán qua VNPay thành công!');
+          toast.success('Thanh toán qua VNPay thành công!');
           await axios.delete('http://localhost:5000/cart')
 
           window.location.href = '/';
         } else {
-          alert('Thanh toán qua VNPay thất bại. Vui lòng thử lại!');
+           toast.error('Thanh toán qua VNPay thất bại. Vui lòng thử lại!');
         }
       }
     };
