@@ -22,6 +22,9 @@
   height: 650px;
 }
 
+body {
+  background-color: rgba(249, 215, 171, 0.601);
+}
 .error {
   color: red;
   font-size: 14px;

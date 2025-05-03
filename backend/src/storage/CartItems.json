@@ -1,19 +1,28 @@
 [
   {
-    "id": 3,
-    "name": "Cheese Cupcake",
-    "price": 50,
-    "category": "Cupcake",
-    "currentQuantity": 65,
+    "id": 11,
+    "name": "Lobster Roll",
+    "price": 105,
+    "category": "Sea Food",
+    "currentQuantity": 40,
     "quantity": 1,
     "note": ""
   },
   {
-    "id": 18,
-    "name": "Chicken Bites",
-    "price": 63,
-    "category": "KFC",
-    "currentQuantity": 81,
+    "id": 7,
+    "name": "Grilled Salmon",
+    "price": 95,
+    "category": "Sea Food",
+    "currentQuantity": 34,
+    "quantity": 1,
+    "note": ""
+  },
+  {
+    "id": 19,
+    "name": "Tropical Paradise",
+    "price": 45,
+    "category": "Juice",
+    "currentQuantity": 142,
     "quantity": 1,
     "note": ""
   }
