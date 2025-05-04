@@ -1,7 +1,6 @@
 # MÔ HÌNH MVP CỦA NHÀ HÀNG TUI ❤️
 
-Đây là mô hình triển khai ban đầu của hệ thống nhà hàng mình. Chứa các chức năng cơ bản như menu chính, thêm giỏ hàng, thanh toán qua nhiều phương thức. Hy vọng bạn sẽ có trải nghiệm tốt khi xem dự án mình🥰. 
-
+Đây là mô hình triển khai ban đầu của hệ thống nhà hàng mình.Chứa các chức năng cơ bản như menu chính, thêm giỏ hàng, thanh toán qua nhiều phương thức.Dự án mình chưa có database hoàn chỉnh. Hiện đang dùng json để load dữ liệu lên local storage.Hy vọng, trong tương lại dự án này sẽ được hoàn chỉnh.Hy vọng bạn sẽ có trải nghiệm tốt khi xem dự án mình🥰. 
 ## Các Thành Phần Chính
 
 1. **Frontend**:
@@ -38,8 +37,8 @@
 
 ### Bạn có thể build dự án thông qua hai cách.
 
-- **Docker** (optional, nếu bạn muốn sử dụng Docker)
-- **Truyền thống** (optional, nếu bạn muốn sử dụng Docker Compose)
+- **Docker** (optional, nếu bạn muốn nhanh dễ dùng dễ chạy 😍)
+- **Truyền thống** (optional, nếu bạn muốn tách front và back 😍)
 
 ### Bước 1: Clone Dự Án từ github của mình 🤣 nếu hay cho mình 1 sao nhá 
 
@@ -50,7 +49,7 @@ git clone https://github.com/hoanhviplengend/Assigment_CNPM.git
 #### Tiếp cận bằng docker.
 - Yêu cần bạn phải có docker
 - Cài đặt [Docker Desktop](https://www.docker.com/products/docker-desktop/)
-##### Từ thư mục gốc để built :
+##### Từ thư mục gốc để build :
 ```bash
 docker-compose up --build
 ```
@@ -59,6 +58,7 @@ docker-compose up --build
 docker-compose up
 ```
 #### Tiếp cận thông thường.
+- Bạn cần chia đôi terminal để chạy song song nhá ❤️
 ##### Từ Thư mục frontend
 - cài đặt npm ⚙️
 ```bash
