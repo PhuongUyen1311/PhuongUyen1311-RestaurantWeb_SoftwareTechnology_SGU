@@ -1,7 +1,7 @@
 // src/pages/Payment/Payment.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useLocation } from 'react-router-dom';
+import { useLocation,useNavigate } from 'react-router-dom';
 import '../../styles/Payment.css';
 import PaymentHeader from '../../components/Payment/PaymentHeader';
 import Pay from '../../components/Payment/PaymentForm';
@@ -12,6 +12,8 @@ const Payment = () => {
   const [loading, setLoading] = useState(true);
   const [paymentInfo, setPaymentInfo] = useState({ items: [], cost: 0, tax: 0, note: '' });
   const location = useLocation();
+  const navigate = useNavigate();
+
 
   const fetchPaymentInfo = async () => {
     try {
@@ -44,21 +46,9 @@ const Payment = () => {
       } else if (paymentMethod === 'cod') {
         const updateResponse = await axios.post('http://localhost:5000/food/update');
         console.log('Cập nhật giỏ hàng thành công:', updateResponse.data);
-
         toast.success('Thanh toán thành công!');
         await axios.delete('http://localhost:5000/cart')
-        window.location.href = '/';
-
-      } else if (paymentMethod === 'bank') {
-        const paymentResponse = await axios.post('http://localhost:5000/payment/checkout', paymentInfo);
-        console.log('Thanh toán thành công:', paymentResponse.data);
-
-        const updateResponse = await axios.post('http://localhost:5000/food/update');
-        console.log('Cập nhật giỏ hàng thành công:', updateResponse.data);
-
-        toast.success('Thanh toán thành công!');
-        await axios.delete('http://localhost:5000/cart')
-        window.location.href = '/';
+        navigate('/');
       }
 
     } catch (err) {
@@ -79,7 +69,7 @@ const Payment = () => {
           toast.success('Thanh toán qua VNPay thành công!');
           await axios.delete('http://localhost:5000/cart')
 
-          window.location.href = '/';
+          navigate('/');
         } else {
            toast.error('Thanh toán qua VNPay thất bại. Vui lòng thử lại!');
         }
@@ -87,7 +77,7 @@ const Payment = () => {
     };
 
     handleVNPayResponse();
-  }, [location]);
+  }, [navigate, location]);
 
   if (!loading) {
     return <div>Đang tải thông tin thanh toán...</div>;

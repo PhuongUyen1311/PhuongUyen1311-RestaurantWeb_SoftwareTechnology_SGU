@@ -1,46 +1,354 @@
 [
-  { "id": 1, "name": "Coca Vanilla", "price": 18, "category": "Soda", "description": "Coca-Cola hương cổ điển mix cùng vị vani tươi mới, độc đáo.", "currentQuantity": 137 },
-  { "id": 2, "name": "Zinger Burger", "price": 55, "category": "KFC", "description": "Burger gà ăn kèm rau xanh và sốt mayonnaise cay.", "currentQuantity": 95 },
-  { "id": 3, "name": "Cheese Cupcake", "price": 22, "category": "Cupcake", "description": "Bánh cupcake mềm xốp với nhân phô mai béo ngậy.", "currentQuantity": 65 },
-  { "id": 4, "name": "Chocolate Donut", "price": 18, "category": "Cupcake", "description": "Bánh donut mềm xốp phủ lớp chocolate ngọt ngào.", "currentQuantity": 78 },
-  { "id": 5, "name": "Seafood Mix", "price": 85, "category": "Sea Food", "description": "Mix 7749 loại hải sản chiên vàng giòn, nóng hổi.", "currentQuantity": 45 },
-  { "id": 6, "name": "Apple Cola", "price": 17, "category": "Soda", "description": "Cola mát lạnh pha hương vị táo tươi mát, sảng khoái.", "currentQuantity": 121 },
-  { "id": 7, "name": "Grilled Salmon", "price": 95, "category": "Sea Food", "description": "Cá hồi nướng mọng nước, tẩm ướp thảo mộc.", "currentQuantity": 34 },
-  { "id": 8, "name": "Pepsi Max", "price": 18, "category": "Soda", "description": "Cola không đường, phù hợp cho chế độ ăn kiêng.", "currentQuantity": 132 },
-  { "id": 9, "name": "Crispy Chicken", "price": 60, "category": "KFC", "description": "Gà rán giòn tan, bên trong mọng mềm.", "currentQuantity": 85 },
-  { "id": 10, "name": "Tropical Soda", "price": 20, "category": "Soda", "description": "Nước ngọt nhiệt đới pha trộn hương trái cây tươi mát, sảng khoái.", "currentQuantity": 126 },
-  { "id": 11, "name": "Lobster Roll", "price": 105, "category": "Sea Food", "description": "Bánh mì kẹp tôm phủ sốt mayonnaise thơm béo.", "currentQuantity": 40 },
-  { "id": 12, "name": "Cream Cupcake", "price": 20, "category": "Cupcake", "description": "Bánh cupcake phô mai béo ngậy, mềm mịn.", "currentQuantity": 97 },
-  { "id": 13, "name": "Chicken Tenders", "price": 48, "category": "KFC", "description": "Gà miếng chiên giòn tẩm sốt - giòn tan, bùng vị.", "currentQuantity": 91 },
-  { "id": 14, "name": "Coca Lite", "price": 17, "category": "Soda", "description": " Coca-Cola giảm đường.", "currentQuantity": 112 },
-  { "id": 15, "name": "Mini Cupcake", "price": 18, "category": "Cupcake", "description": "Bánh cupcake nhỏ xinh, món tráng miệng nhẹ nhàng cho từng bữa ăn.", "currentQuantity": 89 },
-  { "id": 16, "name": "Chicken Wings", "price": 50, "category": "KFC", "description": "Cánh gà chiên cay nồng, thơm ngon đậm đà.", "currentQuantity": 84 },
-  { "id": 17, "name": "Tangy Orange", "price": 16, "category": "Soda", "description": "Nước ngọt hương cam chua nhẹ, sảng khoái.", "currentQuantity": 130 },
-  { "id": 18, "name": "Chicken Bites", "price": 45, "category": "KFC", "description": "Gà viên chiên giòn, mềm ngọt bên trong.", "currentQuantity": 81 },
-  { "id": 19, "name": "Tropical Paradise", "price": 45, "category": "Juice", "description": "Nước trái cây nhiệt đới tươi mát và sảng khoái.", "currentQuantity": 142 },
-  { "id": 20, "name": "Golden Chicken", "price": 60, "category": "KFC", "description": "Gà chiên vàng giòn, đậm đà hương vị.", "currentQuantity": 96 },
-  { "id": 21, "name": "Spicy Burger", "price": 50, "category": "KFC", "description": "Burger gà giòn cay ăn kèm rau tươi - thơm ngon, hấp dẫn.", "currentQuantity": 77 },
-  { "id": 22, "name": "Berry Smoothie", "price": 42, "category": "Juice", "description": "Sinh tố lạnh từ dâu tây, việt quất và mâm xôi.", "currentQuantity": 135 },
-  { "id": 23, "name": "Fried Chicken", "price": 58, "category": "KFC", "description": "Gà chiên giòn vàng, mọng nước và đậm đà hương vị.", "currentQuantity": 89 },
-  { "id": 24, "name": "Red Velvet", "price": 30, "category": "Cupcake", "description": "Bánh velvet đỏ mềm min, phủ lớp kem phô mai béo ngậy tuyệt đối.", "currentQuantity": 86 },
-  { "id": 25, "name": "Fruit Punch", "price": 40, "category": "Juice", "description": "Thức uống mix từ các loại trái cây nhiệt đới và cam chanh.", "currentQuantity": 145 },
-  { "id": 26, "name": "Shrimp Delight", "price": 85, "category": "Sea Food", "description": "Tôm chiên giòn, ăn kèm nước sốt chua cay hấp dẫn.", "currentQuantity": 38 },
-  { "id": 27, "name": "Orange Fizz", "price": 35, "category": "Juice", "description": "Nước cam có ga sảng khoái với hương vị cam tươi mát.", "currentQuantity": 118 },
-  { "id": 28, "name": "Cheese Burger", "price": 50, "category": "KFC", "description": "Burger bò nướng phủ phô mai tan chảy ăn kèm dưa muối.", "currentQuantity": 81 },
-  { "id": 29, "name": "KFC Box", "price": 65, "category": "KFC", "description": "Combo KFC gồm gà, khoai tây chiên và nước uống.", "currentQuantity": 94 },
-  { "id": 30, "name": "Strawberry Cupcake", "price": 26, "category": "Cupcake", "description": "Cupcake mềm phủ kem dâu tươi và trái cây cắt lát.", "currentQuantity": 75 },
-  { "id": 31, "name": "Lemon Cupcake", "price": 25, "category": "Cupcake", "description": "Cupcake mềm mịn với hương vị chanh thơm mát.", "currentQuantity": 72 },
-  { "id": 32, "name": "Oreo Cupcake", "price": 27, "category": "Cupcake", "description": "Cupcake socola phủ vụn bánh Oreo và kem tươi mềm mịn.", "currentQuantity": 78 },
-  { "id": 33, "name": "Peanut Butter", "price": 28, "category": "Cupcake", "description": "Cupcake đậm vị bơ đậu phộng với lớp kem béo ngậy.", "currentQuantity": 86 },
-  { "id": 34, "name": "Matcha Cupcake", "price": 28, "category": "Cupcake", "description": "Cupcake 'babyThree' nhẹ nhàng phủ bởi lớp kem matcha mịn màng.", "currentQuantity": 74 },
-  { "id": 35, "name": "Crab Delight", "price": 90, "category": "Sea Food", "description": "Bánh cua chiên vàng ăn kèm sốt aioli chua ngọt.", "currentQuantity": 46 },
-  { "id": 36, "name": "Grilled Squid", "price": 98, "category": "Sea Food", "description": "Mực nướng thơm lừng hương bơ tỏi béo ngậy.", "currentQuantity": 32 },
-  { "id": 37, "name": "Seafood Platter", "price": 120, "category": "Sea Food", "description": "Đĩa hải sản lớn gồm tôm, cua và vẹm xào bơ tỏi.", "currentQuantity": 44 },
-  { "id": 38, "name": "Mussels Wine", "price": 95, "category": "Sea Food", "description": "Vẹm tươi nấu với rượu vang trắng và thảo mộc.", "currentQuantity": 30 },
-  { "id": 39, "name": "Stuffed Clams", "price": 85, "category": "Sea Food", "description": "Ngao nướng nhồi gia vị và tỏi thơm ngon khó cưỡng.", "currentQuantity": 39 },
-  { "id": 40, "name": "Green Apple", "price": 32, "category": "Juice", "description": "Nước ép táo xanh tươi mát, vị chua nhẹ tự nhiên.", "currentQuantity": 129 },
-  { "id": 41, "name": "Carrot Orange", "price": 30, "category": "Juice", "description": "Nước ép tươi từ cà rốt và cam, giàu vitamin.", "currentQuantity": 115 },
-  { "id": 42, "name": "Mango Blast", "price": 28, "category": "Juice", "description": "Nước ép xoài ngọt dịu, thơm lừng hương nhiệt đới.", "currentQuantity": 138 },
-  { "id": 43, "name": "Pineapple Passion", "price": 30, "category": "Juice", "description": "Nước ép dứa pha chút hương chanh dây tươi mát.", "currentQuantity": 140 },
-  { "id": 44, "name": "Watermelon Cooler", "price": 32, "category": "Juice", "description": "Nước ép dưa hấu mát lạnh, giải khát tuyệt đối.", "currentQuantity": 141 }
+  {
+    "id": 1,
+    "name": "Coca Vanilla",
+    "price": 18,
+    "category": "Soda",
+    "description": "Coca-Cola hương cổ điển mix cùng vị vani tươi mới, độc đáo.",
+    "currentQuantity": 88
+  },
+  {
+    "id": 2,
+    "name": "Zinger Burger",
+    "price": 55,
+    "category": "KFC",
+    "description": "Burger gà ăn kèm rau xanh và sốt mayonnaise cay.",
+    "currentQuantity": 95
+  },
+  {
+    "id": 3,
+    "name": "Cheese Cupcake",
+    "price": 22,
+    "category": "Cupcake",
+    "description": "Bánh cupcake mềm xốp với nhân phô mai béo ngậy.",
+    "currentQuantity": 61
+  },
+  {
+    "id": 4,
+    "name": "Chocolate Donut",
+    "price": 18,
+    "category": "Cupcake",
+    "description": "Bánh donut mềm xốp phủ lớp chocolate ngọt ngào.",
+    "currentQuantity": 78
+  },
+  {
+    "id": 5,
+    "name": "Seafood Mix",
+    "price": 85,
+    "category": "Sea Food",
+    "description": "Mix 7749 loại hải sản chiên vàng giòn, nóng hổi.",
+    "currentQuantity": 45
+  },
+  {
+    "id": 6,
+    "name": "Apple Cola",
+    "price": 17,
+    "category": "Soda",
+    "description": "Cola mát lạnh pha hương vị táo tươi mát, sảng khoái.",
+    "currentQuantity": 121
+  },
+  {
+    "id": 7,
+    "name": "Grilled Salmon",
+    "price": 95,
+    "category": "Sea Food",
+    "description": "Cá hồi nướng mọng nước, tẩm ướp thảo mộc.",
+    "currentQuantity": 34
+  },
+  {
+    "id": 8,
+    "name": "Pepsi Max",
+    "price": 18,
+    "category": "Soda",
+    "description": "Cola không đường, phù hợp cho chế độ ăn kiêng.",
+    "currentQuantity": 132
+  },
+  {
+    "id": 9,
+    "name": "Crispy Chicken",
+    "price": 60,
+    "category": "KFC",
+    "description": "Gà rán giòn tan, bên trong mọng mềm.",
+    "currentQuantity": 85
+  },
+  {
+    "id": 10,
+    "name": "Tropical Soda",
+    "price": 20,
+    "category": "Soda",
+    "description": "Nước ngọt nhiệt đới pha trộn hương trái cây tươi mát, sảng khoái.",
+    "currentQuantity": 126
+  },
+  {
+    "id": 11,
+    "name": "Lobster Roll",
+    "price": 105,
+    "category": "Sea Food",
+    "description": "Bánh mì kẹp tôm phủ sốt mayonnaise thơm béo.",
+    "currentQuantity": 40
+  },
+  {
+    "id": 12,
+    "name": "Cream Cupcake",
+    "price": 20,
+    "category": "Cupcake",
+    "description": "Bánh cupcake phô mai béo ngậy, mềm mịn.",
+    "currentQuantity": 97
+  },
+  {
+    "id": 13,
+    "name": "Chicken Tenders",
+    "price": 48,
+    "category": "KFC",
+    "description": "Gà miếng chiên giòn tẩm sốt - giòn tan, bùng vị.",
+    "currentQuantity": 91
+  },
+  {
+    "id": 14,
+    "name": "Coca Lite",
+    "price": 17,
+    "category": "Soda",
+    "description": " Coca-Cola giảm đường.",
+    "currentQuantity": 112
+  },
+  {
+    "id": 15,
+    "name": "Mini Cupcake",
+    "price": 18,
+    "category": "Cupcake",
+    "description": "Bánh cupcake nhỏ xinh, món tráng miệng nhẹ nhàng cho từng bữa ăn.",
+    "currentQuantity": 89
+  },
+  {
+    "id": 16,
+    "name": "Chicken Wings",
+    "price": 50,
+    "category": "KFC",
+    "description": "Cánh gà chiên cay nồng, thơm ngon đậm đà.",
+    "currentQuantity": 84
+  },
+  {
+    "id": 17,
+    "name": "Tangy Orange",
+    "price": 16,
+    "category": "Soda",
+    "description": "Nước ngọt hương cam chua nhẹ, sảng khoái.",
+    "currentQuantity": 130
+  },
+  {
+    "id": 18,
+    "name": "Chicken Bites",
+    "price": 45,
+    "category": "KFC",
+    "description": "Gà viên chiên giòn, mềm ngọt bên trong.",
+    "currentQuantity": 81
+  },
+  {
+    "id": 19,
+    "name": "Tropical Paradise",
+    "price": 45,
+    "category": "Juice",
+    "description": "Nước trái cây nhiệt đới tươi mát và sảng khoái.",
+    "currentQuantity": 142
+  },
+  {
+    "id": 20,
+    "name": "Golden Chicken",
+    "price": 60,
+    "category": "KFC",
+    "description": "Gà chiên vàng giòn, đậm đà hương vị.",
+    "currentQuantity": 96
+  },
+  {
+    "id": 21,
+    "name": "Spicy Burger",
+    "price": 50,
+    "category": "KFC",
+    "description": "Burger gà giòn cay ăn kèm rau tươi - thơm ngon, hấp dẫn.",
+    "currentQuantity": 77
+  },
+  {
+    "id": 22,
+    "name": "Berry Smoothie",
+    "price": 42,
+    "category": "Juice",
+    "description": "Sinh tố lạnh từ dâu tây, việt quất và mâm xôi.",
+    "currentQuantity": 135
+  },
+  {
+    "id": 23,
+    "name": "Fried Chicken",
+    "price": 58,
+    "category": "KFC",
+    "description": "Gà chiên giòn vàng, mọng nước và đậm đà hương vị.",
+    "currentQuantity": 89
+  },
+  {
+    "id": 24,
+    "name": "Red Velvet",
+    "price": 30,
+    "category": "Cupcake",
+    "description": "Bánh velvet đỏ mềm min, phủ lớp kem phô mai béo ngậy tuyệt đối.",
+    "currentQuantity": 86
+  },
+  {
+    "id": 25,
+    "name": "Fruit Punch",
+    "price": 40,
+    "category": "Juice",
+    "description": "Thức uống mix từ các loại trái cây nhiệt đới và cam chanh.",
+    "currentQuantity": 145
+  },
+  {
+    "id": 26,
+    "name": "Shrimp Delight",
+    "price": 85,
+    "category": "Sea Food",
+    "description": "Tôm chiên giòn, ăn kèm nước sốt chua cay hấp dẫn.",
+    "currentQuantity": 38
+  },
+  {
+    "id": 27,
+    "name": "Orange Fizz",
+    "price": 35,
+    "category": "Juice",
+    "description": "Nước cam có ga sảng khoái với hương vị cam tươi mát.",
+    "currentQuantity": 118
+  },
+  {
+    "id": 28,
+    "name": "Cheese Burger",
+    "price": 50,
+    "category": "KFC",
+    "description": "Burger bò nướng phủ phô mai tan chảy ăn kèm dưa muối.",
+    "currentQuantity": 81
+  },
+  {
+    "id": 29,
+    "name": "KFC Box",
+    "price": 65,
+    "category": "KFC",
+    "description": "Combo KFC gồm gà, khoai tây chiên và nước uống.",
+    "currentQuantity": 94
+  },
+  {
+    "id": 30,
+    "name": "Strawberry Cupcake",
+    "price": 26,
+    "category": "Cupcake",
+    "description": "Cupcake mềm phủ kem dâu tươi và trái cây cắt lát.",
+    "currentQuantity": 75
+  },
+  {
+    "id": 31,
+    "name": "Lemon Cupcake",
+    "price": 25,
+    "category": "Cupcake",
+    "description": "Cupcake mềm mịn với hương vị chanh thơm mát.",
+    "currentQuantity": 72
+  },
+  {
+    "id": 32,
+    "name": "Oreo Cupcake",
+    "price": 27,
+    "category": "Cupcake",
+    "description": "Cupcake socola phủ vụn bánh Oreo và kem tươi mềm mịn.",
+    "currentQuantity": 78
+  },
+  {
+    "id": 33,
+    "name": "Peanut Butter",
+    "price": 28,
+    "category": "Cupcake",
+    "description": "Cupcake đậm vị bơ đậu phộng với lớp kem béo ngậy.",
+    "currentQuantity": 86
+  },
+  {
+    "id": 34,
+    "name": "Matcha Cupcake",
+    "price": 28,
+    "category": "Cupcake",
+    "description": "Cupcake 'babyThree' nhẹ nhàng phủ bởi lớp kem matcha mịn màng.",
+    "currentQuantity": 74
+  },
+  {
+    "id": 35,
+    "name": "Crab Delight",
+    "price": 90,
+    "category": "Sea Food",
+    "description": "Bánh cua chiên vàng ăn kèm sốt aioli chua ngọt.",
+    "currentQuantity": 46
+  },
+  {
+    "id": 36,
+    "name": "Grilled Squid",
+    "price": 98,
+    "category": "Sea Food",
+    "description": "Mực nướng thơm lừng hương bơ tỏi béo ngậy.",
+    "currentQuantity": 32
+  },
+  {
+    "id": 37,
+    "name": "Seafood Platter",
+    "price": 120,
+    "category": "Sea Food",
+    "description": "Đĩa hải sản lớn gồm tôm, cua và vẹm xào bơ tỏi.",
+    "currentQuantity": 44
+  },
+  {
+    "id": 38,
+    "name": "Mussels Wine",
+    "price": 95,
+    "category": "Sea Food",
+    "description": "Vẹm tươi nấu với rượu vang trắng và thảo mộc.",
+    "currentQuantity": 30
+  },
+  {
+    "id": 39,
+    "name": "Stuffed Clams",
+    "price": 85,
+    "category": "Sea Food",
+    "description": "Ngao nướng nhồi gia vị và tỏi thơm ngon khó cưỡng.",
+    "currentQuantity": 39
+  },
+  {
+    "id": 40,
+    "name": "Green Apple",
+    "price": 32,
+    "category": "Juice",
+    "description": "Nước ép táo xanh tươi mát, vị chua nhẹ tự nhiên.",
+    "currentQuantity": 129
+  },
+  {
+    "id": 41,
+    "name": "Carrot Orange",
+    "price": 30,
+    "category": "Juice",
+    "description": "Nước ép tươi từ cà rốt và cam, giàu vitamin.",
+    "currentQuantity": 115
+  },
+  {
+    "id": 42,
+    "name": "Mango Blast",
+    "price": 28,
+    "category": "Juice",
+    "description": "Nước ép xoài ngọt dịu, thơm lừng hương nhiệt đới.",
+    "currentQuantity": 138
+  },
+  {
+    "id": 43,
+    "name": "Pineapple Passion",
+    "price": 30,
+    "category": "Juice",
+    "description": "Nước ép dứa pha chút hương chanh dây tươi mát.",
+    "currentQuantity": 140
+  },
+  {
+    "id": 44,
+    "name": "Watermelon Cooler",
+    "price": 32,
+    "category": "Juice",
+    "description": "Nước ép dưa hấu mát lạnh, giải khát tuyệt đối.",
+    "currentQuantity": 141
+  }
 ]

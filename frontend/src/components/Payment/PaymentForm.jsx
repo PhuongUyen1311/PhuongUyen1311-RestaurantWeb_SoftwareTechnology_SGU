@@ -1,7 +1,8 @@
 // src/components/Payment/PaymentForm.jsx
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
-import '../../styles/PaymentForm.css';
+import '../../styles/PaymentForm.css'
+import { toast } from 'react-toastify';
 
 const Pay = ({ paymentInfo, onCheckout }) => {
   const [cardNumber, setCardNumber] = useState('');
@@ -208,7 +209,10 @@ const Pay = ({ paymentInfo, onCheckout }) => {
           />
         </div>
         <div className="action-buttons">
-          <button className="btn btn-cancel" onClick={() => window.location.href = '/'}>
+          <button className="btn btn-cancel" onClick={() => {
+            navigate('/');
+            toast.info("Hủy thanh toán");
+          }}>
             Hủy
           </button>
           <button className="btn btn-pay" onClick={handleSubmit}>

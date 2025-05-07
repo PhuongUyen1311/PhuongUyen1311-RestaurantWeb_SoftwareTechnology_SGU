@@ -3,6 +3,8 @@ import BankingQRCode from '../../components/BankingQRCode/BankingQRCode';
 import PaymentHeader from '../../components/Payment/PaymentHeader';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
+import axios from 'axios';
+
 
 const BankingQRCodePage = () => {
   const location = useLocation();
@@ -30,7 +32,9 @@ const BankingQRCodePage = () => {
   const confirmBankTransfer = async () => {
     // Giả lập xác nhận chuyển khoản thành công
     try {
-      // Bạn có thể gọi API để lưu đơn hàng nếu cần
+      const updateResponse = await axios.post('http://localhost:5000/food/update');
+      console.log('Cập nhật giỏ hàng thành công:', updateResponse.data);
+      await axios.delete('http://localhost:5000/cart')
       toast.success('Xác nhận chuyển khoản thành công!');
       navigate('/'); // Chuyển hướng về trang chủ
     } catch (err) {
