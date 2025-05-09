@@ -5,7 +5,7 @@
     "price": 18,
     "category": "Soda",
     "description": "Coca-Cola hương cổ điển mix cùng vị vani tươi mới, độc đáo.",
-    "currentQuantity": 88
+    "currentQuantity": 144
   },
   {
     "id": 2,
@@ -21,7 +21,7 @@
     "price": 22,
     "category": "Cupcake",
     "description": "Bánh cupcake mềm xốp với nhân phô mai béo ngậy.",
-    "currentQuantity": 61
+    "currentQuantity": 64
   },
   {
     "id": 4,
@@ -61,7 +61,7 @@
     "price": 18,
     "category": "Soda",
     "description": "Cola không đường, phù hợp cho chế độ ăn kiêng.",
-    "currentQuantity": 132
+    "currentQuantity": 131
   },
   {
     "id": 9,
@@ -93,7 +93,7 @@
     "price": 20,
     "category": "Cupcake",
     "description": "Bánh cupcake phô mai béo ngậy, mềm mịn.",
-    "currentQuantity": 97
+    "currentQuantity": 96
   },
   {
     "id": 13,
@@ -141,7 +141,7 @@
     "price": 45,
     "category": "KFC",
     "description": "Gà viên chiên giòn, mềm ngọt bên trong.",
-    "currentQuantity": 81
+    "currentQuantity": 80
   },
   {
     "id": 19,

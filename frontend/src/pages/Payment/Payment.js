@@ -13,8 +13,6 @@ const Payment = () => {
   const [paymentInfo, setPaymentInfo] = useState({ items: [], cost: 0, tax: 0, note: '' });
   const location = useLocation();
   const navigate = useNavigate();
-
-
   const fetchPaymentInfo = async () => {
     try {
       const response = await axios.get('http://localhost:5000/payment');
@@ -44,6 +42,7 @@ const Payment = () => {
         window.location.href = response.data.paymentUrl; // Chuyển hướng đến giao diện VNPay
 
       } else if (paymentMethod === 'cod') {
+
         const updateResponse = await axios.post('http://localhost:5000/food/update');
         console.log('Cập nhật giỏ hàng thành công:', updateResponse.data);
         toast.success('Thanh toán thành công!');
@@ -56,6 +55,7 @@ const Payment = () => {
       toast.error('Thanh toán thất bại, vui lòng thử lại!');
     }
   };
+  
   useEffect(() => {
     const handleVNPayResponse = async () => {
       const query = new URLSearchParams(location.search);
@@ -77,7 +77,7 @@ const Payment = () => {
     };
 
     handleVNPayResponse();
-  }, [navigate, location]);
+  }, [location, navigate]);
 
   if (!loading) {
     return <div>Đang tải thông tin thanh toán...</div>;

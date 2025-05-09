@@ -26,7 +26,6 @@ const BankingQRCodePage = () => {
     orderId: orderId || `${Date.now()}`,
   };
 
-  // Tạo chuỗi VietQR
   const vietQRString = `00020101021138520010VN0708${bankInfo.accountNumber}5204000053037045408${bankInfo.amount}5802VN5912${bankInfo.accountHolder}62070803QRIBFTTA6304`;
 
   const confirmBankTransfer = async () => {
@@ -34,9 +33,10 @@ const BankingQRCodePage = () => {
     try {
       const updateResponse = await axios.post('http://localhost:5000/food/update');
       console.log('Cập nhật giỏ hàng thành công:', updateResponse.data);
-      await axios.delete('http://localhost:5000/cart')
-      toast.success('Xác nhận chuyển khoản thành công!');
-      navigate('/'); // Chuyển hướng về trang chủ
+      await axios.delete('http://localhost:5000/cart');
+      console.log('Giỏ hàng đã được xoá.');
+    toast.success('Xác nhận chuyển khoản thành công!');
+    navigate('/');
     } catch (err) {
       console.error('Lỗi xác nhận chuyển khoản:', err);
       toast.error('Xác nhận chuyển khoản thất bại, vui lòng thử lại!');
