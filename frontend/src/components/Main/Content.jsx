@@ -1,5 +1,4 @@
 // src/components/MainContent.jsx
-import React from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -58,14 +57,14 @@ const MainContent = ({ homeRef, contactRef, menuRef, aboutUsRef }) => {
         <div className="contactUs-section">
           <h3>Customer Support</h3>
           <p>Need help with your order? Contact 24/7 support team.</p>
-          <p>Email: support@fastfoodexpress.com</p>
+          <p>Email: Fastfoodokela@gmail.com</p>
           <p>Hotline: 0907 7099</p>
         </div>
         <div className="contactUs-section">
           <h3>Store Locations</h3>
-          <p>Visit our stores in your city to enjoy delicious meals.</p>
-          <p>123 Burger Street, Food City</p>
-          <p>456 Pizza Avenue, Meal Town</p>
+          <p>Visit our stores in Ho Chi Minh city to enjoy delicious meals.</p>
+          <p>12X An Duong Vuong Street, Ho Chi Minh City</p>
+          <p>23Y Nguyen Van Linh, HCM City</p>
         </div>
         <div className="contactUs-section">
           <h3>Follow Us</h3>

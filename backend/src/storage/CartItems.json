@@ -1,1 +1,38 @@
-[]
+[
+  {
+    "id": 3,
+    "name": "Cheese Cupcake",
+    "price": 22,
+    "category": "Cupcake",
+    "currentQuantity": 62,
+    "quantity": 2,
+    "note": "\n"
+  },
+  {
+    "id": 2,
+    "name": "Zinger Burger",
+    "price": 55,
+    "category": "KFC",
+    "currentQuantity": 94,
+    "quantity": 1,
+    "note": ""
+  },
+  {
+    "id": 8,
+    "name": "Pepsi Max",
+    "price": 18,
+    "category": "Soda",
+    "currentQuantity": 131,
+    "quantity": 1,
+    "note": ""
+  },
+  {
+    "id": 9,
+    "name": "Crispy Chicken",
+    "price": 60,
+    "category": "KFC",
+    "currentQuantity": 85,
+    "quantity": 1,
+    "note": ""
+  }
+]

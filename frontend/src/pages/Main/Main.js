@@ -2,12 +2,18 @@
 import React, { useRef } from 'react';
 // import { useNavigate } from 'react-router-dom'; 
 import Header from '../../components/Main/Header';
-import Footer from '../../components/Main/Footer';
 import MainContent from '../../components/Main/Content';
 import '../../styles/main.css';
+import { useEffect } from 'react';
 
 
-const Home = () => {
+const Main = () => {
+  useEffect(() => {
+    document.body.classList.add('main-page');
+    return () => {
+      document.body.classList.remove('main-page');
+    };
+  }, []);
   const homeRef = useRef(null);
   const contactRef = useRef(null);
   const menuRef = useRef(null);
@@ -48,9 +54,11 @@ const Home = () => {
         scrollToMenu={scrollToMenu}
         scrollToAboutUs={scrollToAboutUs}
       />
-      <Footer />
+      <div className="footer" >
+      © 2025 FastFood. All rights reserved.
+      </div>
     </div>
   );
 };
 
-export default Home;
+export default Main;

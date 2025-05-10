@@ -1,6 +1,8 @@
-body {
-  font-size: 1rem;
-  /* Dễ dàng thay đổi khi cửa sổ thay đổi kích thước */
+body.main-page {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  overflow-y: auto; 
 }
 
 .container {
@@ -24,13 +26,12 @@ header {
   z-index: 1000;
 }
 
+
 .part1 {
   width: 250px;
   height: 150px;
   display: flex;
-  position: relative;
-  /* background-color: cadetblue; */
-}
+  position: relative;}
 
 .logo-img {
   width: 155px;
@@ -155,35 +156,22 @@ header {
   font-size: 12px;
 }
 
-footer {
+.footer {
   background-color: #214762d0;
   color: white;
   width: 100%;
+  margin-top: 910px;
 }
 
-header {
-  position: fixed;
-  /* Cố định header */
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: rgb(247, 223, 178);
-  height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 3px solid #b31212;
-  z-index: 1000;
-  /* Đảm bảo header nằm trên các phần khác */
-}
 
 main {
   background-color: #ededed;
   color: rgb(19, 26, 32);
-  margin-top: 158px;
+  margin-top: 155px;
   height: calc(100vh - 150px);
-  overflow-y: auto;
   min-height: 700px;
+  padding: 0;
+
 }
 
 
@@ -262,7 +250,6 @@ main {
 }
 
 .aboutUs {
-  margin-top: 10px;
   height: 400px;
   width: 99.5%;
   background-color: #fff9e6;
@@ -309,7 +296,6 @@ main {
   gap: 20px;
   padding-top: 20px;
   padding-left: 20px;
-  margin-top: 5px;
   align-items: center;
 }
 

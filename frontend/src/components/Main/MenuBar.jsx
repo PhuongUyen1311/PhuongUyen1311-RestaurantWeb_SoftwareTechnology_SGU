@@ -19,7 +19,7 @@ const Menu = ({ scrollToContact, scrollToMenu, scrollToAboutUs, scrollToHome }) 
     const item = menuItems[index];
 
     if (item === 'Order') {
-      navigate('/');
+      navigate('/home');
     } else {
       scrollTo[item]();  // Gọi hàm tương ứng với mục menu khác
     }

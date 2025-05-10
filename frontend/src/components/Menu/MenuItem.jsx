@@ -26,7 +26,7 @@ const MenuItem = ({ item, onAddToCart, onItemClick }) => {
       <button
         className="menu-item-button"
         onClick={(e) => {
-          e.stopPropagation(); // Ngăn sự kiện click lan sang div cha
+          e.stopPropagation();
           onAddToCart(item);
         }}
       >

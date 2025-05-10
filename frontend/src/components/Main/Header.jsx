@@ -6,7 +6,7 @@ function Header({ scrollToContact, scrollToMenu, scrollToAboutUs, scrollToHome }
   const navigate = useNavigate(); // Khởi tạo navigate
 
   const handleOrderNow = () => {
-    navigate('/');
+    navigate('/home');
   };
 
   return (

@@ -9,11 +9,11 @@ const MenuList = ({ onCategoryChange }) => {
     { id: 2, name: 'Juice' },
     { id: 3, name: 'Soda' },
     { id: 4, name: 'KFC' },
-    { id: 5, name: 'Cupcake' }, // Thêm vài mục để kiểm tra cuộn
+    { id: 5, name: 'Cupcake' }, 
     { id: 6, name: 'Sea Food' },
   ];
 
-  const [selectedItem, setSelectedItem] = useState(items[1]); // Mặc định chọn mục "Juice"
+  const [selectedItem, setSelectedItem] = useState(items[0]); 
   const scrollRef = useRef(null); // Tham chiếu để điều khiển cuộn
 
   const handleSelect = (item) => {

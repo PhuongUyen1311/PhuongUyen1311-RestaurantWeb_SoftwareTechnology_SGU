@@ -1,4 +1,3 @@
-import React from 'react';
 import { normalizeImageName } from '../../utils/Normalize.js';
 
 const FilterMenu = ({ item, isSelected, onSelect, onAddToCart }) => {
