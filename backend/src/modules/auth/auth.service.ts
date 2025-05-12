@@ -13,19 +13,13 @@ const userFile = path.join(process.cwd(), 'src/storage/users.json');
 @Injectable()
 export class AuthService {
   private readUsers(): User[] {
-  console.log('Đọc file từ:', userFile);
-
-  if (!fs.existsSync(userFile)) {
-    console.error('❌ File không tồn tại');
-    throw new Error('File users.json không tồn tại');
-  }
-
+  console.log('Read file from:', userFile);
   try {
     const data = fs.readFileSync(userFile, 'utf-8');
     return JSON.parse(data);
   } catch (error) {
-    console.error('❌ Lỗi đọc file hoặc JSON parse:', error);
-    throw new Error('Không thể đọc hoặc parse dữ liệu người dùng');
+    console.error('Error file!:', error);
+    throw new Error('Can not read and parse the data of user');
   }
 }
 
@@ -39,7 +33,7 @@ export class AuthService {
       const user = users.find((u) => u.email === email && u.password === password);
 
       if (!user) {
-        return { success: false, message: 'Email hoặc mật khẩu không đúng' };
+        return { success: false, message: '* Incorrect email or password. Try again!' };
       }
 
       const { password: _, ...userWithoutPassword } = user;
@@ -50,7 +44,7 @@ export class AuthService {
         user: userWithoutPassword,
       };
     } catch (error) {
-      console.error('Lỗi trong hàm login:', error);
+      console.error('Lỗi', error);
       return {
         success: false,
         message: 'Lỗi hệ thống: Không thể xử lý đăng nhập',

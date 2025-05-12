@@ -227,11 +227,11 @@ main {
 .gotoCart {
   width: 180px;
   height: 60px;
-  border: 2px solid #fcfaf8;
-  background-color: #bc8532;
+  border: 2px solid #9b1f0cd4;
+  background-color: rgba(186, 134, 39, 0.73);
   color: white;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  border-radius: 10px;
+  border-radius: 25px;
   font-size: 22px;
   font-weight: bold;
 }
@@ -239,7 +239,7 @@ main {
 
 .gotoCart:hover {
   transform: scale(1.03);
-  background-color: #9b620c;
+  background-color: #9b1f0cd4;
 }
 
 .menu-part p {

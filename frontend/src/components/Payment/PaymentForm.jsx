@@ -77,7 +77,7 @@ const Pay = ({ paymentInfo, onCheckout }) => {
   };
 
   return (
-    <div className="payment-container">
+    <div className="payment-container" id="payment-container">
       <div className="payment-section">
         <h2>Phương thức thanh toán</h2>
 

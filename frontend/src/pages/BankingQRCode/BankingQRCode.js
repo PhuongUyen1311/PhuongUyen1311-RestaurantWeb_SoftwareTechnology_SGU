@@ -36,7 +36,7 @@ const BankingQRCodePage = () => {
       await axios.delete('http://localhost:5000/cart');
       console.log('Giỏ hàng đã được xoá.');
     toast.success('Xác nhận chuyển khoản thành công!');
-    navigate('/');
+    navigate('/home');
     } catch (err) {
       console.error('Lỗi xác nhận chuyển khoản:', err);
       toast.error('Xác nhận chuyển khoản thất bại, vui lòng thử lại!');

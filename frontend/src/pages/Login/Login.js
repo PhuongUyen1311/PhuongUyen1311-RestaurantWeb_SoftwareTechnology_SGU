@@ -19,11 +19,20 @@ const Login = () => {
   return (
     <div className="loginPageWrapper">
       <div className="loginContainer">
-        <div className="background_loginPage"></div>
+        <div className="background_loginPage">
+            <div className="background-color-layer"></div>
+            <img src="/images/bg.png" alt="background" className="bg-image" />
+            <div className="overlay"></div>
+        </div>
         <div className="login">
             <LoginForm />
-            <button class="DineInOder-btn" onClick={handleClick}> Skip & Dine-in order</button>
+        <button className="dinein-order-btn" onClick={handleClick}>
+          <span className="text">Skip & Dine-in order</span>
+          <div className="icon-wrapper">
+            <img src="/images/next.svg" alt="Next Icon" className="icon" />
           </div>
+        </button>         
+        </div>
       </div>
     </div>
   );

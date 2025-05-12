@@ -47,7 +47,7 @@ const Payment = () => {
         console.log('Cập nhật giỏ hàng thành công:', updateResponse.data);
         toast.success('Thanh toán thành công!');
         await axios.delete('http://localhost:5000/cart')
-        navigate('/');
+        navigate('/home');
       }
 
     } catch (err) {
@@ -69,7 +69,7 @@ const Payment = () => {
           toast.success('Thanh toán qua VNPay thành công!');
           await axios.delete('http://localhost:5000/cart')
 
-          navigate('/');
+          navigate('/home');
         } else {
            toast.error('Thanh toán qua VNPay thất bại. Vui lòng thử lại!');
         }

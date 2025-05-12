@@ -1,7 +1,9 @@
 // src/components/Login/LoginForm.jsx
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../../styles/login.css';
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
@@ -12,7 +14,7 @@ const LoginForm = () => {
 
   const handleLogin = async () => {
     if (!email || !password) {
-      setMessage('Vui lòng nhập đầy đủ email và mật khẩu');
+      setMessage('* Please enter full your email and password!');
       return;
     }
 
@@ -27,46 +29,42 @@ const LoginForm = () => {
       const result = await response.json();
 
       if (result.success) {
-        setMessage(`Xin chào, ${result.user.name}!`);
+        toast.success('Successful Login!');
         setTimeout(() => navigate('/main'), 1000);
       } else {
         setMessage(result.message);
       }
     } catch (error) {
-      console.error('Lỗi kết nối:', error);
-      setMessage('Không thể kết nối đến máy chủ');
+      console.error('Error connection:', error);
+      setMessage('Can not connect to server!');
     }
   };
 
   return (
-    <div className="login-container">
-      <h2>Đăng nhập</h2>
-
+    <div className="login-container" id="login-container">
+      <h2>LOG IN</h2>
       <div className="Info">
         Your Email : 
         <input
         className="login-input"
         type="email"
-        placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         />
       </div>
       <div className="Info">
-        Password : 
+        Password  : 
         <input
         className="login-input"
         type="password"
-        placeholder="Mật khẩu"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         />
       </div>
-
-      <button className="login-button" onClick={handleLogin}>
-        Đăng nhập
-      </button>
       {message && <p className="login-message">{message}</p>}
+      <button className="login-button" onClick={handleLogin}>
+        Submit
+      </button>
     </div>
   );
 };
