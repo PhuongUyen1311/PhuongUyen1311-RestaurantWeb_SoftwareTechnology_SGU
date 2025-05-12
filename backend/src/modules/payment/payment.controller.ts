@@ -1,10 +1,10 @@
-import { Controller, Get, Post, Body, Req, Res } from '@nestjs/common';
+import { Controller, Get, Post, Body, Req } from '@nestjs/common';
 import { PaymentService, PaymentInfo } from './payment.service';
-import { Request, Response } from 'express';
+import { Request } from 'express';
 
 @Controller('payment')
 export class PaymentController {
-  constructor(private readonly paymentService: PaymentService) { }
+  constructor(private readonly paymentService: PaymentService) {}
 
   @Get()
   getPaymentInfo(): PaymentInfo {
@@ -13,44 +13,16 @@ export class PaymentController {
 
   @Post('vnpay')
   async createVnpayPayment(
-    @Body() body: { amount: number; orderId: string; orderInfo: string },
-    @Req() req: Request,
+    @Body() body: { orderId: string },
   ) {
-    const ipAddr = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-    const paymentUrl = this.paymentService.createVnpayUrl(
-      body.amount,
-      body.orderId,
-      body.orderInfo,
-      ipAddr as string,
-    );
+    const paymentUrl = await  this.paymentService.createVnpayUrl(body.orderId);
+    console.log(paymentUrl)
     return { paymentUrl };
   }
 
-  @Post('ipn')
-  async handleIpn(@Body() params: { [key: string]: string }, @Res() res: Response) {
-    const isValid = this.paymentService.verifyChecksum(params);
-    const response = { RspCode: '', Message: '' };
-
-    if (!isValid) {
-      response.RspCode = '97';
-      response.Message = 'Invalid checksum';
-    } else {
-      const responseCode = params['vnp_ResponseCode'];
-      if (responseCode === '00') {
-        response.RspCode = '00';
-        response.Message = 'Confirm Success';
-      } else {
-        response.RspCode = '01';
-        response.Message = 'Transaction Failed';
-      }
-    }
-
-    res.json(response);
-  }
   @Post('clear')
   clearPaymentInfo() {
     this.paymentService.clearPaymentInfo();
     return { message: 'Payment information cleared successfully' };
   }
-
 }
