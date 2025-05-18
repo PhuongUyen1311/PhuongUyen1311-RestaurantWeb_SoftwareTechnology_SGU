@@ -12,7 +12,7 @@ export interface PaymentInfo {
 
 @Injectable()
 export class PaymentService {
-  constructor(private readonly cartService: CartService) {}
+  constructor(private readonly cartService: CartService) { }
 
   private paymentInfo: PaymentInfo | null = null;
 
@@ -48,7 +48,7 @@ export class PaymentService {
     });
 
     const vnpayResponse = await vnpay.buildPaymentUrl({
-      vnp_Amount: Math.round(amount * 100),
+      vnp_Amount: Math.round(amount * 1000),
       vnp_IpAddr: '127.0.0.1',
       vnp_TxnRef: orderId,
       vnp_OrderInfo: paymentInfo.note || 'khong co',
@@ -56,7 +56,7 @@ export class PaymentService {
       vnp_ReturnUrl: 'http://localhost:3000/payment/return',
       vnp_Locale: VnpLocale.VN,
       vnp_CreateDate: parseInt(moment().format('YYYYMMDDHHmmss')),
-    }); 
-    return vnpayResponse; 
+    });
+    return vnpayResponse;
   }
 }

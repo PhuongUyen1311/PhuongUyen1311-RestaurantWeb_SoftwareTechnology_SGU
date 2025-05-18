@@ -1,7 +1,7 @@
 // src/pages/Payment/Payment.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useLocation,useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import '../../styles/Payment.css';
 import PaymentHeader from '../../components/Payment/PaymentHeader';
 import Pay from '../../components/Payment/PaymentForm';
@@ -55,7 +55,7 @@ const Payment = () => {
       toast.error('Thanh toán thất bại, vui lòng thử lại!');
     }
   };
-  
+
   useEffect(() => {
     const handleVNPayResponse = async () => {
       const query = new URLSearchParams(location.search);
@@ -71,7 +71,7 @@ const Payment = () => {
 
           navigate('/home');
         } else {
-           toast.error('Thanh toán qua VNPay thất bại. Vui lòng thử lại!');
+          toast.error('Thanh toán qua VNPay thất bại. Vui lòng thử lại!');
         }
       }
     };
