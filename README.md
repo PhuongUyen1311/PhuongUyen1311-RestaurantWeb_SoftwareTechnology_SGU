@@ -1,20 +1,20 @@
 # MÔ HÌNH MVP CỦA NHÀ HÀNG TUI ❤️
 
-Đây là mô hình triển khai ban đầu của hệ thống nhà hàng mình.Chứa các chức năng cơ bản như menu chính, thêm giỏ hàng, thanh toán qua nhiều phương thức.Dự án mình chưa có database hoàn chỉnh. Hiện đang dùng json để load dữ liệu lên local storage.Hy vọng, trong tương lại dự án này sẽ được hoàn chỉnh.Hy vọng bạn sẽ có trải nghiệm tốt khi xem dự án mình🥰. 
+Đây là mô hình triển khai ban đầu của hệ thống nhà hàng mình.Chứa các chức năng cơ bản như menu chính, thêm giỏ hàng, thanh toán qua nhiều phương thức.Dự án mình chưa có database hoàn chỉnh. Hiện đang dùng json để load dữ liệu lên local storage. Hy vọng, trong tương lại dự án này sẽ được hoàn chỉnh. Hy vọng bạn sẽ có trải nghiệm tốt khi xem dự án mình🥰. 
 ## Các Thành Phần Chính
 
 1. **Frontend**:
    - Xây dựng bằng **React**.
-   - Cung cấp giao diện người dùng cho khách hàng  chọn món ăn, thêm vào giỏ hàng và thanh toán.
+   - Cung cấp giao diện người dùng cho khách hàng chọn món ăn, thêm vào giỏ hàng và thanh toán.
 
 2. **Backend**:
    - Xây dựng bằng **NestJS**.
    - Up dữ liệu từ file json lên local storage.
 ## Partner của mình ❤️
-- 3122410461 : [Uyên k24](https://github.com/PhuongUyen1311)
-- 3119480093 : [Trân k21](https://github.com/trannguyen5801)
-- 3122410253 : [Nam k24](https://github.com/NhatNam15151515)
-- 3122410132 : [Hoành k24](https://github.com/hoanhviplengend)
+- 3122410461 : [Uyên 2k4](https://github.com/PhuongUyen1311)
+- 3119480093 : [Trân 2k1](https://github.com/trannguyen5801)
+- 3122410253 : [Nam 2k4](https://github.com/NhatNam15151515)
+- 3122410132 : [Hoành 2k4](https://github.com/hoanhviplengend)
 ## 📁 Cấu trúc thư mục
 
 ```
