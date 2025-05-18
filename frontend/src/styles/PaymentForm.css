@@ -12,7 +12,7 @@
 .payment-section {
   flex: 1;
   padding-right: 30px;
-  border-right: 1px solid #e56701;
+  border-right: 1px solid rgb(136, 98, 10);
   width: 25vw;
 }
 
@@ -26,14 +26,14 @@
 #payment-container h2 {
   font-size: 24px;
   margin-bottom: 20px;
-  color: #e38f20;
+  color: rgb(136, 98, 10);
   text-align: center;
 }
 
 #payment-container h3 {
   font-size: 18px;
   margin-bottom: 15px;
-  color: #e38f20;
+  color: rgb(173, 132, 37);
 }
 
 /* Payment Method Styles */
@@ -50,7 +50,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 15px;
-  border: 1px solid #f5ba9b;
+  border: 1px solid rgb(173, 132, 37);
   border-radius: 5px;
   cursor: pointer;
   width: 100%;
@@ -149,7 +149,7 @@
   width: 100%;
   padding: 8px 12px;
   font-size: 14px;
-  border: 1px solid #f5ba9b;
+  border: 1px solid rgb(173, 132, 37);
   border-radius: 6px;
   background-color: #fefcfc;
   outline: none;
@@ -229,27 +229,27 @@
 
 .btn-cancel {
   background-color: #fefcfc;
-  color: #dc8008;
+  color: rgb(135, 101, 21);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  border: 1px solid #dc8008
+  border: 1px solid rgb(135, 101, 21)
 }
 
 .btn-pay {
   background-color: #fefcfc;
-  color: #dc8008;
+  color: rgb(135, 101, 21);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  border: 1px solid #dc8008
+  border: 1px solid rgb(135, 101, 21)
 }
 
 .btn-pay:hover {
-  background-color: #dc8008;
+  background-color: rgb(152, 114, 27);
   color: white;
   box-shadow: 0 5px 10px#fee1d1;
 }
 
 .btn-cancel:hover {
-  background-color: #fee1d1;
-  color: #dc8008;
+  background-color: rgb(152, 114, 27);
+  color: white;
   box-shadow: 0 5px 10px#fee1d1;
 }
 

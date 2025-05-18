@@ -68,10 +68,10 @@ export class CartService {
 
 
   clearCart() {
-    this.cart = [];
-    this.saveCart();
-    return { success: true };
-  }
+  this.cart = [];
+  this.saveCart(); 
+  return { success: true };
+}
 
 
   async getCartItems(id: string) {

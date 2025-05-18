@@ -51,4 +51,11 @@ export class AuthService {
       };
     }
   }
+
+  clearLoginSession(): { success: boolean; message: string } {
+  return {
+    success: true,
+    message: 'Đã xoá trạng thái đăng nhập (mocked)',
+  };
+}
 }

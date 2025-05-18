@@ -1,19 +1,42 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Thêm import useNavigate
+import { useEffect, useState } from 'react';
 import Menu from './MenuBar';
+import { useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
 
 function Header({ scrollToContact, scrollToMenu, scrollToAboutUs, scrollToHome }) {
-  const navigate = useNavigate(); // Khởi tạo navigate
+  const navigate = useNavigate();
+  const [username, setUsername] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const handleOrderNow = () => {
-    navigate('/home');
+  useEffect(() => {
+    const storedName = localStorage.getItem('username');
+    const loginStatus = localStorage.getItem('isLoggedIn') === 'true';
+    setIsLoggedIn(loginStatus);
+    if (storedName) {
+      setUsername(storedName);
+    }
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('username');
+    setIsLoggedIn(false);
+    setUsername('');
+    toast.info('Successful log out!');
+  };
+
+  const handleLogin = () => {
+    navigate('/');
+  };
+
+  const handleRegister = () => {
+    navigate('/register');
   };
 
   return (
     <header>
       <div className="part1">
-        <img src="/images/logo_shop.png" alt="Logo" className="logo-img" />
-        <div className="logo-name">FastFood</div>
+        <img src="/images/logo_shop.png" alt="logo" />
       </div>
 
       <div className="part2">
@@ -31,9 +54,35 @@ function Header({ scrollToContact, scrollToMenu, scrollToAboutUs, scrollToHome }
       </div>
 
       <div className="part3">
-        <button className="order-button" onClick={handleOrderNow}>Order now!</button>
-        <img src="/images/telephone.svg" alt="call" className="call-icon" />
-        <div className="hotline">Hotline: 0907 7099</div>
+        <p className="userName">Hello, {isLoggedIn ? username : 'customer'}!</p>
+        
+        {isLoggedIn ? (
+          <>
+            <div className="OrderHistory">
+              <img src="/images/history.svg" alt="Order History Icon" className="iconHistory" />
+              Order History
+            </div>
+            <div className="promotion">
+              <img src="/images/cart.svg" alt="promotionIcon" className="promotionIcon" />
+              Promotion
+            </div>
+            <div className="logout-bnt" onClick={handleLogout}>
+              Log Out
+              <img src="/images/exit.svg" alt="logout Icon" className="iconExit" />
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="login-bnt" onClick={handleLogin}>
+              <img src="/images/login.svg" alt="login Icon" className="iconLogin" />
+              Login
+            </div>
+            <div className="register-bnt" onClick={handleRegister}>
+              <img src="/images/register.svg" alt="register Icon" className="iconRegister" />
+              Register
+            </div>
+          </>
+        )}
       </div>
     </header>
   );

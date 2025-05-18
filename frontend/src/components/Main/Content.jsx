@@ -37,7 +37,7 @@ const MainContent = ({ homeRef, contactRef, menuRef, aboutUsRef }) => {
         <div className="menu-image">
           <img src="/images/menu.png" alt="menu" />
         </div>
-        <button className="gotoCart" onClick={() => navigate('/')}>Go to Cart</button>
+        <button className="gotoCart" onClick={() => navigate('/home')}>Go to Cart</button>
       </div>
 
       <div className="aboutUs" ref={aboutUsRef}>

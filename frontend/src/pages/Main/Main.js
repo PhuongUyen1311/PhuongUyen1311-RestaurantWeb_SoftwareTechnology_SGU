@@ -37,28 +37,28 @@ const Main = () => {
   };
 
   return (
-    <div>
-      <Header
-        scrollToHome={scrollToHome}
-        scrollToContact={scrollToContact}
-        scrollToMenu={scrollToMenu}
-        scrollToAboutUs={scrollToAboutUs}
-      />
-      <MainContent
-        homeRef={homeRef}
-        contactRef={contactRef}
-        menuRef={menuRef}
-        aboutUsRef={aboutUsRef}
-        scrollToHome={scrollToHome}
-        scrollToContact={scrollToContact}
-        scrollToMenu={scrollToMenu}
-        scrollToAboutUs={scrollToAboutUs}
-      />
-      <div className="footer" >
+  <div className="page-wrapper">
+    <Header
+      scrollToHome={scrollToHome}
+      scrollToContact={scrollToContact}
+      scrollToMenu={scrollToMenu}
+      scrollToAboutUs={scrollToAboutUs}
+    />
+    <MainContent
+      homeRef={homeRef}
+      contactRef={contactRef}
+      menuRef={menuRef}
+      aboutUsRef={aboutUsRef}
+      scrollToHome={scrollToHome}
+      scrollToContact={scrollToContact}
+      scrollToMenu={scrollToMenu}
+      scrollToAboutUs={scrollToAboutUs}
+    />
+    <footer className="footer">
       © 2025 FastFood. All rights reserved.
-      </div>
-    </div>
-  );
+    </footer>
+  </div>
+);
 };
 
 export default Main;

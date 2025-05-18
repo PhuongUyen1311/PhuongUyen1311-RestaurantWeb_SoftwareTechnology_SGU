@@ -114,7 +114,7 @@ const Cart = () => {
         console.log("Xóa khỏi giỏ hàng thành công", response.data);
       } catch (err) {
         console.error("Lỗi:", err);
-        if (!silent) toast.error("❌ Có lỗi khi xóa sản phẩm!");
+        if (!silent) toast.error("Có lỗi khi xóa sản phẩm!");
       }
     };
     

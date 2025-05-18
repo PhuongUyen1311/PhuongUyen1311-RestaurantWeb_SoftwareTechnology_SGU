@@ -14,6 +14,7 @@ export interface PaymentInfo {
 export class PaymentService {
   constructor(private readonly cartService: CartService) { }
 
+
   private paymentInfo: PaymentInfo | null = null;
 
   getPaymentInfo(): PaymentInfo {

@@ -26,12 +26,11 @@ export class CartController {
 
   @Post('decrease')
   async decreaseQuantity(@Body() body: { id: string }) {
-    // Giảm số lượng
     return this.cartService.decreaseQuantity(body.id);
   }
 
-  @Delete()
-  clearCart() {
+  @Delete('clear')
+  async clearCart() {
     return this.cartService.clearCart();
   }
 

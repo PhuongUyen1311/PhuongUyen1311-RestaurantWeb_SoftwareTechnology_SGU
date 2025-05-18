@@ -30,6 +30,8 @@ const LoginForm = () => {
 
       if (result.success) {
         toast.success('Successful Login!');
+        localStorage.setItem('isLoggedIn', 'true');
+        localStorage.setItem('username', result.user.name); 
         setTimeout(() => navigate('/main'), 1000);
       } else {
         setMessage(result.message);

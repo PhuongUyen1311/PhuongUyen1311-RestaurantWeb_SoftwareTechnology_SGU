@@ -13,7 +13,7 @@
     "price": 55,
     "category": "KFC",
     "description": "Burger gà ăn kèm rau xanh và sốt mayonnaise cay.",
-    "currentQuantity": 88
+    "currentQuantity": 1
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "price": 22,
     "category": "Cupcake",
     "description": "Bánh cupcake mềm xốp với nhân phô mai béo ngậy.",
-    "currentQuantity": 59
+    "currentQuantity": 58
   },
   {
     "id": 4,
@@ -29,7 +29,7 @@
     "price": 18,
     "category": "Cupcake",
     "description": "Bánh donut mềm xốp phủ lớp chocolate ngọt ngào.",
-    "currentQuantity": 78
+    "currentQuantity": 68
   },
   {
     "id": 5,
@@ -37,7 +37,7 @@
     "price": 85,
     "category": "Sea Food",
     "description": "Mix 7749 loại hải sản chiên vàng giòn, nóng hổi.",
-    "currentQuantity": 44
+    "currentQuantity": 42
   },
   {
     "id": 6,
