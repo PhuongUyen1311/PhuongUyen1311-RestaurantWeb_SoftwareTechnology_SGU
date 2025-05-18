@@ -60,6 +60,10 @@ docker-compose up
 #### Tiếp cận thông thường.
 - Bạn cần chia đôi terminal để chạy song song nhá ❤️
 ##### Từ Thư mục frontend
+- chuyển hướng từ thư mục gốc tới thư mục frontend (nếu chưa chuyển) ➡️
+```bash
+cd frontend
+```
 - cài đặt npm ⚙️
 ```bash
 npm install
@@ -69,6 +73,10 @@ npm install
 npm start
 ```
 ##### Từ Thư mục backend
+- chuyển hướng từ thư mục gốc tới thư mục backend (nếu chưa chuyển) ➡️
+```bash
+cd backend
+```
 - cài đặt npm ⚙️
 ```bash
 npm install
