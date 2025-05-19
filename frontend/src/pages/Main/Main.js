@@ -1,6 +1,4 @@
-// src/pages/Home.jsx
-import React, { useRef } from 'react';
-// import { useNavigate } from 'react-router-dom'; 
+import { useRef } from 'react';
 import Header from '../../components/Main/Header';
 import MainContent from '../../components/Main/Content';
 import '../../styles/main.css';

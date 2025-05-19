@@ -8,19 +8,16 @@ export class FoodController {
     private readonly cartService: CartService
   ) { }
 
-  // Lấy tất cả món ăn
   @Get()
   getAll() {
     const result = this.foodService.findAll();
     return result;
   }
-  // Lấy món ăn theo ID
   @Get('id')
   getById(@Param('id') id: string) {
     return this.foodService.findOne(id);
   }
 
-  // Lấy món ăn theo danh mục
   @Get('category')
   getByCategory(@Query('category') category: string) {
     if (category) {
@@ -29,19 +26,16 @@ export class FoodController {
     return this.foodService.getAllFood()
   }
 
-  // Thêm món ăn mới
   @Post()
   create(@Body() createFoodDto: any) {
     return this.foodService.create(createFoodDto);
   }
 
-  // Cập nhật món ăn
   @Put(':id')
   update(@Param('id') id: string, @Body() updateFoodDto: any) {
     return this.foodService.update(id, updateFoodDto);
   }
 
-  // Xóa món ăn
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.foodService.remove(id);
@@ -52,7 +46,7 @@ export class FoodController {
     const updatedItems: any[] = [];
 
     for (const cartItem of cartItems) {
-      const food = await this.foodService.getFoodById(cartItem.id); // Sử dụng await cho phương thức bất đồng bộ
+      const food = await this.foodService.getFoodById(cartItem.id); 
       if (food) {
         const newQuantity = food.currentQuantity - cartItem.quantity;
 

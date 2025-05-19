@@ -29,8 +29,7 @@ export class CartService {
     const foodItem = await this.foodService.getFoodById(id);
     const existingItemIndex = this.cart.findIndex(item => item.id === id);
     if (existingItemIndex !== -1) {
-      // Nếu sản phẩm đã có trong giỏ, tăng số lượng
-      this.cart[existingItemIndex].note += "\n" + (note || '');
+      this.cart[existingItemIndex].note += note ? note + "\n" : '';
       this.cart[existingItemIndex].quantity += quantity;
       if (this.cart[existingItemIndex].quantity > 99) {
         this.cart[existingItemIndex].quantity = 99;
@@ -43,7 +42,6 @@ export class CartService {
 
 
     } else {
-      // Nếu chưa có, thêm sản phẩm mới vào giỏ
       this.cart.push({
         id: foodItem.id,
         name: foodItem.name,
@@ -51,7 +49,7 @@ export class CartService {
         category: foodItem.category,
         currentQuantity: foodItem.currentQuantity,
         quantity: quantity,
-        note: note || ''
+        note: note ? note + "\n" : ''
       });
 
     }
@@ -68,10 +66,10 @@ export class CartService {
 
 
   clearCart() {
-  this.cart = [];
-  this.saveCart(); 
-  return { success: true };
-}
+    this.cart = [];
+    this.saveCart();
+    return { success: true };
+  }
 
 
   async getCartItems(id: string) {
@@ -107,7 +105,6 @@ export class CartService {
       };
     }
     else {
-      // Nếu sản phẩm chưa có trong giỏ, thêm mới
       this.cart.push({
         id: foodItem.id,
         name: foodItem.name,

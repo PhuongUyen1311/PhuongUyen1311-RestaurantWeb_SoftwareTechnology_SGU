@@ -1,5 +1,4 @@
-// src/pages/Cart/Cart.js
-import React, { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../../styles/YourCart.css';
@@ -52,7 +51,6 @@ const Cart = () => {
     }
   };
   
-    // Tăng số lượng sản phẩm trong giỏ hàng
     const handleIncrease = async (id) => {
       try {
         const res = await axios.post('http://localhost:5000/cart/increase', { id });

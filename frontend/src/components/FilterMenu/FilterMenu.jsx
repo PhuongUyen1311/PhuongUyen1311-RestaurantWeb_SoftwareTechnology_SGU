@@ -8,13 +8,13 @@ const FilterMenu = ({ item, isSelected, onSelect, onAddToCart }) => {
           onSelect(item);
           onAddToCart(item);
         }}
-        className={`flex flex-col items-center p-2 rounded ${isSelected ? 'bg-blue-400' : 'bg-gray-700'}`} // Thêm màu nền khi được chọn
+        className={`flex flex-col items-center p-2 rounded ${isSelected ? 'bg-blue-400' : 'bg-gray-700'}`}
       >
         <img
           src={`/images/${normalizeImageName(item.name)}.jpg`}
           alt={item.name}
-          className="w-16 h-16 object-cover mb-2 rounded" // Kích thước và kiểu hình ảnh
-          onError={(e) => (e.target.src = 'https://via.placeholder.com/100')} // Hình ảnh dự phòng
+          className="w-16 h-16 object-cover mb-2 rounded"
+          onError={(e) => (e.target.src = 'https://via.placeholder.com/100')}
         />
         <p className="text-white text-sm">{item.name}</p>
       </button>

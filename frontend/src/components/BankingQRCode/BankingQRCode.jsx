@@ -1,5 +1,3 @@
-// src/pages/BankTransfer/BankTransferPage.jsx
-import React from 'react';
 import { QRCodeCanvas } from 'qrcode.react';
 import '../../styles/BankingQRCode.css';
 

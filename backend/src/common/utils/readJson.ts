@@ -1,4 +1,3 @@
-// src/common/utils/read-json.ts
 import { readFileSync } from 'fs';
 import { join } from 'path';
 

@@ -1,7 +1,7 @@
-import React, { useEffect} from 'react';
+import { useEffect } from 'react';
 import Item from '../../components/ItemInfo/ItemInfo.jsx';
 
-const ItemInfo = ({ item, quantity, note, isOpen, onClose, onAddToCart }) => {
+const ItemInfo = ({ item, quantity, note, isOpen, onClose, onAddToCart, action }) => {
   useEffect(() => {
     const handleEsc = (e) => {
       if (e.key === 'Escape') onClose();
@@ -18,6 +18,7 @@ const ItemInfo = ({ item, quantity, note, isOpen, onClose, onAddToCart }) => {
       note={note}
       onClose={onClose}
       onAddToCart={onAddToCart}
+      action={action}
     />
   );
 };

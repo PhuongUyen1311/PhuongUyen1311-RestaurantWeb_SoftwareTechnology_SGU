@@ -1,12 +1,11 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom';
 import '../../styles/PaymentHeader.css';
 
 const BankingtHeader = () => {
-  const navigate = useNavigate(); // Khởi tạo navigate
+  const navigate = useNavigate();
 
   const handleBackClick = () => {
-    navigate(-1); // Quay lại trang trước đó trong lịch sử trình duyệt
+    navigate(-1); // Quay lại trang trước đó
   };
 
   return (

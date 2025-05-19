@@ -20,7 +20,6 @@ export class CartController {
 
   @Post('increase')
   async increaseQuantity(@Body() body: { id: string }) {
-    // Tăng số lượng
     return this.cartService.increaseQuantity(body.id);
   }
 

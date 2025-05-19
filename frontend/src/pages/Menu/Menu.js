@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import MenuItem from '../../components/Menu/MenuItem';
 import ItemInfo from '../ItemInfo/ItemInfo.js';
@@ -92,6 +92,7 @@ function Menu({ category }) {
               isOpen={isPopupOpen}
               onClose={closePopup}
               onAddToCart={addToCart}
+              action={'add'}
             />
           )}
         </>

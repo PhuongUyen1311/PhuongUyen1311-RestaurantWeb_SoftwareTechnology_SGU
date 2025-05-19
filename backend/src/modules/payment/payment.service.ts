@@ -24,9 +24,9 @@ export class PaymentService {
     const cost = costWithoutTax + tax;
 
     const note = items
-      .map(item => item.note?.replace(/\s+/g, ' ').trim())
-      .filter(Boolean)
-      .join(' | ');
+      .filter(item => item.note) // Chỉ giữ các item có note
+      .map(item => `${item.name}: ${item.note.replace(/\s+/g, ', ').trim()}`)
+      .join('\n');
 
     this.paymentInfo = { items, cost, tax, note };
     return this.paymentInfo;
@@ -52,7 +52,7 @@ export class PaymentService {
       vnp_Amount: Math.round(amount * 1000),
       vnp_IpAddr: '127.0.0.1',
       vnp_TxnRef: orderId,
-      vnp_OrderInfo: paymentInfo.note || 'khong co',
+      vnp_OrderInfo: paymentInfo.note || '',
       vnp_OrderType: ProductCode.Other, // thay 'other' nếu cần
       vnp_ReturnUrl: 'http://localhost:3000/payment/return',
       vnp_Locale: VnpLocale.VN,

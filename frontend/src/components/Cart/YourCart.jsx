@@ -1,5 +1,4 @@
-// YourCart.jsx
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import '../../styles/YourCart.css';
 import { normalizeImageName } from '../../utils/Normalize.js';
 
@@ -36,10 +35,10 @@ export const YourCart = ({ item, onIncrease, onDecrease, onRemove, onItemClick }
   return (
     <div className="cart-item" >
       <img
-        onClick={() => onItemClick(item)} // Mở popup khi nhấn item
+        onClick={() => onItemClick(item)} // Mở popup
         role="button"
         tabIndex={0}
-        onKeyDown={(e) => e.key === 'Enter' && onItemClick(item)} // Hỗ trợ phím Enter
+        onKeyDown={(e) => e.key === 'Enter' && onItemClick(item)}
         src={imageSrc}
         alt={item.name}
         className="cart-item-image"
@@ -47,10 +46,10 @@ export const YourCart = ({ item, onIncrease, onDecrease, onRemove, onItemClick }
       />
 
       <div className="cart-item-details"
-        onClick={() => onItemClick(item)} // Mở popup khi nhấn item
+        onClick={() => onItemClick(item)} // Mở popup 
         role="button"
         tabIndex={0}
-        onKeyDown={(e) => e.key === 'Enter' && onItemClick(item)} // Hỗ trợ phím Enter
+        onKeyDown={(e) => e.key === 'Enter' && onItemClick(item)}
       >
         <p className="cart-item-name">{item.name}</p>
         <p className="cart-item-price">{price} VND</p>

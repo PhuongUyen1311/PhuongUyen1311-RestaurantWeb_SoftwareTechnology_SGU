@@ -1,9 +1,8 @@
-// src/components/ItemInfo.jsx
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { normalizeImageName } from '../../utils/Normalize.js';
 import '../../styles/ItemInfo.css';
 
-const Item = ({ item, quantity: initialQuantity, note: initialNote = "", onAddToCart, onClose }) => {
+const Item = ({ item, quantity: initialQuantity, note: initialNote = "", onAddToCart, onClose, action }) => {
   const intervalRef = useRef(null);
   const [note, setNote] = useState(initialNote);
   const [quantity, setQuantity] = useState(initialQuantity);
@@ -28,10 +27,8 @@ const Item = ({ item, quantity: initialQuantity, note: initialNote = "", onAddTo
     }
   };
 
-  // Xử lý khi người dùng nhập giá trị vào ô input
   const handleInputChange = (e) => {
     const value = e.target.value;
-    // Chỉ cho phép nhập số
     if (/^\d*$/.test(value)) {
       setInputValue(value);
     }
@@ -47,13 +44,11 @@ const Item = ({ item, quantity: initialQuantity, note: initialNote = "", onAddTo
       setInputValue('99');
       setQuantity(99);
     } else {
-      // Nếu hợp lệ thì cập nhật
       setInputValue(value.toString());
       setQuantity(value);
     }
   };
 
-  // Đồng bộ quantity với inputValue khi onIncrease/onDecrease được gọi
   const handleIncrease = () => {
     const newQuantity = quantity + 1;
     setQuantity(newQuantity);
@@ -137,7 +132,7 @@ const Item = ({ item, quantity: initialQuantity, note: initialNote = "", onAddTo
               }}
               className="add-to-cart-button-iteminfo"
             >
-              Thêm vào giỏ hàng
+              {action === 'add' ? 'Thêm vào giỏ hàng' : 'Cập nhật sản phẩm'}
             </button>
           </div>
         </div>

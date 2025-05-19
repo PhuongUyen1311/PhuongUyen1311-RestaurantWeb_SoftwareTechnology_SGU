@@ -1,6 +1,5 @@
-// src/components/Payment/PaymentForm.jsx
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../../styles/PaymentForm.css'
 import { toast } from 'react-toastify';
 
@@ -8,7 +7,7 @@ const Pay = ({ paymentInfo, onCheckout }) => {
   const [paymentMethod, setPaymentMethod] = useState('credit');
   const [orderId, setOrderId] = useState('');
   const [note, setNote] = useState(paymentInfo.note);
-  const navigate = useNavigate(); // Khởi tạo useNavigate
+  const navigate = useNavigate();
 
   const totalItems = paymentInfo.items.reduce((total, item) => total + item.quantity, 0);
 
@@ -37,7 +36,7 @@ const Pay = ({ paymentInfo, onCheckout }) => {
   }, [paymentInfo.note]);
   const handleSubmit = () => {
     if (paymentMethod === 'bank') {
-      // Điều hướng đến trang BankTransferPage và truyền thông tin cần thiết
+      // Điều hướng đến trang BankTransferPage
       navigate('/bank-transfer', {
         state: {
           paymentInfo,
