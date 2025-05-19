@@ -35,9 +35,14 @@ const Cart = () => {
         localStorage.setItem('cart', JSON.stringify(Response.data));
         window.dispatchEvent(new Event('cartUpdated'));
       }
-      console.log("Cập nhật giỏ hàng thành công:", Response.data);
+      toast.success("Cập nhật sản phẩm thành công!", {
+        autoClose: 1000, 
+      });
     } catch (err) {
       console.error("Lỗi:", err);
+      toast.success("Cập nhật sản phẩm thất bại!", {
+      autoClose: 1000, 
+      });
     }
   };
 

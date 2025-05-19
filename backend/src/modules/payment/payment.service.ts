@@ -25,7 +25,7 @@ export class PaymentService {
 
     const note = items
       .filter(item => item.note) // Chỉ giữ các item có note
-      .map(item => `${item.name}: ${item.note.replace(/\s+/g, ', ').trim()}`)
+      .map(item => `${item.name}: ${item.note.replace(/\n+/g, ', ').trim()}`)
       .join('\n');
 
     this.paymentInfo = { items, cost, tax, note };
