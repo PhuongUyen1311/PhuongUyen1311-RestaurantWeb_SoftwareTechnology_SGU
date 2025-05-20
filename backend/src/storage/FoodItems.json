@@ -5,15 +5,7 @@
     "price": 18,
     "category": "Soda",
     "description": "Coca-Cola hương cổ điển mix cùng vị vani tươi mới, độc đáo.",
-    "currentQuantity": 143
-  },
-  {
-    "id": 2,
-    "name": "Zinger Burger",
-    "price": 55,
-    "category": "KFC",
-    "description": "Burger gà ăn kèm rau xanh và sốt mayonnaise cay.",
-    "currentQuantity": 1
+    "currentQuantity": 141
   },
   {
     "id": 3,
@@ -21,7 +13,7 @@
     "price": 22,
     "category": "Cupcake",
     "description": "Bánh cupcake mềm xốp với nhân phô mai béo ngậy.",
-    "currentQuantity": 31
+    "currentQuantity": 29
   },
   {
     "id": 4,
@@ -29,7 +21,7 @@
     "price": 18,
     "category": "Cupcake",
     "description": "Bánh donut mềm xốp phủ lớp chocolate ngọt ngào.",
-    "currentQuantity": 68
+    "currentQuantity": 66
   },
   {
     "id": 5,
@@ -53,7 +45,7 @@
     "price": 95,
     "category": "Sea Food",
     "description": "Cá hồi nướng mọng nước, tẩm ướp thảo mộc.",
-    "currentQuantity": 34
+    "currentQuantity": 33
   },
   {
     "id": 8,
@@ -93,7 +85,7 @@
     "price": 20,
     "category": "Cupcake",
     "description": "Bánh cupcake phô mai béo ngậy, mềm mịn.",
-    "currentQuantity": 88
+    "currentQuantity": 87
   },
   {
     "id": 13,

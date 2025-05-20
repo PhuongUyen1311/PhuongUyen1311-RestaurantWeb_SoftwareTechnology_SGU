@@ -1,5 +1,5 @@
 import { Controller, Post, Body, Delete } from '@nestjs/common';
-import { AuthService } from '../auth/auth.service';
+import { AuthService, User } from '../auth/auth.service';
 
 @Controller('auth')
 export class AuthController {
@@ -14,6 +14,11 @@ export class AuthController {
   @Delete('clear')
   clearLoginSession() {
   return this.authService.clearLoginSession();
+}
+  @Post('signup')
+  signup(@Body() body: User) {
+  console.log('Yêu cầu đăng ký mới:', body);
+  return this.authService.register(body);
 }
 
 }

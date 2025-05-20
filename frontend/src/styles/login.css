@@ -66,12 +66,12 @@
 
 .login {
   flex: 2;
-  background-color: rgb(236, 221, 194); 
+  background-color: rgba(242, 240, 194, 0.654); 
   position: relative;
 }
 
 .login-container {
-  margin-top: 120px;
+  margin-top: 100px;
   left: 50px;
   padding: 20px;
   position: absolute;
@@ -91,7 +91,7 @@
 }
 
 #login-container h2 {
-  color: rgb(124, 91, 16);
+  color: rgb(112, 94, 15);
   font-size: 45px;
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   letter-spacing: 10px;
@@ -103,7 +103,7 @@
   margin-bottom: 20px;
   display: flex;
   flex-direction: row;
-  color: rgb(157, 112, 7);
+  color: rgb(127, 107, 19);
   font-size: 18px;
   justify-content: space-between; 
   align-items: center;
@@ -123,14 +123,14 @@
 }
 
 .login-input:focus {
-  border: 2.2px solid rgb(112, 82, 14);
+  border: 2.2px solid rgb(127, 107, 19);
 }
 
 .login-button {
   padding: 12px 25px;
   font-size: 20px;
   cursor: pointer;
-  background-color: rgba(112, 83, 14, 0.837);
+  background-color: rgba(127, 107, 19, 0.892);
   color: rgb(252, 244, 218);
   border: none;
   border-radius: 5px;
@@ -141,11 +141,11 @@
 }
 
 .login-button:hover {
-  background-color: rgba(112, 83, 14, 0.647);
+  background-color: rgb(111, 94, 17);
 }
 
 .login-button:active {
-  background-color: rgb(112, 83, 14); 
+  background-color: rgb(127, 107, 19); 
   transform: scale(1.05);   
   transition: transform 0.1s, background-color 0.1s;
 }
@@ -164,7 +164,7 @@
   justify-content: flex-end;
   width: 60px;
   height: 60px;
-  background-color: rgba(112, 83, 14, 0.606);
+  background-color: rgba(127, 107, 19, 0.666);
   border: none;
   border-radius: 50%;
   cursor: pointer;
@@ -193,7 +193,7 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: rgba(112, 83, 14, 0.579);
+  background-color: rgba(127, 107, 19, 0.54);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -218,5 +218,74 @@
 .dinein-order-btn:hover .text {
   opacity: 1;
   max-width: 200px; /* đủ rộng để hiển thị text */
+}
+
+.linkSignup {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  font-size: 20px;
+  color: rgb(88, 65, 11);
+  display: flex;
+  align-items: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  gap: 8px;
+}
+
+.signup-btn {
+  color: #0676ae;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: transform 0.2s; 
+}
+
+.signup-btn:hover {
+  Color: rgba(201, 38, 5, 0.947);
+}
+
+.signup-btn:active {
+  Color: rgba(201, 38, 5, 0.947);
+  transform: scale(0.95);
+}
+
+.signup-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.58);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: rgba(251, 250, 221, 0.83);
+  padding: 50px;
+  border-radius: 12px;
+  width: 300px;
+  max-width: 90%;
+  position: relative;
+  min-height: 350px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border-color: 2px solid rgb(249, 206, 64);
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  color: rgb(110, 93, 16);
+}
+
+.close-btn:hover{
+  color: rgb(177, 23, 23);
 }
 

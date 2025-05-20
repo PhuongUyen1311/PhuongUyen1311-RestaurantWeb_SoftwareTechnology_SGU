@@ -30,8 +30,9 @@ function Header({ scrollToContact, scrollToMenu, scrollToAboutUs, scrollToHome }
   };
 
   const handleRegister = () => {
-    navigate('/register');
-  };
+  navigate('/', { state: { showSignup: true } }); 
+};
+
 
   return (
     <header>

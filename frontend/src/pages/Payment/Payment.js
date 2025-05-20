@@ -51,7 +51,7 @@ const Payment = () => {
         await axios.delete('http://localhost:5000/cart/clear')
         console.log('Giỏ hàng đã được làm mới.');
 
-        toast.success('Vui lòng chờ giao hàng và thanh toán. Cảm ơn quý khách!');
+        toast.success('Quý khách vui lòng thanh toán sau khi nhận hàng. Xin cảm ơn!');
         navigate('/home');
       }
 

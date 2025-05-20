@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "id": 3,
+    "name": "Cheese Cupcake",
+    "price": 22,
+    "category": "Cupcake",
+    "currentQuantity": 29,
+    "quantity": 1,
+    "note": ""
+  },
+  {
+    "id": 1,
+    "name": "Coca Vanilla",
+    "price": 18,
+    "category": "Soda",
+    "currentQuantity": 141,
+    "quantity": 1,
+    "note": ""
+  }
+]

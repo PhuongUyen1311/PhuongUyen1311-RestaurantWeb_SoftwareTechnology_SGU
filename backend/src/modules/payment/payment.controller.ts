@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body} from '@nestjs/common';
+import { Controller, Get, Post, Body } from '@nestjs/common';
 import { PaymentService, PaymentInfo } from './payment.service';
 
 @Controller('payment')
@@ -25,4 +25,3 @@ export class PaymentController {
     return { message: 'Payment information cleared successfully' };
   }
 }
-

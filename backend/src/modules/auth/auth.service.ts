@@ -58,4 +58,24 @@ export class AuthService {
     message: 'Đã xoá trạng thái đăng nhập (mocked)',
   };
 }
+
+  register(newUser: User): { success: boolean; message: string } {
+  try {
+    const users = this.readUsers();
+
+    const exists = users.some(u => u.email === newUser.email);
+    if (exists) {
+      return { success: false, message: 'Email đã được đăng ký.' };
+    }
+
+    users.push(newUser);
+    fs.writeFileSync(userFile, JSON.stringify(users, null, 2), 'utf-8');
+
+    return { success: true, message: 'Đăng ký thành công.' };
+  } catch (error) {
+    console.error('Lỗi ghi file:', error);
+    return { success: false, message: 'Không thể ghi dữ liệu người dùng.' };
+  }
+}
+
 }
